@@ -71,11 +71,12 @@
   color: var(--color-heading);
 }
 
-/* ── Programme cards — gentle pointer response ─────────────────────
- * The card lifts a few pixels with a soft shadow when the pointer rests
- * on it (or the keyboard reaches the link inside it). Kept slow and
- * shallow so it reads as a nudge, not a jump.
+/* ── Gentle pointer response for boxes ─────────────────────────────
+ * Cards, tabs, buttons, selectors, accordion rows and table rows answer
+ * the pointer with a small lift and a soft shadow. Kept slow and shallow
+ * so it reads as a nudge, not a jump.
  */
+.landing .soft-lift,
 .landing .programme-card {
   transition:
     transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -83,6 +84,8 @@
   box-shadow: 0 1px 2px oklch(0.2 0.05 255 / 0.08);
 }
 
+.landing .soft-lift:hover,
+.landing .soft-lift:focus-within,
 .landing .programme-card:hover,
 .landing .programme-card:focus-within {
   transform: translateY(-4px);
@@ -91,9 +94,39 @@
     0 2px 6px oklch(0.2 0.05 255 / 0.1);
 }
 
+/* Smaller boxes — tabs, buttons, the programme selector and the
+ * accordion rows — take the same cue at half the depth. */
+.landing [role="tab"],
+.landing :is(button, a).inline-flex,
+.landing button[data-state] {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.landing [role="tab"]:hover,
+.landing :is(button, a).inline-flex:hover,
+.landing button[data-state]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px -14px oklch(0.2 0.06 255 / 0.5);
+}
+
+/* Table rows warm instead of lifting. */
+.landing tbody tr {
+  transition: background-color 0.25s ease;
+}
+.landing tbody tr:hover {
+  background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .landing .soft-lift:hover,
+  .landing .soft-lift:focus-within,
   .landing .programme-card:hover,
-  .landing .programme-card:focus-within {
+  .landing .programme-card:focus-within,
+  .landing [role="tab"]:hover,
+  .landing :is(button, a).inline-flex:hover,
+  .landing button[data-state]:hover {
     transform: none;
   }
 }
