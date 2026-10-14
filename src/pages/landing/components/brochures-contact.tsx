@@ -19,7 +19,7 @@ const brochures = [
 
 export function Brochures({ unlocked }: { unlocked: boolean }) {
   return (
-    <section id="brochures" className="landing py-20">
+    <section id="brochures" className="landing pt-10 pb-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2>Programme brochures</h2>
@@ -87,7 +87,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
   }
 
   return (
-    <section id="contact" className="landing pb-24">
+    <section id="contact" className="landing pt-20 pb-10">
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2>Contact us</h2>

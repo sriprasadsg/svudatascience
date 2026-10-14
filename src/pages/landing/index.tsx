@@ -560,10 +560,10 @@ export default function Landing() {
         <Learning />
         <Admissions />
         <International />
-        <Faqs />
         <Register />
-        <Brochures unlocked={brochuresUnlocked} />
+        <Faqs />
         <ContactForm onSubmitted={() => setBrochuresUnlocked(true)} />
+        <Brochures unlocked={brochuresUnlocked} />
       </main>
       <SvuFooter />
     </>
