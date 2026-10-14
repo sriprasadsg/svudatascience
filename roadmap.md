@@ -20,7 +20,7 @@
 - [x] Fix the empty space in the programmes section: a single card now spans the band, flush with the comparison table (done)
 - [x] Page titles in deep navy (#0a2e57), with dark bands keeping light headings (done)
 - [x] Gentle pointer response on every box: cards, tabs, buttons, selector, accordion rows, table rows, contact pill and badges (done)
-- [x] Google Sans fonts across the site, footer keeping its present outlook (done)
+- [x] Google Sans fonts across the site, footer keeping its present outlook (done — later superseded by Poppins site-wide).
 - [x] Remove the "SVU × Exafluence" label; site-wide Google Sans with no bold weights (done)
 - [x] "Data Science" treated as one word — never split across lines (done)
 - [x] Titles unbolded: headings at regular weight (400), nothing bold anywhere (done)
