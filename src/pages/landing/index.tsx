@@ -245,15 +245,26 @@ function Programmes() {
               <TabsTrigger key={g.key} value={g.key}>{g.label}</TabsTrigger>
             ))}
           </TabsList>
-          {groups.map((g) => (
-            <TabsContent key={g.key} value={g.key} forceMount className="data-[state=inactive]:hidden">
-              <div className={`grid gap-6 md:grid-cols-2 ${g.key === "diploma" ? "" : "lg:grid-cols-3"}`}>
-                {programmes.filter((p) => p.group === g.key).map((p, i) => (
-                  <ProgrammeCard key={p.slug} p={p} wide={g.key === "diploma" && i === 0} />
-                ))}
-              </div>
-            </TabsContent>
-          ))}
+          {groups.map((g) => {
+            const items = programmes.filter((p) => p.group === g.key);
+            const cols =
+              g.key === "diploma"
+                ? "md:grid-cols-2"
+                : items.length === 1
+                  ? "md:grid-cols-1"
+                  : items.length === 2
+                    ? "md:grid-cols-2"
+                    : "md:grid-cols-2 lg:grid-cols-3";
+            return (
+              <TabsContent key={g.key} value={g.key} forceMount className="data-[state=inactive]:hidden">
+                <div className={`grid gap-6 ${cols}`}>
+                  {items.map((p, i) => (
+                    <ProgrammeCard key={p.slug} p={p} wide={g.key === "diploma" && i === 0} />
+                  ))}
+                </div>
+              </TabsContent>
+            );
+          })}
         </Tabs>
 
         <div className="mt-12 overflow-x-auto rounded-xl bg-background text-foreground">
