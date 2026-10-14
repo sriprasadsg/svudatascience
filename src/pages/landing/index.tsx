@@ -414,6 +414,7 @@ function Learning() {
             <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and study resources 24/7
           </p>
         </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
             <div key={c.title} className="soft-lift rounded-xl border border-border bg-card p-6">
               <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
