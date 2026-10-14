@@ -22,4 +22,4 @@
 - [x] Admissions timeline dates note reduced to 13px and set on a single line. (done)
 - [x] "Frequently asked questions" heading reduced to 22px, regular weight. (done)
 - [x] Brochure downloads unlock after the contact form is submitted — verified end to end in preview.
-- [ ] Highlight + animate the five learning points (80/20, Online Sessions, Industry Professionals & Mentors, LMS 24/7).
+- [x] Highlight + animate the five learning points (80/20, Online Sessions, Industry Professionals & Mentors, LMS 24/7) — glow pulse staggered per tile, verified in preview.
