@@ -215,7 +215,7 @@ function Collaboration() {
 
 function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
   return (
-    <article id={`prog-${p.slug}`} className={`scroll-mt-24 rounded-xl bg-background p-6 text-foreground ${wide ? "md:col-span-2" : ""}`}>
+    <article id={`prog-${p.slug}`} className={`programme-card scroll-mt-24 rounded-xl bg-background p-6 text-foreground ${wide ? "md:col-span-2" : ""}`}>
       <h3 className="text-xl">{p.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{p.duration} · {p.mode}</p>
       <p className="mt-4 text-muted-foreground">{p.summary}</p>
