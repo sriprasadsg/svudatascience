@@ -26,3 +26,4 @@
 - [x] LMS access line shown as its own box with the text centred.
 - [x] Brochure cards framed in two colours (navy / blue), titles kept inside the frames.
 - [x] Contact form programme dropdown aligned with the other fields (no longer extended past the card).
+- [x] Contact form moved above the brochure boxes.
