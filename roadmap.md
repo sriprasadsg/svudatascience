@@ -1,5 +1,11 @@
 # Roadmap
 
+- [ ] Match the official site's top header and all original navigation destinations.
+- [ ] Reduce excess gaps around collaboration, admissions, international students, FAQs, contact and brochures.
+- [ ] Add linked admissions and international-student pages with relevant official hero imagery and verified information.
+- [ ] Deliver enquiry-form notifications to contact@exafluence.com (blocked until a sender domain is configured).
+- [ ] Soften brochure-box colour intensity while retaining readable text and buttons.
+
 - [x] Reproduce the official SVU footer layout, colours, text, links, and logos.
 - [x] Verify the footer’s appearance, links, and images in the preview.
 - [x] Compact and balance the admissions & enquiries contact band above the official footer.
