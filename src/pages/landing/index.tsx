@@ -142,12 +142,12 @@ function Hero() {
       </div>
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute top-40 right-1/4 -z-10 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
+      <div className="mx-auto mb-6 flex max-w-4xl flex-nowrap items-center justify-center gap-x-5 gap-y-3 px-6">
+        <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-14 w-auto min-w-0 shrink sm:h-20" />
+        <span className="shrink-0 text-sm font-medium text-muted-foreground">in collaboration with</span>
+        <img src={exfeduLogo.url} alt="Exafluence Education" className="h-14 w-auto min-w-0 shrink sm:h-20" />
+      </div>
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <div className="mb-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-          <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-16 w-auto sm:h-20" />
-          <span className="text-sm font-medium text-muted-foreground">in collaboration with</span>
-          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-16 w-auto sm:h-20" />
-        </div>
         <h1 className="display mb-6">
           Data Science Education
           <br />
