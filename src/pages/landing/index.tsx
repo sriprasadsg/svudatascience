@@ -560,8 +560,8 @@ export default function Landing() {
         <Learning />
         <Admissions />
         <International />
-        <Faqs />
         <Register />
+        <Faqs />
         <ContactForm onSubmitted={() => setBrochuresUnlocked(true)} />
         <Brochures unlocked={brochuresUnlocked} />
       </main>
