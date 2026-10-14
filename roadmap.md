@@ -41,5 +41,5 @@
 - [x] Brochure unlock is per programme: the contact form opens only the brochure for the programme selected — verified in preview and covered by a test.
 - [x] Add the technology logo strip to the International Students page, sized to its content width (done).
 - [x] Site-wide font switched to Poppins — the same font the top header bar uses; footer unchanged (done).
-^- [x] Home navigation links to carry the master site (svudatascience.in) real destinations; fetch the data behind each link.
-^- [x] Verify every navigation link activates correctly and browser back/forward works like the reference site.
+- [x] Home navigation links to carry the master site (svudatascience.in) real destinations; fetch the data behind each link.
+- [x] Verify every navigation link activates correctly and browser back/forward works like the reference site.
