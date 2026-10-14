@@ -138,7 +138,13 @@
 .svu-enquiries-chip { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 9px; background: var(--svu-enquiries-chip); color: var(--svu-enquiries-accent); }
 .svu-enquiries a { color: var(--svu-enquiries-accent); }
 .svu-enquiries a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.svu-enquiries-email { display: inline-flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; padding: 6px 16px 6px 6px; border: 1px solid var(--svu-enquiries-rule); border-radius: 999px; background: var(--svu-surface); box-shadow: 0 1px 2px hsl(215 25% 60% / 0.08); font-size: 14px; font-weight: 500; color: var(--svu-enquiries-accent); transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease; }
+.svu-enquiries-email { display: inline-flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; padding: 6px 16px 6px 6px; border: 1px solid var(--svu-enquiries-rule); border-radius: 999px; background: var(--svu-surface); box-shadow: 0 1px 2px hsl(215 25% 60% / 0.08); font-size: 14px; font-weight: 500; color: var(--svu-enquiries-accent); transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.svu-enquiries-email:hover { transform: translateY(-2px); box-shadow: 0 9px 20px -14px hsl(215 30% 40% / 0.45); }
+.svu-enquiries-chip { transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.28s ease; }
+.svu-enquiries-chip:hover { transform: translateY(-2px); box-shadow: 0 8px 16px -12px hsl(215 30% 40% / 0.5); }
+@media (prefers-reduced-motion: reduce) {
+  .svu-enquiries-email:hover, .svu-enquiries-chip:hover { transform: none; }
+}
 .svu-enquiries-email .svu-enquiries-chip { width: 28px; height: 28px; }
 .svu-enquiries-email:hover { text-decoration: none; border-color: var(--svu-enquiries-accent); background: var(--svu-enquiries-chip); box-shadow: 0 3px 10px hsl(219 64% 42% / 0.14); }
 .svu-enquiries-email span { overflow-wrap: anywhere; }
