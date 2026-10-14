@@ -1,11 +1,11 @@
 # Roadmap
 
-- [ ] Match the official site's top header and all original navigation destinations.
-- [ ] Reduce excess gaps around collaboration, admissions, international students, FAQs, contact and brochures.
-- [ ] Add linked admissions and international-student pages with relevant official hero imagery and verified information.
+- [x] Match the official site's top header and all original navigation destinations.
+- [x] Reduce excess gaps around collaboration, admissions, international students, FAQs, contact and brochures.
+- [x] Add linked admissions and international-student pages with relevant official hero imagery and verified information.
 - [ ] Deliver enquiry-form notifications to contact@exafluence.com (blocked until a sender domain is configured).
-- [ ] Soften brochure-box colour intensity while retaining readable text and buttons.
-- [ ] Replace all three brochure downloads with the newly enclosed M.S., PG Diploma and Specialist Diplomas versions.
+- [x] Soften brochure-box colour intensity while retaining readable text and buttons.
+- [x] Replace all three brochure downloads with the newly enclosed M.S., PG Diploma and Specialist Diplomas versions.
 
 - [x] Reproduce the official SVU footer layout, colours, text, links, and logos.
 - [x] Verify the footer’s appearance, links, and images in the preview.
