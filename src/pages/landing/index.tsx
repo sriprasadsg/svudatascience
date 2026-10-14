@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { SvuFooter } from "./components/svu-footer";
 import {
   IconArrowRight,
   IconBook2,
@@ -8,10 +8,6 @@ import {
   IconUsers,
   IconWorld,
   IconBuildingBank,
-  IconBrandFacebook,
-  IconBrandLinkedin,
-  IconBrandInstagram,
-  IconBrandYoutube,
 } from "@tabler/icons-react";
 import { Button } from "@/components/base/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -425,61 +421,6 @@ function Register() {
   );
 }
 
-const footerCols: { title: string; links: string[] }[] = [
-  { title: "About Us", links: ["Overview", "Vision & Mission", "Our Predecessors", "Act & Ordinance"] },
-  { title: "Administration", links: ["Vice Chancellor", "Rector", "Registrar", "Executive Council", "Academic Senate", "Officers of SVU"] },
-  { title: "Resources", links: ["Sports & Games", "SVU Health Centre", "Exams Results", "Internet Facility", "Committees", "MoU's"] },
-  { title: "Important Links", links: ["Academic Calendar", "Notifications", "Campus Tour", "Privacy Policy", "Terms & Conditions", "Copyright Policy"] },
-];
-
-function Footer() {
-  return (
-    <footer id="contact" className="border-t border-border py-16">
-      <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-          {footerCols.map((c) => (
-            <div key={c.title}>
-              <h3 className="mb-3 text-sm font-semibold">{c.title}</h3>
-              <ul className="space-y-2 text-sm">
-                {c.links.map((l) => (
-                  <li key={l}><a href="https://svuniversity.edu.in/about/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">{l}</a></li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          <div>
-            <h3 className="mb-3 text-sm font-semibold">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic text-muted-foreground">
-              <p>Sri Venkateswara University, Tirupati, Andhra Pradesh - 517502</p>
-              <p><a className="hover:text-foreground" href="https://maps.google.com/?q=Sri+Venkateswara+University+Tirupati" target="_blank" rel="noopener noreferrer">View On Map</a></p>
-              <p><a className="hover:text-foreground" href="tel:+918772289545">+91 (877) 2289545</a></p>
-              <p><a className="hover:text-foreground" href="mailto:registrarsvu@gmail.com">registrarsvu@gmail.com</a></p>
-              <p><a className="hover:text-foreground" href="mailto:registrar@svumail.edu.in">registrar@svumail.edu.in</a></p>
-              <p>For Genuineness Verification of Diplomas, mail to <a className="hover:text-foreground" href="mailto:verify@svumail.edu.in">verify@svumail.edu.in</a></p>
-            </address>
-          </div>
-        </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted-foreground md:flex-row">
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">National Portal of India</a>
-            <a href="https://www.ap.gov.in/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Government of Andhra Pradesh</a>
-            <a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Ministry of Education</a>
-          </div>
-          <div className="flex gap-3" aria-label="Social media">
-            {[IconBrandFacebook, IconBrandLinkedin, IconBrandInstagram, IconBrandYoutube].map((I, i) => (
-              <I key={i} className="size-5" aria-hidden="true" />
-            ))}
-          </div>
-        </div>
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Sri Venkateswara University, Tirupati, in collaboration with Exafluence Education.{" "}
-          <Link to="/auth?intent=signin" className="sr-only">Staff sign in</Link>
-        </p>
-      </div>
-    </footer>
-  );
-}
-
 export default function Landing() {
   return (
     <>
@@ -494,7 +435,7 @@ export default function Landing() {
         <Faqs />
         <Register />
       </main>
-      <Footer />
+      <SvuFooter />
     </>
   );
 }
