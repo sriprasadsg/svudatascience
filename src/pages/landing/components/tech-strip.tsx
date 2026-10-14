@@ -25,9 +25,9 @@ export function TechStrip({ compact = false }: { compact?: boolean }) {
     <div className={compact ? "" : "mt-14"}>
       <p className="mb-5 text-center text-sm font-medium text-primary">Tools &amp; technologies you will work with</p>
       <div className="tech-marquee overflow-hidden">
-        <ul className={`tech-track flex w-max gap-4 ${compact ? "tech-track--compact" : ""}`}>
+        <ul className={`tech-track flex w-max gap-4`}>
           {loop.map((t, i) => (
-            <li key={i} aria-hidden={i >= technologies.length} className={`tech-tile soft-lift ${compact ? "tech-tile--compact" : ""} flex flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card ${compact ? "h-20 w-28" : "h-24 w-36"}`}>
+            <li key={i} aria-hidden={i >= technologies.length} className={`tech-tile soft-lift flex flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card ${compact ? "h-20 w-28" : "h-24 w-36"}`}>
               <img src={t.src} alt={t.name} className={`object-contain ${compact ? "h-8 w-8" : "h-10 w-10"}`} />
               <span className="text-xs text-muted-foreground">{t.name}</span>
             </li>
