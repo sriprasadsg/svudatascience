@@ -257,7 +257,7 @@
   .svu-footer-columns { gap: 28px 16px; }
   .svu-footer-columns h5 { font-size: 14px; }
   .svu-footer-links li { font-size: 12px; }
-  .svu-government-logos { grid-template-columns: 1fr; justify-items: center; gap: 28px; }
+  .svu-government-logos { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 28px; }
 }
 
 /* Colourful, continuously animated landing icons (footer excluded) */
