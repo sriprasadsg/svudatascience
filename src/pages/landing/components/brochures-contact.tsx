@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { IconDownload, IconFileTypePpt } from "@tabler/icons-react";
+import { IconDownload, IconFileTypePpt, IconLock } from "@tabler/icons-react";
 import { toast } from "sonner";
 import { Button } from "@/components/base/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
+import { programmeOptions } from "./register-interest";
 import msBrochure from "@/assets/brochure-MS_Data_Science_Brochure.pptx.asset.json";
 import pgBrochure from "@/assets/brochure-PG_Diploma_Data_Science.pptx.asset.json";
 import diplomaBrochure from "@/assets/brochure-Specialist_Diplomas.pptx.asset.json";
@@ -14,14 +15,6 @@ const brochures = [
   { title: "M.S. Data Science", note: "Two-year Master's programme", file: msBrochure },
   { title: "PG Diploma in Data Science", note: "One-year postgraduate diploma", file: pgBrochure },
   { title: "Specialist Diplomas", note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies", file: diplomaBrochure },
-];
-
-const programmeOptions = [
-  "M.S. Data Science",
-  "PG Diploma in Data Science",
-  "Specialist Diploma – Python for AI, ML & Generative AI",
-  "Specialist Diploma – Data Visualization",
-  "Specialist Diploma – Cloud Technologies",
 ];
 
 export function Brochures() {
