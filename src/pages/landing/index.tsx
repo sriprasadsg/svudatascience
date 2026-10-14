@@ -185,14 +185,14 @@ function Collaboration() {
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <p className="text-sm font-semibold text-primary">Industry Collaboration</p>
-          <h2 className="mt-2 text-balance">An academic award with industry experience built in</h2>
+          <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl border border-border bg-card p-8">
             <IconBuildingBank className="mb-4 size-8 text-primary" />
             <h3>Sri Venkateswara University</h3>
             <p className="mt-3 text-muted-foreground">
-              Sets academic standards, conducts admissions through the Directorate of Admissions, holds
+              Provides academic oversight, manages admissions through the Directorate of Admissions, conducts
               examinations and awards the qualification.
             </p>
           </div>
@@ -200,8 +200,8 @@ function Collaboration() {
             <IconBriefcase className="mb-4 size-8 text-primary" />
             <h3>Exafluence Education</h3>
             <p className="mt-3 text-muted-foreground">
-              Brings industry practice into the programmes through practical work, mentorship, projects and
-              learning resources.
+              Supports practical learning through industry mentorship, hands-on projects and learning
+              resources.
             </p>
           </div>
         </div>
