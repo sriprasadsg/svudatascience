@@ -210,9 +210,9 @@ function Collaboration() {
   );
 }
 
-function ProgrammeCard({ p }: { p: Programme }) {
+function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
   return (
-    <article id={`prog-${p.slug}`} className="scroll-mt-24 rounded-xl bg-background p-6 text-foreground">
+    <article id={`prog-${p.slug}`} className={`scroll-mt-24 rounded-xl bg-background p-6 text-foreground ${wide ? "md:col-span-2" : ""}`}>
       <h3 className="text-xl">{p.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{p.duration} · {p.mode}</p>
       <p className="mt-4 text-muted-foreground">{p.summary}</p>
@@ -244,9 +244,9 @@ function Programmes() {
           </TabsList>
           {groups.map((g) => (
             <TabsContent key={g.key} value={g.key} forceMount className="data-[state=inactive]:hidden">
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {programmes.filter((p) => p.group === g.key).map((p) => (
-                  <ProgrammeCard key={p.slug} p={p} />
+              <div className={`grid gap-6 md:grid-cols-2 ${g.key === "diploma" ? "" : "lg:grid-cols-3"}`}>
+                {programmes.filter((p) => p.group === g.key).map((p, i) => (
+                  <ProgrammeCard key={p.slug} p={p} wide={g.key === "diploma" && i === 0} />
                 ))}
               </div>
             </TabsContent>
