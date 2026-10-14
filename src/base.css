@@ -48,6 +48,10 @@
 
 /* A heading that sits directly on a dark band keeps that band's light text —
  * navy on navy would be unreadable. */
+.landing:is(.bg-primary) h1,
+.landing:is(.bg-primary) h2,
+.landing:is(.bg-primary) h3,
+.landing:is(.bg-primary) h4,
 .landing .bg-primary h1,
 .landing .bg-primary h2,
 .landing .bg-primary h3,
@@ -56,6 +60,10 @@
 }
 
 /* …unless the heading sits on a light card placed inside that band. */
+.landing:is(.bg-primary) .bg-background h1,
+.landing:is(.bg-primary) .bg-background h2,
+.landing:is(.bg-primary) .bg-background h3,
+.landing:is(.bg-primary) .bg-background h4,
 .landing .bg-primary .bg-background h1,
 .landing .bg-primary .bg-background h2,
 .landing .bg-primary .bg-background h3,
