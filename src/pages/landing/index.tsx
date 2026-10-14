@@ -408,7 +408,6 @@ function Faqs() {
     ["How are programmes delivered?", "The M.S. is regular full-time in hybrid mode. The PG Diploma and specialist diplomas are part-time in hybrid mode."],
     ["Is the programme fully online?", "No. Semester-end examinations are primarily offline, and attendance in India may be required."],
     ["When are the entrance tests?", "For January 2027 entry, December 2026; for July 2027 entry, June 2027. The M.S. entrance is expected in May, possibly June 2027. Exact dates are subject to official announcement."],
-    ["Do the programmes guarantee a job?", "No. Programmes build skills relevant to data and AI roles but do not promise employment or placement."],
   ];
   return (
     <section className="landing bg-muted/40 py-20">
