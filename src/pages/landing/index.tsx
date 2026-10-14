@@ -107,9 +107,9 @@ function Header() {
     <header className="landing sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-6 px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3">
-          <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-9 w-auto" />
-          <span aria-hidden="true" className="h-7 w-px bg-border" />
-          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-11 w-auto" />
+          <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-7 w-auto" />
+          <span aria-hidden="true" className="h-6 w-px bg-border" />
+          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto" />
         </a>
         <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
           {nav.map((n) => (
@@ -143,9 +143,9 @@ function Hero() {
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute top-40 right-1/4 -z-10 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
       <div className="mx-auto mb-6 flex max-w-4xl flex-nowrap items-center justify-center gap-x-5 gap-y-3 px-6">
-        <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-12 w-auto min-w-0 shrink sm:h-16" />
+        <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
         <span className="shrink-0 text-sm font-medium text-muted-foreground">in collaboration with</span>
-        <img src={exfeduLogo.url} alt="Exafluence Education" className="h-12 w-auto min-w-0 shrink sm:h-16" />
+        <img src={exfeduLogo.url} alt="Exafluence Education" className="h-9 w-auto min-w-0 shrink sm:h-11" />
       </div>
       <div className="mx-auto max-w-3xl px-6 text-center">
         <h1 className="display mb-6">
