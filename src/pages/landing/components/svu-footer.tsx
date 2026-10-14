@@ -38,7 +38,6 @@ export function SvuFooter() {
       <div className="svu-enquiries">
         <div className="svu-enquiries-inner">
           <div className="svu-admissions-contact">
-            <span className="svu-enquiries-label">SVU × Exafluence</span>
             <h4>Admissions &amp; enquiries</h4>
             <a className="svu-enquiries-email" href="mailto:admissions@svudatascience.in">
               <EnquiryChip icon={IconMailFilled} />
