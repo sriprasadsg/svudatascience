@@ -549,7 +549,7 @@ function Register() {
 }
 
 export default function Landing() {
-  const [brochuresUnlocked, setBrochuresUnlocked] = useState(false);
+  const [enquiredProgrammes, setEnquiredProgrammes] = useState<string[]>([]);
   return (
     <>
       <Header />
@@ -562,8 +562,8 @@ export default function Landing() {
         <International />
         <Register />
         <Faqs />
-        <ContactForm onSubmitted={() => setBrochuresUnlocked(true)} />
-        <Brochures unlocked={brochuresUnlocked} />
+        <ContactForm onSubmitted={(p) => setEnquiredProgrammes((prev) => (prev.includes(p) ? prev : [...prev, p]))} />
+        <Brochures unlockedFor={enquiredProgrammes} />
       </main>
       <SvuFooter />
     </>
