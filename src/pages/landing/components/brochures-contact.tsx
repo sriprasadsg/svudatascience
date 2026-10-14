@@ -26,7 +26,7 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
           <p className="mt-3 text-muted-foreground">
             {unlocked
               ? "Your downloads are unlocked — take any brochure you like."
-              : "Fill in the contact form below to unlock the brochure downloads."}
+              : "Please complete the contact form to download the brochure."}
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -47,7 +47,7 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
                   </a>
                 </Button>
               ) : (
-                <Button variant="outline" disabled className="mt-5" title="Fill in the contact form below to unlock downloads">
+                <Button variant="outline" disabled className="mt-5" title="Please complete the contact form to download the brochure.">
                   <IconLock className="size-4" /> Download brochure
                 </Button>
               )}
@@ -99,7 +99,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
           <div className="grid gap-2"><Label htmlFor="phone">Phone (optional)</Label><Input id="phone" name="phone" type="tel" maxLength={20} /></div>
           <div className="grid gap-2">
             <Label htmlFor="programme">Programme</Label>
-            <select id="programme" name="programme" required defaultValue="" className="h-10 rounded-md border border-input bg-background px-3 text-sm">
+            <select id="programme" name="programme" required defaultValue="" className="h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm soft-lift">
               <option value="" disabled>Select a programme</option>
               {programmeOptions.map((p) => <option key={p}>{p}</option>)}
             </select>
