@@ -36,12 +36,12 @@ const brochures = [
 export function Brochures({ unlockedFor }: { unlockedFor: string[] }) {
   const openIds = unlockedBrochureIds(unlockedFor);
   return (
-    <section id="brochures" className="landing pt-10 pb-24">
+    <section id="brochures" className="landing pt-6 pb-12">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2>Programme brochures</h2>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
           {brochures.map((b) => {
             const isUnlocked = openIds.includes(b.id);
             return (
@@ -105,7 +105,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: (programme: string)
   }
 
   return (
-    <section id="contact" className="landing pt-20 pb-10">
+    <section id="contact" className="landing pt-10 pb-6">
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2>Contact us</h2>

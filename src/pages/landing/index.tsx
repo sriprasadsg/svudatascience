@@ -191,9 +191,9 @@ function Hero() {
 
 function Collaboration() {
   return (
-    <section id="collaboration" className="landing py-20">
+    <section id="collaboration" className="landing py-10">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-6 max-w-2xl text-center">
           <p className="text-sm font-medium text-primary">Industry Collaboration</p>
           <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
         </div>
@@ -437,9 +437,9 @@ function Admissions() {
     { when: "June 2027", what: "Expected entrance test for the July 2027 intake (PG Diploma and specialist diplomas)." },
   ];
   return (
-    <section id="admissions" className="landing bg-muted/40 py-20">
+    <section id="admissions" className="landing bg-muted/40 py-10">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-6 max-w-3xl text-center">
           <p className="text-sm font-medium text-primary">Admissions</p>
           <h2 className="mt-2 text-balance">Admissions timeline</h2>
           <p className="mt-4 text-[13px] text-muted-foreground max-sm:whitespace-normal sm:whitespace-nowrap">
@@ -479,7 +479,7 @@ function Admissions() {
 
 function International() {
   return (
-    <section id="international" className="landing py-20">
+    <section id="international" className="landing py-10">
       <div className="mx-auto grid max-w-page items-center gap-10 px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-sm font-medium text-primary">International Students</p>
@@ -516,7 +516,7 @@ function Faqs() {
     ["When are the entrance tests?", "For January 2027 entry, December 2026; for July 2027 entry, June 2027. The M.S. entrance is expected in May, possibly June 2027. Exact dates are subject to official announcement."],
   ];
   return (
-    <section className="landing bg-muted/40 py-20">
+    <section className="landing bg-muted/40 py-10">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="faq-heading mb-8 text-center">Frequently asked questions</h2>
         <Accordion type="single" collapsible>
@@ -534,7 +534,7 @@ function Faqs() {
 
 function Register() {
   return (
-    <section id="register" className="landing py-24">
+    <section id="register" className="landing py-12">
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2 className="text-balance">Ready to take the next step?</h2>

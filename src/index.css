@@ -224,22 +224,28 @@
    included, sits inside the coloured frame. */
 /* Brochure cards: navy header band over a sky-blue body, per brand spec */
 .brochure-card {
+  --brochure-navy: hsl(219 72% 30%);
+  --brochure-sky: hsl(204 100% 93%);
+  --brochure-ink: hsl(218 12% 30%);
+  --brochure-inverse: hsl(0 0% 100%);
+  --brochure-band: color-mix(in srgb, var(--brochure-navy) 76%, var(--brochure-inverse));
+  --brochure-body: color-mix(in srgb, var(--brochure-sky) 58%, var(--brochure-inverse));
   display: grid;
   grid-template-rows: 1fr 4fr;
   min-height: 268px;
   overflow: hidden;
-  border: 1.5px solid color-mix(in srgb, #153b82 40%, var(--color-border));
+  border: 1.5px solid color-mix(in srgb, var(--brochure-navy) 22%, var(--color-border));
   border-radius: 0.75rem;
-  background-color: #d9f0ff;
+  background-color: var(--brochure-body);
 }
 .brochure-card__top {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #153b82;
+  background-color: var(--brochure-band);
 }
 .brochure-card__top .brochure-icon {
-  color: #ffffff;
+  color: var(--brochure-inverse);
 }
 .brochure-card__body {
   display: flex;
@@ -247,29 +253,29 @@
   padding: 1.5rem;
 }
 .landing .brochure-card__body h3 {
-  color: #153b82;
+  color: var(--brochure-navy);
   font-size: 15px;
   line-height: 20px;
   font-weight: 500;
 }
 .landing .brochure-card__body p {
-  color: #444b57;
+  color: var(--brochure-ink);
   font-size: 13.5px;
   line-height: 20px;
   font-weight: 400;
 }
 .brochure-btn {
-  background-color: #153b82;
-  color: #ffffff;
+  background-color: var(--brochure-navy);
+  color: var(--brochure-inverse);
   font-weight: 500;
 }
 .brochure-btn:hover {
-  background-color: color-mix(in srgb, #153b82 86%, #ffffff);
-  color: #ffffff;
+  background-color: color-mix(in srgb, var(--brochure-navy) 86%, var(--brochure-inverse));
+  color: var(--brochure-inverse);
 }
 .brochure-btn:disabled {
-  background-color: #153b82;
-  color: #ffffff;
+  background-color: var(--brochure-navy);
+  color: var(--brochure-inverse);
   opacity: 1;
   cursor: not-allowed;
 }
