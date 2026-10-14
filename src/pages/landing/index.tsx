@@ -408,10 +408,10 @@ function Admissions() {
   return (
     <section id="admissions" className="landing bg-muted/40 py-20">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-medium text-primary">Admissions</p>
           <h2 className="mt-2 text-balance">Admissions timeline</h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-[13px] text-muted-foreground max-sm:whitespace-normal sm:whitespace-nowrap">
             Dates are expected windows. Exact dates are subject to official university and APPGCET announcements.
           </p>
         </div>
