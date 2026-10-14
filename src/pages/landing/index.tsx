@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link } from "react-router-dom";
+import { TechStrip } from "./components/tech-strip";
 import { Brochures, ContactForm } from "./components/brochures-contact";
 import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
