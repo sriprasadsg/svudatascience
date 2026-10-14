@@ -136,8 +136,10 @@ function Hero() {
     <section id="top" className="landing relative isolate overflow-hidden py-24">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,black,transparent_80%)] bg-[linear-gradient(to_right,theme(colors.foreground/0.02)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.foreground/0.02)_1px,transparent_1px)] bg-[size:40px_40px]"
-      />
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,black,transparent_80%)]"
+      >
+        <div aria-hidden="true" className="hero-motif absolute inset-0" />
+      </div>
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute top-40 right-1/4 -z-10 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
       <div className="mx-auto max-w-3xl px-6 text-center">
