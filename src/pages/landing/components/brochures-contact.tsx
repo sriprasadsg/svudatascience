@@ -30,9 +30,14 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {brochures.map((b) => (
-            <div key={b.title} className="soft-lift flex flex-col rounded-xl border bg-card p-6">
-              <IconFileTypePpt className="size-9 text-primary icon-float" />
+          {brochures.map((b, i) => (
+            <div
+              key={b.title}
+              className={`brochure-card soft-lift flex flex-col rounded-xl border p-6 ${
+                i % 2 ? "brochure-card--blue" : "brochure-card--navy"
+              }`}
+            >
+              <IconFileTypePpt className="brochure-icon size-9 icon-float" />
               <h3 className="mt-4 text-lg">{b.title}</h3>
               <p className="mt-1 flex-1 text-sm text-muted-foreground">{b.note}</p>
               {unlocked ? (
