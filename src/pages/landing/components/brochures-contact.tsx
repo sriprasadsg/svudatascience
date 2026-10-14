@@ -38,8 +38,7 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
               }`}
             >
               <IconFileTypePpt className="brochure-icon size-9 icon-float" />
-              <h3 className="mt-4 text-lg">{b.title}</h3>
-              <p className="mt-1 flex-1 text-sm text-muted-foreground">{b.note}</p>
+              <h3 className="mt-4 flex-1 text-lg">{b.title}</h3>
               {unlocked ? (
                 <Button asChild variant="outline" className="mt-5">
                   <a href={b.file.url} download={b.file.original_filename}>
