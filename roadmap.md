@@ -19,3 +19,4 @@
 - [x] Titles unbolded: headings at regular weight (400), nothing bold anywhere (done)
 - [x] Reduce the hero further (headline and logo row) to a tighter, neater scale. (done)
 - [x] FAQ questions unbolded and reduced to 14px with normal letter spacing. (done)
+- [x] Admissions timeline dates note reduced to 13px and set on a single line. (done)
