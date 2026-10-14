@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
+import { SvuHeader } from "./components/svu-header";
+import { Link } from "react-router-dom";
 import { Brochures, ContactForm } from "./components/brochures-contact";
 import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
@@ -98,43 +100,6 @@ const programmes: Programme[] = [
   },
 ];
 
-const nav = [
-  { label: "Home", href: "#top" },
-  { label: "Programmes", href: "#programmes" },
-  { label: "Industry Collaboration", href: "#collaboration" },
-  { label: "Admissions", href: "#admissions" },
-  { label: "International Students", href: "#international" },
-  { label: "Contact", href: "#contact" },
-];
-
-function Header() {
-  return (
-    <header className="landing sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-6 px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-3">
-          <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-7 w-auto" />
-          <span aria-hidden="true" className="h-6 w-px bg-border" />
-          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-7 w-auto" />
-        </a>
-        <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
-          {nav.map((n) => (
-            <a
-              key={n.label}
-              href={n.href}
-              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <Button asChild>
-          <a href="#register">Register Interest</a>
-        </Button>
-      </div>
-    </header>
-  );
-}
-
 function Hero() {
   const [choice, setChoice] = useState<string>("");
   return (
@@ -191,9 +156,9 @@ function Hero() {
 
 function Collaboration() {
   return (
-    <section id="collaboration" className="landing py-20">
+    <section id="collaboration" className="landing py-10">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-6 max-w-2xl text-center">
           <p className="text-sm font-medium text-primary">Industry Collaboration</p>
           <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
         </div>
@@ -437,9 +402,9 @@ function Admissions() {
     { when: "June 2027", what: "Expected entrance test for the July 2027 intake (PG Diploma and specialist diplomas)." },
   ];
   return (
-    <section id="admissions" className="landing bg-muted/40 py-20">
+    <section id="admissions" className="landing bg-muted/40 py-10">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-6 max-w-3xl text-center">
           <p className="text-sm font-medium text-primary">Admissions</p>
           <h2 className="mt-2 text-balance">Admissions timeline</h2>
           <p className="mt-4 text-[13px] text-muted-foreground max-sm:whitespace-normal sm:whitespace-nowrap">
@@ -455,7 +420,7 @@ function Admissions() {
             </li>
           ))}
         </ol>
-        <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-6 grid max-w-3xl gap-6 md:grid-cols-2">
           <div className="soft-lift rounded-xl border border-border bg-card p-6">
             <h4 className="font-medium">M.S. Data Science seats per year</h4>
             <dl className="mt-3 space-y-1 text-sm">
@@ -472,6 +437,7 @@ function Admissions() {
             </p>
           </div>
         </div>
+        <div className="mt-6 text-center"><Button variant="outline" asChild><Link to="/admissions">Admission process & eligibility <IconArrowRight size={16} /></Link></Button></div>
       </div>
     </section>
   );
@@ -479,7 +445,7 @@ function Admissions() {
 
 function International() {
   return (
-    <section id="international" className="landing py-20">
+    <section id="international" className="landing py-10">
       <div className="mx-auto grid max-w-page items-center gap-10 px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-sm font-medium text-primary">International Students</p>
@@ -487,6 +453,7 @@ function International() {
           <p className="mt-4 text-muted-foreground">
             30 seats each year are reserved for international applicants to the M.S. Data Science programme.
           </p>
+          <Button asChild className="mt-5"><Link to="/international-students">International student admissions <IconArrowRight size={16} /></Link></Button>
         </div>
         <ul className="space-y-4">
           {[
@@ -516,7 +483,7 @@ function Faqs() {
     ["When are the entrance tests?", "For January 2027 entry, December 2026; for July 2027 entry, June 2027. The M.S. entrance is expected in May, possibly June 2027. Exact dates are subject to official announcement."],
   ];
   return (
-    <section className="landing bg-muted/40 py-20">
+    <section className="landing bg-muted/40 py-10">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="faq-heading mb-8 text-center">Frequently asked questions</h2>
         <Accordion type="single" collapsible>
@@ -534,7 +501,7 @@ function Faqs() {
 
 function Register() {
   return (
-    <section id="register" className="landing py-24">
+    <section id="register" className="landing py-12">
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2 className="text-balance">Ready to take the next step?</h2>
@@ -552,7 +519,7 @@ export default function Landing() {
   const [enquiredProgrammes, setEnquiredProgrammes] = useState<string[]>([]);
   return (
     <>
-      <Header />
+      <SvuHeader />
       <main>
         <Hero />
         <Collaboration />
