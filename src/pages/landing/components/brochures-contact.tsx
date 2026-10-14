@@ -13,22 +13,22 @@ import diplomaBrochure from "@/assets/brochure-Specialist_Diplomas.pptx.asset.js
 
 const brochures = [
   {
+    id: "ms" as BrochureId,
     title: "M.S. Data\u00A0Science",
     note: "Two-year Master's programme",
     file: msBrochure,
-    unlocksFor: (p: string) => p.startsWith("M.S."),
   },
   {
+    id: "pg" as BrochureId,
     title: "PG Diploma in Data\u00A0Science",
     note: "One-year postgraduate diploma",
     file: pgBrochure,
-    unlocksFor: (p: string) => p.startsWith("PG Diploma"),
   },
   {
+    id: "specialist" as BrochureId,
     title: "Specialist Diplomas",
     note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies",
     file: diplomaBrochure,
-    unlocksFor: (p: string) => p.startsWith("Specialist Diploma"),
   },
 ];
 
