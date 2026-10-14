@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { IconChevronDown, IconMenu2 } from "@tabler/icons-react";
+import { IconChevronDown, IconMenu2, IconExternalLink } from "@tabler/icons-react";
 import { Button } from "@/components/base/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuSubContent } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -8,6 +8,20 @@ import navigation from "@/data/svu-navigation.json";
 import banner from "@/assets/svu-official-header.jpg.asset.json";
 
 type UniversityLink = { label: string; href: string | null; children: UniversityLink[] };
+
+type ProgrammeNavItem = { label: string; to?: string; href?: string; official?: string };
+
+// Destinations copied from svudatascience.in: programmes #courses, international students
+// #internationStudents, the official enquiry form and the official registration form.
+const programmeNav: ProgrammeNavItem[] = [
+  { label: "Home", to: "/", official: "https://svudatascience.in/" },
+  { label: "Programmes", href: "/#programmes", official: "https://svudatascience.in/#courses" },
+  { label: "Industry Collaboration", href: "/#collaboration" },
+  { label: "Admissions", to: "/admissions" },
+  { label: "International Students", to: "/international-students", official: "https://svudatascience.in/#internationStudents" },
+  { label: "Contact", href: "/#contact", official: "https://svudatascience.in/enquiry.html" },
+  { label: "Register Interest", href: "/#register", official: "https://svudatascience.in/register.html" },
+];
 
 function MenuItems({ items }: { items: UniversityLink[] }) {
   return <>{items.map((item, index) => item.children.length ? (
@@ -64,9 +78,11 @@ export function SvuHeader() {
       </div>
     </header>
     <nav className="svu-page-nav" aria-label="Data science programme navigation"><div className="svu-page-nav-inner">
-      <Link to="/">Home</Link><a href="/#programmes">Programmes</a><a href="/#collaboration">Industry Collaboration</a>
-      <Link to="/admissions">Admissions</Link><Link to="/international-students">International Students</Link>
-      <a href="/#contact">Contact</a><a href="/#register">Register Interest</a>
+      {programmeNav.map((item) => <span key={item.label} className="svu-page-nav-item">
+        {item.to ? <Link to={item.to}>{item.label}</Link> : <a href={item.href}>{item.label}</a>}
+        {item.official && <a className="svu-page-nav-official" href={item.official} target="_blank" rel="noopener noreferrer" title={`Official SVU site: ${item.official}`} aria-label={`Open the official SVU page for ${item.label} in a new tab`}><IconExternalLink size={11} stroke={2} /></a>}
+      </span>)}
+      <span className="svu-page-nav-note">Marked links open the official SVU site</span>
     </div></nav>
   </>;
 }
