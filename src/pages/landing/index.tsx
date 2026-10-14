@@ -562,8 +562,8 @@ export default function Landing() {
         <International />
         <Faqs />
         <Register />
-        <Brochures unlocked={brochuresUnlocked} />
         <ContactForm onSubmitted={() => setBrochuresUnlocked(true)} />
+        <Brochures unlocked={brochuresUnlocked} />
       </main>
       <SvuFooter />
     </>
