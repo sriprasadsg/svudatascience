@@ -77,7 +77,7 @@ export function Brochures({ unlockedFor }: { unlockedFor: string[] }) {
   );
 }
 
-export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
+export function ContactForm({ onSubmitted }: { onSubmitted?: (programme: string) => void }) {
   const [sending, setSending] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
