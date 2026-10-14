@@ -173,7 +173,7 @@ function Hero() {
           </Select>
           <Button className="h-14 px-6" asChild>
             <a href={choice ? `#prog-${choice}` : "#programmes"}>
-              Explore <IconArrowRight className="size-4" />
+              Explore <IconArrowRight className="size-4 icon-nudge" />
             </a>
           </Button>
         </div>
@@ -192,7 +192,7 @@ function Collaboration() {
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl border border-border bg-card p-8">
-            <IconBuildingBank className="mb-4 size-8 text-primary" />
+            <IconBuildingBank className="mb-4 size-8 icon-anim icon-c1" />
             <h3>Sri Venkateswara University</h3>
             <p className="mt-3 text-muted-foreground">
               Provides academic oversight, manages admissions through the Directorate of Admissions, conducts
@@ -200,7 +200,7 @@ function Collaboration() {
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-8">
-            <IconBriefcase className="mb-4 size-8 text-primary" />
+            <IconBriefcase className="mb-4 size-8 icon-anim icon-c2" />
             <h3>Exafluence Education</h3>
             <p className="mt-3 text-muted-foreground">
               Supports practical learning through industry mentorship, hands-on projects and learning
@@ -220,7 +220,7 @@ function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
       <p className="mt-2 text-sm text-muted-foreground">{p.duration} · {p.mode}</p>
       <p className="mt-4 text-muted-foreground">{p.summary}</p>
       <a href="#register" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-        Register interest <IconArrowRight className="size-4" />
+        Register interest <IconArrowRight className="size-4 icon-nudge" />
       </a>
     </article>
   );
@@ -301,7 +301,7 @@ function Learning() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <div key={c.title} className="rounded-xl border border-border bg-card p-6">
-              <c.icon className="mb-4 size-7 text-primary" />
+              <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
               <h4 className="font-semibold">{c.title}</h4>
               <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
             </div>
@@ -378,7 +378,7 @@ function International() {
             ["Examinations", "Learning is hybrid. Semester-end examinations are primarily offline, so travel to India may be required."],
           ].map(([t, d]) => (
             <li key={t} className="flex gap-4 rounded-xl border border-border bg-card p-5">
-              <IconWorld className="size-6 shrink-0 text-primary" />
+              <IconWorld className="size-6 shrink-0 icon-anim icon-c3" />
               <div>
                 <p className="font-semibold">{t}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{d}</p>
