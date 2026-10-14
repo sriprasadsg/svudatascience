@@ -35,11 +35,6 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2>Programme brochures</h2>
-          <p className="mt-3 text-muted-foreground">
-            {unlocked
-              ? "Your downloads are unlocked — take any brochure you like."
-              : "Please complete the contact form to download the brochure."}
-          </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {brochures.map((b) => (
