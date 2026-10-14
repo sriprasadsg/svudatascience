@@ -199,8 +199,56 @@
 
 /* Colourful, continuously animated landing icons (footer excluded) */
 .icon-c1 { color: #3b82f6; } .icon-c2 { color: #f59e0b; } .icon-c3 { color: #10b981; } .icon-c4 { color: #ec4899; }
-@keyframes icon-float { 0%,100% { transform: translateY(0) rotate(0); } 25% { transform: translateY(-4px) rotate(-6deg); } 75% { transform: translateY(2px) rotate(6deg); } }
-@keyframes icon-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
-@keyframes icon-hue { 0%,100% { filter: hue-rotate(0deg) drop-shadow(0 0 0 transparent); } 50% { filter: hue-rotate(40deg) drop-shadow(0 2px 6px currentColor); } }
-.icon-anim { animation: icon-float 3s ease-in-out infinite, icon-hue 6s ease-in-out infinite; }
-.icon-nudge { animation: icon-nudge 1.4s ease-in-out infinite; }
+@keyframes icon-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes icon-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(2px); } }
+@keyframes icon-hue { 0%,100% { filter: hue-rotate(0deg); } 50% { filter: hue-rotate(10deg); } }
+.icon-anim { animation: icon-float 7s ease-in-out infinite, icon-hue 14s ease-in-out infinite; }
+.icon-nudge { animation: icon-nudge 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .icon-anim, .icon-nudge { animation: none; } }
+
+/* Admissions timeline: a soft glow travels down the line and each dot pulses in turn */
+.svu-timeline { position: relative; }
+.svu-timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 26%;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, transparent, var(--color-primary), transparent);
+  animation: svu-line-travel 7s linear infinite;
+  pointer-events: none;
+}
+@keyframes svu-line-travel {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% { transform: translateY(385%); opacity: 0; }
+}
+.svu-dot { animation: svu-dot-breathe 7s ease-in-out infinite; }
+.svu-dot::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  border: 2px solid var(--color-primary);
+  opacity: 0;
+  animation: svu-dot-halo 7s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes svu-dot-halo {
+  0% { transform: scale(0.9); opacity: 0; }
+  10% { opacity: 0.55; }
+  55%, 100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes svu-dot-breathe {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.12); }
+  30% { transform: scale(1); }
+}
+.svu-timeline li:nth-child(1) .svu-dot, .svu-timeline li:nth-child(1) .svu-dot::before { animation-delay: 0.2s; }
+.svu-timeline li:nth-child(2) .svu-dot, .svu-timeline li:nth-child(2) .svu-dot::before { animation-delay: 2s; }
+.svu-timeline li:nth-child(3) .svu-dot, .svu-timeline li:nth-child(3) .svu-dot::before { animation-delay: 3.9s; }
+.svu-timeline li:nth-child(4) .svu-dot, .svu-timeline li:nth-child(4) .svu-dot::before { animation-delay: 5.7s; }
+@media (prefers-reduced-motion: reduce) { .svu-timeline::after, .svu-dot, .svu-dot::before { animation: none; } }
