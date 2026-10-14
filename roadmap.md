@@ -16,3 +16,5 @@
 - [x] Google Sans fonts across the site, footer keeping its present outlook (done)
 - [x] Remove the "SVU × Exafluence" label; site-wide Google Sans with no bold weights (done)
 - [x] "Data Science" treated as one word — never split across lines (done)
+- [x] Titles unbolded: headings at regular weight (400), nothing bold anywhere (done)
+- [x] Reduce the hero further (headline and logo row) to a tighter, neater scale. (done)
