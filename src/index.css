@@ -116,19 +116,32 @@
   --svu-instagram: hsl(16 77% 57%);
   --svu-youtube: hsl(0 74% 46%);
   --svu-top: hsl(219 43% 55%);
+  --svu-enquiries-accent: hsl(219 64% 42%);
+  --svu-enquiries-muted: hsl(215 14% 43%);
+  --svu-enquiries-rule: hsl(215 25% 88%);
+  --svu-enquiries-surface: hsl(215 40% 98%);
   font-family: "Poppins", sans-serif;
   letter-spacing: 0;
   color: var(--svu-text);
 }
 .svu-official-footer a { text-decoration: none; }
 .svu-official-footer a:focus-visible { outline: 2px solid var(--svu-contact); outline-offset: 3px; }
-.svu-enquiries { background: var(--svu-blue); border-radius: 150px 150px 0 0; padding: 32px 24px 16px; }
-.svu-enquiries-inner { max-width: 1320px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; text-align: center; }
-.svu-enquiries h4 { font-family: inherit; color: var(--svu-heading); font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: 0; }
-.svu-enquiries p { font-size: 20px; line-height: 25px; color: var(--svu-surface); }
-.svu-enquiries a { color: inherit; }
-.svu-admissions-contact { padding-top: 32px; }
-.svu-enquiries-phone { margin-top: 16px; }
+.svu-enquiries { background: var(--svu-enquiries-surface); border-top: 3px solid var(--svu-enquiries-accent); border-bottom: 1px solid var(--svu-enquiries-rule); padding: 52px 32px; }
+.svu-enquiries-inner { max-width: 1200px; margin: auto; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, .7fr); gap: 32px; text-align: left; }
+.svu-enquiries-inner > div { min-width: 0; }
+.svu-enquiries h4 { font-family: inherit; color: var(--svu-heading); font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: 0; margin-bottom: 12px; }
+.svu-admissions-contact h4 { font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 20px; }
+.svu-enquiries-label { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; text-transform: uppercase; color: var(--svu-enquiries-accent); margin-bottom: 14px; }
+.svu-enquiries a { color: var(--svu-enquiries-accent); }
+.svu-enquiries a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.svu-enquiries-email { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.svu-enquiries-email svg { flex-shrink: 0; }
+.svu-enquiries-email span { overflow-wrap: anywhere; }
+.svu-enquiries-address { border-left: 1px solid var(--svu-enquiries-rule); padding-left: 32px; }
+.svu-enquiries-address address { font-style: normal; font-size: 14px; line-height: 1.85; color: var(--svu-enquiries-muted); }
+.svu-enquiries-numbers { border-left: 1px solid var(--svu-enquiries-rule); padding-left: 32px; display: flex; flex-direction: column; align-items: flex-start; }
+.svu-enquiries-numbers > a { font-size: 15px; line-height: 1.8; font-weight: 500; }
+.svu-enquiries-number-label { font-size: 12px; color: var(--svu-enquiries-muted); margin-top: 12px; margin-bottom: 3px; }
 .svu-footer-band { position: relative; padding-top: 48px; padding-bottom: 48px; background: var(--svu-footer-trim); border-radius: 150px 150px 0 0; margin-top: 48px; }
 .svu-footer-main { background: var(--svu-surface); padding: 48px 12px; position: relative; z-index: 1; }
 .svu-footer-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 2fr)) minmax(0, 3fr); gap: 24px; padding-left: calc((100% + 24px) / 12); }
@@ -159,15 +172,15 @@
 .svu-official-footer .svu-back-to-top { position: absolute; right: 20px; margin-top: -58px; z-index: 2; background: var(--svu-top); color: var(--svu-text); border-radius: 4px; }
 @media (max-width: 991px) {
   .svu-enquiries-inner { grid-template-columns: 1fr; gap: 32px; }
+  .svu-enquiries-address, .svu-enquiries-numbers { border-left: 0; border-top: 1px solid var(--svu-enquiries-rule); padding-left: 0; padding-top: 24px; }
   .svu-footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-left: 0; gap: 32px 24px; }
   .svu-university-contact { grid-column: 1 / -1; }
   .svu-footer-main { padding: 32px 24px; }
   .svu-government-logos { margin-top: 32px; }
 }
 @media (max-width: 575px) {
-  .svu-enquiries { border-radius: 60px 60px 0 0; }
-  .svu-enquiries h4 { font-size: 21px; }
-  .svu-enquiries p { font-size: 16px; overflow-wrap: anywhere; }
+  .svu-enquiries { padding: 36px 24px; }
+  .svu-admissions-contact h4 { font-size: 26px; }
   .svu-footer-columns { gap: 28px 16px; }
   .svu-footer-columns h5 { font-size: 14px; }
   .svu-footer-links li { font-size: 12px; }
