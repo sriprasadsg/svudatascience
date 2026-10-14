@@ -505,15 +505,14 @@ function Faqs() {
 function Register() {
   return (
     <section id="register" className="landing py-24">
-      <div className="mx-auto max-w-2xl px-6 text-center">
-        <h2 className="text-balance">Ready to take the next step?</h2>
-        <p className="mt-4 text-muted-foreground">
-          Register your interest to receive admission notifications and programme updates.
-        </p>
-        <div className="mt-6 flex justify-center gap-3">
-          <Button asChild><a href="#contact">Register Interest</a></Button>
-          <Button variant="outline" asChild><a href="#programmes">View programmes</a></Button>
+      <div className="mx-auto max-w-2xl px-6">
+        <div className="text-center">
+          <h2 className="text-balance">Ready to take the next step?</h2>
+          <p className="mt-4 text-muted-foreground">
+            Register your interest to receive admission notifications and programme updates.
+          </p>
         </div>
+        <RegisterInterest />
       </div>
     </section>
   );

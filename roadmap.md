@@ -21,3 +21,4 @@
 - [x] FAQ questions unbolded and reduced to 14px with normal letter spacing. (done)
 - [x] Admissions timeline dates note reduced to 13px and set on a single line. (done)
 - [x] "Frequently asked questions" heading reduced to 22px, regular weight. (done)
+- [ ] Brochure downloads unlock after the contact form is submitted (in progress).
