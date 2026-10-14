@@ -353,7 +353,7 @@ function Programmes() {
             <tbody>
               {programmes.map((p) => (
                 <tr key={p.slug} className="border-b border-border last:border-0">
-                  <td className="p-4 font-medium">{p.name}</td>
+                  <td className="p-4 font-medium"><a href={`#prog-${p.slug}`} onClick={(e) => { e.preventDefault(); goToProgramme(p.slug); }} className="hover:text-primary hover:underline">{p.name}</a></td>
                   <td className="p-4 text-muted-foreground">{p.duration}</td>
                   <td className="p-4 text-muted-foreground">{p.mode}</td>
                   <td className="p-4 text-muted-foreground">{p.intake}</td>
