@@ -111,17 +111,17 @@ export default {
   		fontFamily: {
   			sans: [
   				'var(--font-body)',
-  				'Figtree',
+  				'Google Sans',
   				'sans-serif'
   			],
   			heading: [
   				'var(--font-heading)',
-  				'Figtree',
+  				'Google Sans',
   				'sans-serif'
   			],
   			body: [
   				'var(--font-body)',
-  				'Figtree',
+  				'Google Sans',
   				'sans-serif'
   			],
   			serif: [
