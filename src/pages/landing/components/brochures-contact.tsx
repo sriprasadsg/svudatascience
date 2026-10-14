@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { programmeOptions } from "./register-interest";
+import { unlockedBrochureIds, type BrochureId } from "./brochure-unlock";
 import msBrochure from "@/assets/brochure-MS_Data_Science_Brochure.pptx.asset.json";
 import pgBrochure from "@/assets/brochure-PG_Diploma_Data_Science.pptx.asset.json";
 import diplomaBrochure from "@/assets/brochure-Specialist_Diplomas.pptx.asset.json";
@@ -32,7 +33,8 @@ const brochures = [
   },
 ];
 
-export function Brochures({ unlocked }: { unlocked: boolean }) {
+export function Brochures({ unlockedFor }: { unlockedFor: string[] }) {
+  const openIds = unlockedBrochureIds(unlockedFor);
   return (
     <section id="brochures" className="landing pt-10 pb-24">
       <div className="mx-auto max-w-5xl px-6">
@@ -40,32 +42,35 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
           <h2>Programme brochures</h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {brochures.map((b) => (
-            <div key={b.title} className="brochure-card soft-lift">
-              <div className="brochure-card__top">
-                <IconFileTypePpt className="brochure-icon size-8 icon-float" />
+          {brochures.map((b) => {
+            const isUnlocked = openIds.includes(b.id);
+            return (
+              <div key={b.title} className="brochure-card soft-lift">
+                <div className="brochure-card__top">
+                  <IconFileTypePpt className="brochure-icon size-8 icon-float" />
+                </div>
+                <div className="brochure-card__body">
+                  <h3>{b.title}</h3>
+                  <p className="mt-2 flex-1">{b.note}</p>
+                  {isUnlocked ? (
+                    <Button asChild className="brochure-btn mt-5 w-full">
+                      <a href={b.file.url} download={b.file.original_filename}>
+                        <IconDownload className="size-4" /> Download brochure
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button
+                      className="brochure-btn mt-5 w-full"
+                      disabled
+                      title="Select this programme in the contact form to unlock its brochure."
+                    >
+                      <IconLock className="size-4" /> Download brochure
+                    </Button>
+                  )}
+                </div>
               </div>
-              <div className="brochure-card__body">
-                <h3>{b.title}</h3>
-                <p className="mt-2 flex-1">{b.note}</p>
-                {unlocked ? (
-                  <Button asChild className="brochure-btn mt-5 w-full">
-                    <a href={b.file.url} download={b.file.original_filename}>
-                      <IconDownload className="size-4" /> Download brochure
-                    </a>
-                  </Button>
-                ) : (
-                  <Button
-                    className="brochure-btn mt-5 w-full"
-                    disabled
-                    title="Please complete the contact form to download the brochure."
-                  >
-                    <IconLock className="size-4" /> Download brochure
-                  </Button>
-                )}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -95,8 +100,8 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
     setSending(false);
     if (error) { toast.error("Sorry, your enquiry could not be sent. Please try again."); return; }
     form.reset();
-    onSubmitted?.();
-    toast.success("Thank you — your downloads are unlocked, and our admissions team will contact you soon.");
+    onSubmitted?.(programme);
+    toast.success(`Thank you — the ${programme} brochure is unlocked, and our admissions team will contact you soon.`);
   }
 
   return (
