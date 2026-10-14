@@ -8,6 +8,13 @@
       "when": 1791955359838,
       "tag": "0000_create_profile_on_signup",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791966211227,
+      "tag": "0001_create_enquiries",
+      "breakpoints": true
     }
   ]
 }
