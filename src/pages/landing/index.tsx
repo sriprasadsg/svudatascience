@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
+import { Brochures, ContactForm } from "./components/brochures-contact";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 import {
@@ -531,6 +532,8 @@ export default function Landing() {
         <International />
         <Faqs />
         <Register />
+        <Brochures />
+        <ContactForm />
       </main>
       <SvuFooter />
     </>
