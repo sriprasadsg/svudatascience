@@ -408,9 +408,9 @@ function Learning() {
             </div>
           ))}
         </div>
-        <div className="learn-lms soft-lift mx-auto mb-12 flex max-w-4xl items-center gap-3 rounded-xl border border-border bg-card px-5 py-4">
-          <IconDatabase className="size-6 shrink-0 icon-anim icon-c1" />
-          <p className="text-sm leading-snug">
+        <div className="learn-lms soft-lift mx-auto mb-12 max-w-4xl rounded-xl border border-border bg-card px-6 py-6 text-center">
+          <IconDatabase className="mx-auto mb-3 size-7 icon-anim icon-c1" />
+          <p className="text-sm leading-relaxed">
             <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and study resources 24/7
           </p>
         </div>
