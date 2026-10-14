@@ -41,7 +41,7 @@ type Programme = {
 const programmes: Programme[] = [
   {
     slug: "ms-data-science",
-    name: "M.S. Data Science",
+    name: "M.S. Data Science",
     group: "masters",
     duration: "2 Years",
     mode: "Regular Full-Time (Hybrid)",
@@ -52,7 +52,7 @@ const programmes: Programme[] = [
   },
   {
     slug: "pg-diploma-data-science",
-    name: "PG Diploma in Data Science",
+    name: "PG Diploma in Data Science",
     group: "pg",
     duration: "1 Year",
     mode: "Part-Time (Hybrid)",
@@ -147,14 +147,14 @@ function Hero() {
           <img src={exfeduLogo.url} alt="Exafluence Education" className="h-12 w-auto sm:h-14" />
         </div>
         <h1 className="display mb-6">
-          Data Science Education
+          Data Science Education
           <br />
           with Industry Experience
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
           Explore Master's and Diploma Programmes{" "}
           <br className="hidden sm:block" />
-          in Data Science, AI, Generative AI,{" "}
+          in Data Science, AI, Generative AI,{" "}
           <br className="hidden sm:block" />
           Data Visualization and Cloud Technologies.
         </p>
@@ -327,7 +327,7 @@ function Admissions() {
   const steps = [
     { when: "Register interest", what: "Tell us which programme you are interested in to receive admission updates." },
     { when: "December 2026", what: "Expected entrance test for the January 2027 intake (PG Diploma and specialist diplomas)." },
-    { when: "May–June 2027", what: "Expected entrance examination for M.S. Data Science, AY 2027 admissions (APPGCET or SVU DOA test)." },
+    { when: "May–June 2027", what: "Expected entrance examination for M.S. Data Science, AY 2027 admissions (APPGCET or SVU DOA test)." },
     { when: "June 2027", what: "Expected entrance test for the July 2027 intake (PG Diploma and specialist diplomas)." },
   ];
   return (
@@ -351,7 +351,7 @@ function Admissions() {
         </ol>
         <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
           <div className="soft-lift rounded-xl border border-border bg-card p-6">
-            <h4 className="font-semibold">M.S. Data Science seats per year</h4>
+            <h4 className="font-semibold">M.S. Data Science seats per year</h4>
             <dl className="mt-3 space-y-1 text-sm">
               {[["Through APPGCET", "30"], ["Through DOA", "60"], ["International students", "30"], ["Total annual intake", "120"]].map(([k, v]) => (
                 <div key={k} className="flex justify-between"><dt className="text-muted-foreground">{k}</dt><dd className="font-medium">{v}</dd></div>
@@ -377,9 +377,9 @@ function International() {
       <div className="mx-auto grid max-w-page items-center gap-10 px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-sm font-semibold text-primary">International Students</p>
-          <h2 className="mt-2 text-balance">Studying M.S. Data Science from outside India</h2>
+          <h2 className="mt-2 text-balance">Studying M.S. Data Science from outside India</h2>
           <p className="mt-4 text-muted-foreground">
-            30 seats each year are reserved for international applicants to the M.S. Data Science programme.
+            30 seats each year are reserved for international applicants to the M.S. Data Science programme.
           </p>
         </div>
         <ul className="space-y-4">
