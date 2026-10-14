@@ -30,3 +30,4 @@
 - [x] FAQs moved between the "Ready to take the next step?" form and the "Contact us" form.
 - [x] Brochure boxes trimmed to the note, programme title and download button only.
 - [x] Brochure cards restyled: navy 20% band with white icon over a sky-blue body, navy button, small one-line titles.
+- [x] "How you will learn" title placed directly above the four cards (Practical work, Mentorship, Projects, Learning resources); the 80/20 tiles and LMS box follow below.
