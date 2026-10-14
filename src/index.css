@@ -219,6 +219,20 @@
 }
 .learn-tile { animation: learn-glow 6s ease-in-out infinite; }
 .learn-lms { animation: learn-glow 6s ease-in-out infinite 4.8s; }
+
+/* Brochure cards: two-colour frames (deep navy + blue). The whole card, title
+   included, sits inside the coloured frame. */
+.brochure-card { border-width: 1.5px; }
+.brochure-card--navy {
+  border-color: color-mix(in srgb, var(--color-heading) 68%, var(--color-border));
+  background-color: color-mix(in srgb, var(--color-heading) 10%, var(--color-card));
+}
+.brochure-card--navy .brochure-icon { color: var(--color-heading); }
+.brochure-card--blue {
+  border-color: color-mix(in srgb, #3b82f6 72%, var(--color-border));
+  background-color: color-mix(in srgb, #3b82f6 10%, var(--color-card));
+}
+.brochure-card--blue .brochure-icon { color: #3b82f6; }
 @media (prefers-reduced-motion: reduce) { .learn-tile, .learn-lms { animation: none; } }
 
 /* Admissions timeline: a soft glow travels down the line and each dot pulses in turn */
