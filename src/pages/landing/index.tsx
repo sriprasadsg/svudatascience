@@ -152,8 +152,11 @@ function Hero() {
           with Industry Experience
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          Explore Master's and Diploma Programmes in Data Science, AI, Generative AI, Data
-          Visualization and Cloud Technologies.
+          Explore Master's and Diploma Programmes{" "}
+          <br className="hidden sm:block" />
+          in Data Science, AI, Generative AI,{" "}
+          <br className="hidden sm:block" />
+          Data Visualization and Cloud Technologies.
         </p>
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-2 sm:flex-row">
           <Select value={choice} onValueChange={setChoice}>
