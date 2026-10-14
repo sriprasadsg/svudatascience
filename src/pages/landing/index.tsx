@@ -104,7 +104,7 @@ const nav = [
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+    <header className="landing sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-6 px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3">
           <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-9 w-auto" />
@@ -191,7 +191,7 @@ function Collaboration() {
           <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-8">
+          <div className="soft-lift rounded-xl border border-border bg-card p-8">
             <IconBuildingBank className="mb-4 size-8 icon-anim icon-c1" />
             <h3>Sri Venkateswara University</h3>
             <p className="mt-3 text-muted-foreground">
@@ -199,7 +199,7 @@ function Collaboration() {
               examinations and awards the qualification.
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-card p-8">
+          <div className="soft-lift rounded-xl border border-border bg-card p-8">
             <IconBriefcase className="mb-4 size-8 icon-anim icon-c2" />
             <h3>Exafluence Education</h3>
             <p className="mt-3 text-muted-foreground">
@@ -311,7 +311,7 @@ function Learning() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
-            <div key={c.title} className="rounded-xl border border-border bg-card p-6">
+            <div key={c.title} className="soft-lift rounded-xl border border-border bg-card p-6">
               <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
               <h4 className="font-semibold">{c.title}</h4>
               <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
@@ -350,7 +350,7 @@ function Admissions() {
           ))}
         </ol>
         <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div className="soft-lift rounded-xl border border-border bg-card p-6">
             <h4 className="font-semibold">M.S. Data Science seats per year</h4>
             <dl className="mt-3 space-y-1 text-sm">
               {[["Through APPGCET", "30"], ["Through DOA", "60"], ["International students", "30"], ["Total annual intake", "120"]].map(([k, v]) => (
@@ -358,7 +358,7 @@ function Admissions() {
               ))}
             </dl>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div className="soft-lift rounded-xl border border-border bg-card p-6">
             <h4 className="font-semibold">Other programmes</h4>
             <p className="mt-3 text-sm text-muted-foreground">
               Selection is through the Common Online Proctored Entrance Test conducted by the Directorate of
@@ -388,7 +388,7 @@ function International() {
             ["Selection and documents", "Selection follows the university's international admissions route; required documents will be listed on the International Students page."],
             ["Examinations", "Learning is hybrid. Semester-end examinations are primarily offline, so travel to India may be required."],
           ].map(([t, d]) => (
-            <li key={t} className="flex gap-4 rounded-xl border border-border bg-card p-5">
+            <li key={t} className="soft-lift flex gap-4 rounded-xl border border-border bg-card p-5">
               <IconWorld className="size-6 shrink-0 icon-anim icon-c3" />
               <div>
                 <p className="font-semibold">{t}</p>
