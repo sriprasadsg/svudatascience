@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link } from "react-router-dom";
+import { TechStrip } from "./components/tech-strip";
 import { Brochures, ContactForm } from "./components/brochures-contact";
 import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
@@ -198,44 +199,6 @@ function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
   );
 }
 
-const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
-const technologies = [
-  { name: "Python", src: `${DI}/python/python-original.svg` },
-  { name: "Pandas", src: `${DI}/pandas/pandas-original.svg` },
-  { name: "NumPy", src: `${DI}/numpy/numpy-original.svg` },
-  { name: "Jupyter", src: `${DI}/jupyter/jupyter-original.svg` },
-  { name: "scikit-learn", src: `${DI}/scikitlearn/scikitlearn-original.svg` },
-  { name: "TensorFlow", src: `${DI}/tensorflow/tensorflow-original.svg` },
-  { name: "PyTorch", src: `${DI}/pytorch/pytorch-original.svg` },
-  { name: "SQL", src: `${DI}/azuresqldatabase/azuresqldatabase-original.svg` },
-  { name: "MySQL", src: `${DI}/mysql/mysql-original.svg` },
-  { name: "Hadoop", src: `${DI}/hadoop/hadoop-original.svg` },
-  { name: "Spark", src: `${DI}/apachespark/apachespark-original.svg` },
-  { name: "Git", src: `${DI}/git/git-original.svg` },
-  { name: "Docker", src: `${DI}/docker/docker-original.svg` },
-  { name: "AWS", src: `${DI}/amazonwebservices/amazonwebservices-original-wordmark.svg` },
-  { name: "Azure", src: `${DI}/azure/azure-original.svg` },
-  { name: "Google Cloud", src: `${DI}/googlecloud/googlecloud-original.svg` },
-];
-
-function TechStrip() {
-  const loop = [...technologies, ...technologies];
-  return (
-    <div className="mt-14">
-      <p className="mb-5 text-center text-sm font-medium text-primary">Tools &amp; technologies you will work with</p>
-      <div className="tech-marquee overflow-hidden">
-        <ul className="tech-track flex w-max gap-4">
-          {loop.map((t, i) => (
-            <li key={i} aria-hidden={i >= technologies.length} className="tech-tile soft-lift flex h-24 w-36 flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card">
-              <img src={t.src} alt={t.name} className="h-10 w-10 object-contain" />
-              <span className="text-xs text-muted-foreground">{t.name}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
 
 function goToProgramme(slug: string) {
   history.replaceState(null, "", `#prog-${slug}`);
