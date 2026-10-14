@@ -1,0 +1,661 @@
+[
+  {
+    "label": "About",
+    "href": "https://svuniversity.edu.in/about/",
+    "children": []
+  },
+  {
+    "label": "Adminstration",
+    "href": null,
+    "children": [
+      {
+        "label": "Vice Chancellor",
+        "href": "https://svuniversity.edu.in/vice-chancellor/",
+        "children": []
+      },
+      {
+        "label": "Former Vice Chancellors",
+        "href": "https://svuniversity.edu.in/former-vice-chancellors/",
+        "children": []
+      },
+      {
+        "label": "Rector",
+        "href": "https://svuniversity.edu.in/rector/",
+        "children": []
+      },
+      {
+        "label": "Former Rectors",
+        "href": "https://svuniversity.edu.in/former-rectors/",
+        "children": []
+      },
+      {
+        "label": "Registrar",
+        "href": "https://svuniversity.edu.in/registrar/",
+        "children": []
+      },
+      {
+        "label": "Former Joint Registrars",
+        "href": "https://svuniversity.edu.in/former-registars/",
+        "children": []
+      },
+      {
+        "label": "Executive Councils",
+        "href": "https://svuniversity.edu.in/executive-council/",
+        "children": []
+      },
+      {
+        "label": "Academic Senate",
+        "href": "https://svuniversity.edu.in/academic-senate/",
+        "children": []
+      },
+      {
+        "label": "officers",
+        "href": "https://svuniversity.edu.in/officers/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Governance",
+    "href": null,
+    "children": [
+      {
+        "label": "URC Members",
+        "href": "https://svuniversity.edu.in/urc-members",
+        "children": []
+      },
+      {
+        "label": "University Offers",
+        "href": null,
+        "children": [
+          {
+            "label": "Deputy Registrars",
+            "href": "https://svuniversity.edu.in/deputy-registrars",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Deputy Registrars",
+        "href": "https://svuniversity.edu.in/deputy-registrars",
+        "children": []
+      },
+      {
+        "label": "Finance Committee",
+        "href": "https://svuniversity.edu.in/finance-committee/",
+        "children": []
+      },
+      {
+        "label": "CPC Members",
+        "href": "https://svuniversity.edu.in/cpc-members",
+        "children": []
+      },
+      {
+        "label": "AAO",
+        "href": "https://svuniversity.edu.in/aao",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Colleges",
+    "href": "https://svuniversity.edu.in//college-of-arts/",
+    "children": [
+      {
+        "label": "SVU College of Arts",
+        "href": "https://svuniversity.edu.in//college-of-arts/",
+        "children": [
+          {
+            "label": "About",
+            "href": "https://svuniversity.edu.in/college-of-arts/",
+            "children": []
+          },
+          {
+            "label": "Principal",
+            "href": "https://svudatascience.in/college-principal-cfa/",
+            "children": []
+          },
+          {
+            "label": "Department",
+            "href": "https://svuniversity.edu.in/sv-arts-department/",
+            "children": []
+          },
+          {
+            "label": "Events & Achievements",
+            "href": "https://svuniversity.edu.in/college-events-cfa/",
+            "children": []
+          },
+          {
+            "label": "Administration",
+            "href": "https://svuniversity.edu.in/college-staff-cfa/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SVU College of Science",
+        "href": "https://svuniversity.edu.in//college-of-science/",
+        "children": [
+          {
+            "label": "About",
+            "href": "https://svuniversity.edu.in/college-of-science/",
+            "children": []
+          },
+          {
+            "label": "Principal",
+            "href": "https://svuniversity.edu.in/college-of-science-principal/",
+            "children": []
+          },
+          {
+            "label": "Department",
+            "href": "https://svuniversity.edu.in/college-of-science-department/",
+            "children": []
+          },
+          {
+            "label": "Events & Achievements",
+            "href": "https://svuniversity.edu.in/events-achievements-cfs/",
+            "children": []
+          },
+          {
+            "label": "Administration",
+            "href": "https://svuniversity.edu.in/collage-of-science-administration/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SVU College of Engineering",
+        "href": "https://svuniversity.edu.in//college-of-engineering/",
+        "children": [
+          {
+            "label": "About",
+            "href": "https://svuniversity.edu.in/college-of-engineering/",
+            "children": []
+          },
+          {
+            "label": "Principal",
+            "href": "https://svuniversity.edu.in/collage-of-engineering/",
+            "children": []
+          },
+          {
+            "label": "Department",
+            "href": "https://svuniversity.edu.in/college-departments-cfe/",
+            "children": []
+          },
+          {
+            "label": "Events & Achievements",
+            "href": "https://svuniversity.edu.in/college-events-cfe/",
+            "children": []
+          },
+          {
+            "label": "Administration",
+            "href": "https://svuniversity.edu.in/collage-of-engineering-administration-staff/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SVU College of CM & CS",
+        "href": "https://svuniversity.edu.in//college-of-engineering/",
+        "children": [
+          {
+            "label": "About",
+            "href": "https://svuniversity.edu.in/about-cmcs/",
+            "children": []
+          },
+          {
+            "label": "Principal",
+            "href": "https://svuniversity.edu.in/collage-of-commerce/",
+            "children": []
+          },
+          {
+            "label": "Department",
+            "href": "https://svuniversity.edu.in/college-departments-cmcs/",
+            "children": []
+          },
+          {
+            "label": "Events & Achievements",
+            "href": "https://svuniversity.edu.in/college-events-cm-cs/",
+            "children": []
+          },
+          {
+            "label": "Administration",
+            "href": "https://svuniversity.edu.in/collage-of-commerce-cmcs/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SVU College of Pharmaceutical Sciences",
+        "href": "https://svuniversity.edu.in//college-of-pharmaceutical-sciences/",
+        "children": [
+          {
+            "label": "About",
+            "href": "https://svuniversity.edu.in/college-of-pharmaceutical-sciences/",
+            "children": []
+          },
+          {
+            "label": "Principal",
+            "href": "https://svuniversity.edu.in/collage-of-pharmacy/",
+            "children": []
+          },
+          {
+            "label": "Department",
+            "href": "https://svuniversity.edu.in/college-departments-cfp/",
+            "children": []
+          },
+          {
+            "label": "Events & Achievements",
+            "href": "https://svuniversity.edu.in/college-events-cfp/",
+            "children": []
+          },
+          {
+            "label": "Administration",
+            "href": "https://svuniversity.edu.in/collage-of-pharmacy-administration/",
+            "children": []
+          },
+          {
+            "label": "Collage of Pharmacy SIF report",
+            "href": "https://svuniversity.edu.in/collage-of-pharmacy-sif-report/",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Centers",
+    "href": null,
+    "children": [
+      {
+        "label": "ADVANCED CENTRE FOR ATMOSPHERIC STUDIES",
+        "href": "https://svuniversity.edu.in/advanced-centre-for-atmospheric-sciences",
+        "children": []
+      },
+      {
+        "label": "BIOINFORMATICS INFRASTRUCTURE FACILITY (BIF)",
+        "href": "https://svuniversity.edu.in/bioinformatics-infrastructure-facility-bif",
+        "children": []
+      },
+      {
+        "label": "CSEAP STUDIES",
+        "href": "https://svuniversity.edu.in/cseap-studies-center",
+        "children": []
+      },
+      {
+        "label": "COMPUTER CENTRE",
+        "href": "https://svuniversity.edu.in/computer-center/",
+        "children": []
+      },
+      {
+        "label": "CERDAT",
+        "href": "https://svuniversity.edu.in/cerdat/",
+        "children": []
+      },
+      {
+        "label": "DOA",
+        "href": "https://svuniversity.edu.in/doa/",
+        "children": []
+      },
+      {
+        "label": "CENTER FOR DISTANCE AND ONLINE EDUCATION (CDOE)",
+        "href": "https://www.svucdoe.ac.in/",
+        "children": []
+      },
+      {
+        "label": "DST PURSE CENTRE",
+        "href": "https://svuniversity.edu.in/dst-purse-centre-3",
+        "children": []
+      },
+      {
+        "label": "MMTTC CENTRE",
+        "href": "https://svuniversity.edu.in/mmttc-center/",
+        "children": []
+      },
+      {
+        "label": "DSWCA",
+        "href": "https://svuniversity.edu.in/storage/2023/07/DSWCA.pdf",
+        "children": []
+      },
+      {
+        "label": "INCUBATION CENTRE",
+        "href": "https://svuniversity.edu.in/storage/2022/08/Incubation-Centre.pdf",
+        "children": []
+      },
+      {
+        "label": "MST RADAR CENTRE",
+        "href": "https://svuniversity.edu.in/storage/2022/08/MST-RADAR.pdf",
+        "children": []
+      },
+      {
+        "label": "ORIENTAL RESEARCH INSTITUTE",
+        "href": "https://svuniversity.edu.in/ori-center",
+        "children": []
+      },
+      {
+        "label": "USIC",
+        "href": "https://svuniversity.edu.in/usi-center",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Programmes Offered",
+    "href": null,
+    "children": [
+      {
+        "label": "Programmes Offered",
+        "href": "https://svuniversity.edu.in/academic-programme/",
+        "children": []
+      },
+      {
+        "label": "Professional Programmes",
+        "href": "https://svuniversity.edu.in/professional-courses/",
+        "children": []
+      },
+      {
+        "label": "Degree Programmes Syllabus",
+        "href": "https://svuniversity.edu.in/degree-course-syllabus/",
+        "children": []
+      },
+      {
+        "label": "PG Programmes Syllabus",
+        "href": "https://svuniversity.edu.in/pg-course-syllabus/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Academics",
+    "href": null,
+    "children": [
+      {
+        "label": "Dean Development",
+        "href": "https://svuniversity.edu.in/dean-development",
+        "children": []
+      },
+      {
+        "label": "Dean R&D",
+        "href": "https://svuniversity.edu.in/dean-rd",
+        "children": []
+      },
+      {
+        "label": "Dean Commerce & Management",
+        "href": "https://svuniversity.edu.in/dean-commerce-management/",
+        "children": []
+      },
+      {
+        "label": "Dean CDC",
+        "href": "https://svuniversity.edu.in/dean-cdc",
+        "children": []
+      },
+      {
+        "label": "Dean International Relations",
+        "href": "https://svuniversity.edu.in/dean-international-relations",
+        "children": []
+      },
+      {
+        "label": "Dean IT",
+        "href": "https://svuniversity.edu.in/dean-it",
+        "children": []
+      },
+      {
+        "label": "Dean Faculty of Sciences",
+        "href": "https://svuniversity.edu.in/dean-faculty-of-sciences",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Research",
+    "href": "https://svuniversity.edu.in/research/",
+    "children": []
+  },
+  {
+    "label": "Affliation",
+    "href": null,
+    "children": [
+      {
+        "label": "Affliated Colleges Information",
+        "href": "https://svuniversity.edu.in/college-affiliation/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Exams",
+    "href": "https://svuniversity.edu.in/control-of-examination/",
+    "children": []
+  },
+  {
+    "label": "Facilities",
+    "href": "https://svuniversity.edu.in/facilities/",
+    "children": [
+      {
+        "label": "LIBRARY",
+        "href": "https://svuniversity.edu.in/library/",
+        "children": []
+      },
+      {
+        "label": "STADIUM",
+        "href": "https://svuniversity.edu.in/stadium/",
+        "children": []
+      },
+      {
+        "label": "SVU Health Center",
+        "href": "https://svuniversity.edu.in/health-center/",
+        "children": []
+      },
+      {
+        "label": "Women's Hostels",
+        "href": "https://svuniversity.edu.in/womens-hostels/",
+        "children": []
+      },
+      {
+        "label": "SVU Guest House",
+        "href": "https://svuniversity.edu.in/svu-guest-house/",
+        "children": []
+      },
+      {
+        "label": "Campus School",
+        "href": "https://svuniversity.edu.in/campus-school/",
+        "children": []
+      },
+      {
+        "label": "DSWCA",
+        "href": "https://svuniversity.edu.in/annyamaya-bhavan/",
+        "children": []
+      },
+      {
+        "label": "SVU Internet Facility",
+        "href": "https://svuniversity.edu.in/internet-facility/",
+        "children": []
+      },
+      {
+        "label": "SVU Post Office",
+        "href": "https://svuniversity.edu.in/s-v-university-post-office/",
+        "children": []
+      },
+      {
+        "label": "Labs",
+        "href": "https://svuniversity.edu.in/labs/",
+        "children": []
+      },
+      {
+        "label": "NSS",
+        "href": "https://svuniversity.edu.in/nss/",
+        "children": []
+      },
+      {
+        "label": "NCC",
+        "href": "https://svuniversity.edu.in/ncc",
+        "children": []
+      },
+      {
+        "label": "Day care centre",
+        "href": "https://svuniversity.edu.in/day-care-centre/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Antiragging",
+    "href": "https://svudatascience.in/#",
+    "children": [
+      {
+        "label": "Antiragging Guidelines",
+        "href": "https://svuniversity.edu.in/storage/2023/08/UGC-ragging-regulations.pdf",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Sports & Games",
+    "href": "https://svuniversity.edu.in/sports-games/",
+    "children": []
+  },
+  {
+    "label": "IQAC",
+    "href": null,
+    "children": [
+      {
+        "label": "IQAC Information",
+        "href": "https://svuniversity.edu.in/iqac/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "NAAC",
+    "href": null,
+    "children": [
+      {
+        "label": "About",
+        "href": "https://svuniversity.edu.in/naac",
+        "children": []
+      },
+      {
+        "label": "IIQA",
+        "href": "https://svuniversity.edu.in/iiqa/",
+        "children": []
+      },
+      {
+        "label": "SSR",
+        "href": "https://svuniversity.edu.in/ssr",
+        "children": []
+      },
+      {
+        "label": "DVV Report",
+        "href": "https://svuniversity.edu.in/dvv/",
+        "children": []
+      },
+      {
+        "label": "Appeal",
+        "href": "https://svuniversity.edu.in/appeal/",
+        "children": []
+      },
+      {
+        "label": "Re DVV",
+        "href": "https://svuniversity.edu.in/redvv/",
+        "children": []
+      },
+      {
+        "label": "Best Practices",
+        "href": "https://svudatascience.in/#",
+        "children": []
+      },
+      {
+        "label": "Institution Distinctiveness",
+        "href": "https://svudatascience.in/#",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Rankings",
+    "href": null,
+    "children": [
+      {
+        "label": "NAAC",
+        "href": "https://svuniversity.edu.in/naac-information/",
+        "children": []
+      },
+      {
+        "label": "NIRF 2024",
+        "href": "https://svuniversity.edu.in/storage/2024/03/NIRF-2024-SVU.pdf",
+        "children": []
+      },
+      {
+        "label": "NIRF 2023",
+        "href": "https://svuniversity.edu.in/storage/2023/02/NIRF-2023.pdf",
+        "children": []
+      },
+      {
+        "label": "Others",
+        "href": "https://svuniversity.edu.in/other-information",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "RTI Cell",
+    "href": "https://svuniversity.edu.in/legal-rti-cell",
+    "children": []
+  },
+  {
+    "label": "Alumni",
+    "href": null,
+    "children": [
+      {
+        "label": "ALUMNI INFORMATION",
+        "href": "https://svuniversity.edu.in/alumni-information/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "label": "Academic Schedule",
+    "href": "https://svuniversity.edu.in/academic-schedule",
+    "children": []
+  },
+  {
+    "label": "RUSA",
+    "href": "https://svuniversity.edu.in/about-svu-rusa",
+    "children": []
+  },
+  {
+    "label": "JnanaBhumi",
+    "href": "https://hrsfrs.ap.gov.in/help-videos/",
+    "children": []
+  },
+  {
+    "label": "Contact",
+    "href": "https://svuniversity.edu.in/contact/",
+    "children": []
+  },
+  {
+    "label": "Diploma Fees (New)",
+    "href": "https://svuexams.edu.in/alumniportal",
+    "children": []
+  },
+  {
+    "label": "Videos",
+    "href": "https://svuniversity.edu.in/videos/",
+    "children": []
+  },
+  {
+    "label": "Data Science",
+    "href": "https://svudatascience.in/",
+    "children": []
+  },
+  {
+    "label": "NIRF",
+    "href": "https://svuniversity.edu.in/nirf/",
+    "children": []
+  },
+  {
+    "label": "Pensioners Corner",
+    "href": "https://pensioner.svupayonline.edu.in/pensioner/Home",
+    "children": []
+  }
+]
