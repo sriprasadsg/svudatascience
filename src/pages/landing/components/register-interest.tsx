@@ -16,7 +16,7 @@ export const programmeOptions = [
 const occupationOptions = ["Student", "Working Professional"];
 
 const selectClass =
-  "h-10 w-full rounded-md border border-input bg-background px-3 text-sm soft-lift";
+  "h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm soft-lift";
 
 export function RegisterInterest() {
   const [sending, setSending] = useState(false);

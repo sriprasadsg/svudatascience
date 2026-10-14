@@ -99,7 +99,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
           <div className="grid gap-2"><Label htmlFor="phone">Phone (optional)</Label><Input id="phone" name="phone" type="tel" maxLength={20} /></div>
           <div className="grid gap-2">
             <Label htmlFor="programme">Programme</Label>
-            <select id="programme" name="programme" required defaultValue="" className="h-10 rounded-md border border-input bg-background px-3 text-sm">
+            <select id="programme" name="programme" required defaultValue="" className="h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm soft-lift">
               <option value="" disabled>Select a programme</option>
               {programmeOptions.map((p) => <option key={p}>{p}</option>)}
             </select>
