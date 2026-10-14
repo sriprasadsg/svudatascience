@@ -100,6 +100,57 @@
 }
 
 /* The university footer deliberately retains the official site's palette. */
+.svu-official-header {
+  --svu-header-surface: hsl(0 0% 100%);
+  --svu-header-ink: hsl(0 0% 0%);
+  --svu-header-rule: hsl(0 0% 90%);
+  --svu-header-highlight: hsl(0 100% 50%);
+  background: var(--svu-header-surface);
+  color: var(--svu-header-ink);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 50;
+  border-bottom: 1px solid var(--svu-header-rule);
+}
+.svu-header-inner { display: flex; align-items: center; gap: 36px; padding: 8px 20px; max-width: 1920px; margin: auto; }
+.svu-header-brand { flex: 0 0 24%; max-width: 430px; }
+.svu-header-brand img { width: 100%; height: auto; }
+.svu-header-nav { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 14px; }
+.svu-header-nav > a, .svu-header-nav > div > button { font-size: 14px; line-height: 24px; font-weight: 500; white-space: nowrap; letter-spacing: 0; }
+.svu-header-nav > a { padding: 7px 0; }
+.svu-header-nav > div > button { background: transparent; color: inherit; border-radius: 0; padding: 7px 0; height: auto; box-shadow: none; }
+.svu-header-new { color: var(--svu-header-highlight); }
+.svu-header-dropdown { max-height: 65vh; overflow: auto; width: 290px; padding: 6px; font-family: "Poppins", sans-serif; }
+.svu-header-dropdown a { display: block; padding: 9px 12px; font-size: 13px; line-height: 1.5; }
+.svu-header-mobile { display: none; }
+.svu-mobile-links { display: grid; gap: 8px; padding-top: 20px; font-size: 14px; }
+.svu-mobile-links a, .svu-mobile-links summary { display: block; padding: 8px 0; }
+.svu-mobile-links details a { padding-left: 16px; color: var(--color-muted-foreground); }
+.svu-page-nav { border-bottom: 1px solid var(--color-border); background: var(--color-background); }
+.svu-page-nav-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px; max-width: 1200px; margin: auto; padding: 10px 24px; font-size: 13px; }
+.svu-page-nav a { color: var(--color-heading); padding: 3px 0; }
+.svu-page-nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+@media (max-width: 767px) {
+  .svu-header-inner { justify-content: space-between; padding: 14px 16px; gap: 16px; }
+  .svu-header-brand { flex-basis: auto; width: 290px; max-width: calc(100% - 60px); }
+  .svu-header-nav { display: none; }
+  .svu-header-mobile { display: block; }
+  .svu-page-nav-inner { gap: 4px 16px; padding: 8px 16px; }
+}
+.student-page-hero { position: relative; isolation: isolate; min-height: 340px; display: flex; align-items: flex-end; padding: 48px 24px; background: var(--color-primary); }
+.student-page-hero > img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -2; }
+.student-page-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 88%, transparent), color-mix(in srgb, var(--color-primary) 30%, transparent)); }
+.student-page-hero-content { width: 100%; max-width: 1136px; margin: auto; color: var(--color-primary-foreground); }
+.landing .student-page-hero h1 { color: var(--color-primary-foreground); font-size: 40px; line-height: 1.2; letter-spacing: 0; }
+.student-page-hero p { max-width: 650px; margin-top: 16px; line-height: 1.7; }
+.student-page-content { max-width: 1000px; margin: auto; padding: 40px 24px; }
+.student-page-content > section + section { margin-top: 36px; padding-top: 32px; border-top: 1px solid var(--color-border); }
+.student-page-content h2 { margin-bottom: 16px; }
+.student-page-content p, .student-page-content li { line-height: 1.8; color: var(--color-muted-foreground); }
+.student-page-content ul { list-style: disc; padding-left: 22px; }
+.student-page-content li + li { margin-top: 8px; }
+@media (max-width: 767px) { .landing .student-page-hero h1 { font-size: 32px; } .student-page-hero { min-height: 300px; padding: 32px 24px; } }
+
 .svu-official-footer {
   --svu-surface: hsl(0 0% 100%);
   --svu-text: hsl(0 0% 0%);
