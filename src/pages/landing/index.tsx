@@ -107,9 +107,9 @@ function Header() {
     <header className="landing sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-6 px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3">
-          <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-11 w-auto" />
-          <span aria-hidden="true" className="h-9 w-px bg-border" />
-          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-14 w-auto" />
+          <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-10 w-auto" />
+          <span aria-hidden="true" className="h-8 w-px bg-border" />
+          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-12 w-auto" />
         </a>
         <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
           {nav.map((n) => (
