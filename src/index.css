@@ -258,3 +258,20 @@
 .svu-timeline li:nth-child(3) .svu-dot, .svu-timeline li:nth-child(3) .svu-dot::before { animation-delay: 3.9s; }
 .svu-timeline li:nth-child(4) .svu-dot, .svu-timeline li:nth-child(4) .svu-dot::before { animation-delay: 5.7s; }
 @media (prefers-reduced-motion: reduce) { .svu-timeline::after, .svu-dot, .svu-dot::before { animation: none; } }
+
+/* Technology logo strip */
+.tech-marquee { mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.tech-track { animation: tech-scroll 45s linear infinite; }
+.tech-marquee:hover .tech-track { animation-play-state: paused; }
+.tech-tile img { filter: grayscale(0.35); transition: filter .3s ease, transform .3s ease; }
+.tech-tile:hover { border-color: var(--color-primary); box-shadow: 0 8px 24px -10px color-mix(in oklab, var(--color-primary) 55%, transparent); }
+.tech-tile:hover img { filter: none; transform: scale(1.12); }
+@keyframes tech-scroll { to { transform: translateX(calc(-50% - 0.5rem)); } }
+
+/* Programme card highlight when navigated to */
+.prog-highlight { animation: prog-glow 2.2s ease-out; }
+@keyframes prog-glow {
+  0%, 30% { box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary-foreground) 85%, transparent), 0 12px 30px -8px rgb(0 0 0 / .35); transform: translateY(-4px); }
+  100% { box-shadow: none; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .tech-track, .prog-highlight { animation: none; } }
