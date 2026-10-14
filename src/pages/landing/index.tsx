@@ -187,7 +187,7 @@ function Collaboration() {
     <section id="collaboration" className="landing py-20">
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="text-sm font-semibold text-primary">Industry Collaboration</p>
+          <p className="text-sm font-medium text-primary">Industry Collaboration</p>
           <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -236,7 +236,7 @@ function Programmes() {
     <section id="programmes" className="landing bg-primary py-20 text-primary-foreground">
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="text-sm font-semibold opacity-80">Programmes</p>
+          <p className="text-sm font-medium opacity-80">Programmes</p>
           <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
         </div>
         <Tabs defaultValue="masters">
@@ -272,10 +272,10 @@ function Programmes() {
             <caption className="sr-only">Programme comparison</caption>
             <thead className="border-b border-border">
               <tr>
-                <th className="p-4 font-semibold">Programme</th>
-                <th className="p-4 font-semibold">Duration</th>
-                <th className="p-4 font-semibold">Mode of delivery</th>
-                <th className="p-4 font-semibold">Intake</th>
+                <th className="p-4 font-medium">Programme</th>
+                <th className="p-4 font-medium">Duration</th>
+                <th className="p-4 font-medium">Mode of delivery</th>
+                <th className="p-4 font-medium">Intake</th>
               </tr>
             </thead>
             <tbody>
@@ -306,14 +306,14 @@ function Learning() {
     <section className="landing py-20">
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="text-sm font-semibold text-primary">Learning experience</p>
+          <p className="text-sm font-medium text-primary">Learning experience</p>
           <h2 className="mt-2 text-balance">How you will learn</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
             <div key={c.title} className="soft-lift rounded-xl border border-border bg-card p-6">
               <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
-              <h4 className="font-semibold">{c.title}</h4>
+              <h4 className="font-medium">{c.title}</h4>
               <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
             </div>
           ))}
@@ -334,7 +334,7 @@ function Admissions() {
     <section id="admissions" className="landing bg-muted/40 py-20">
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="text-sm font-semibold text-primary">Admissions</p>
+          <p className="text-sm font-medium text-primary">Admissions</p>
           <h2 className="mt-2 text-balance">Admissions timeline</h2>
           <p className="mt-4 text-muted-foreground">
             Dates are expected windows. Exact dates are subject to official university and APPGCET announcements.
@@ -344,14 +344,14 @@ function Admissions() {
           {steps.map((s) => (
             <li key={s.when} className="relative">
               <span className="svu-dot absolute -left-[33px] top-1 size-4 rounded-full border-2 border-primary bg-background" />
-              <p className="font-semibold">{s.when}</p>
+              <p className="font-medium">{s.when}</p>
               <p className="mt-1 text-muted-foreground">{s.what}</p>
             </li>
           ))}
         </ol>
         <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
           <div className="soft-lift rounded-xl border border-border bg-card p-6">
-            <h4 className="font-semibold">M.S. Data Science seats per year</h4>
+            <h4 className="font-medium">M.S. Data Science seats per year</h4>
             <dl className="mt-3 space-y-1 text-sm">
               {[["Through APPGCET", "30"], ["Through DOA", "60"], ["International students", "30"], ["Total annual intake", "120"]].map(([k, v]) => (
                 <div key={k} className="flex justify-between"><dt className="text-muted-foreground">{k}</dt><dd className="font-medium">{v}</dd></div>
@@ -359,7 +359,7 @@ function Admissions() {
             </dl>
           </div>
           <div className="soft-lift rounded-xl border border-border bg-card p-6">
-            <h4 className="font-semibold">Other programmes</h4>
+            <h4 className="font-medium">Other programmes</h4>
             <p className="mt-3 text-sm text-muted-foreground">
               Selection is through the Common Online Proctored Entrance Test conducted by the Directorate of
               Admissions, Sri Venkateswara University, Tirupati. Intakes run in January and July.
@@ -376,7 +376,7 @@ function International() {
     <section id="international" className="landing py-20">
       <div className="mx-auto grid max-w-page items-center gap-10 px-6 lg:grid-cols-2 lg:px-8">
         <div>
-          <p className="text-sm font-semibold text-primary">International Students</p>
+          <p className="text-sm font-medium text-primary">International Students</p>
           <h2 className="mt-2 text-balance">Studying M.S. Data Science from outside India</h2>
           <p className="mt-4 text-muted-foreground">
             30 seats each year are reserved for international applicants to the M.S. Data Science programme.
@@ -391,7 +391,7 @@ function International() {
             <li key={t} className="soft-lift flex gap-4 rounded-xl border border-border bg-card p-5">
               <IconWorld className="size-6 shrink-0 icon-anim icon-c3" />
               <div>
-                <p className="font-semibold">{t}</p>
+                <p className="font-medium">{t}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{d}</p>
               </div>
             </li>
