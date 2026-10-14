@@ -29,17 +29,21 @@ export function SvuFooter() {
       <div className="svu-enquiries">
         <div className="svu-enquiries-inner">
           <div className="svu-admissions-contact">
-            <h4>For Admissions<br />&amp; Enquiries</h4>
-            <p><a href="mailto:admissions@svudatascience.in">admissions@svudatascience.in</a></p>
+            <span className="svu-enquiries-label">SVU × Exafluence</span>
+            <h4>Admissions &amp; enquiries</h4>
+            <a className="svu-enquiries-email" href="mailto:admissions@svudatascience.in"><IconMailFilled size={20} aria-hidden="true" /><span>admissions@svudatascience.in</span></a>
           </div>
-          <div>
-            <h4>Address for more Information</h4>
-            <p>Exafluence Education Centre</p>
-            <p>Next to Centre for Distance &amp; Online Education</p>
-            <p>SV University Campus</p>
-            <p>Tirupati – 517502</p>
-            <p className="svu-enquiries-phone">Phone: <a href="tel:08772248094">0877 - 2248094</a></p>
-            <p>Mobile: <a href="tel:+917396866627">+91 7396866627</a>/<a href="tel:+917396866628">28</a></p>
+          <div className="svu-enquiries-address">
+            <span className="svu-enquiries-label"><IconMapPinFilled size={16} aria-hidden="true" /> Visit us</span>
+            <h4>Exafluence Education Centre</h4>
+            <address>Next to Centre for Distance &amp; Online Education<br />SV University Campus<br />Tirupati – 517502</address>
+          </div>
+          <div className="svu-enquiries-numbers">
+            <span className="svu-enquiries-label"><IconPhoneFilled size={16} aria-hidden="true" /> Call us</span>
+            <a href="tel:08772248094">0877 - 2248094</a>
+            <span className="svu-enquiries-number-label">Mobile</span>
+            <a href="tel:+917396866627">+91 7396866627</a>
+            <a href="tel:+917396866628">+91 7396866628</a>
           </div>
         </div>
       </div>
