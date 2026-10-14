@@ -118,11 +118,10 @@ function Hero() {
         <span className="shrink-0 text-sm font-normal text-muted-foreground">in collaboration with</span>
         <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto min-w-0 shrink sm:h-9" />
       </div>
-      <div className="mx-auto max-w-3xl px-6 text-center">
+      <div className="mx-auto max-w-4xl px-6 text-center">
         <h1 className="display mb-6">
-          Data Science Education
-          <br />
-          with Industry Experience
+          <span className="block sm:whitespace-nowrap">Data Science Education</span>
+          <span className="block sm:whitespace-nowrap">with Industry Experience</span>
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
           Explore Master's and Diploma Programmes{" "}

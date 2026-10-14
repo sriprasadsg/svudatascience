@@ -131,11 +131,19 @@
   }
 }
 
-/* Fluid hero — modifier class for the primary landing headline */
+/* Fixed-size steps keep the opening headline neatly on two desktop lines. */
 .landing h1.display {
-  font-size: clamp(2.25rem, -1.5rem + 6vw, 4.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@media (max-width: 1023px) {
+  .landing h1.display { font-size: 36px; }
+}
+
+@media (max-width: 639px) {
+  .landing h1.display { font-size: 28px; }
 }
 
 /* Mobile — one step down */
