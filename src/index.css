@@ -132,6 +132,10 @@
 .svu-page-nav-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px; max-width: 1200px; margin: auto; padding: 10px 24px; font-size: 13px; }
 .svu-page-nav a { color: var(--color-heading); padding: 3px 0; }
 .svu-page-nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.svu-page-nav-item { display: inline-flex; align-items: center; gap: 5px; }
+.svu-page-nav-official { display: inline-flex; align-items: center; color: var(--color-muted-foreground); opacity: .8; }
+.svu-page-nav a.svu-page-nav-official:hover { opacity: 1; color: var(--color-primary); text-decoration: none; }
+.svu-page-nav-note { align-self: center; font-size: 11px; color: var(--color-muted-foreground); }
 @media (max-width: 767px) {
   .svu-header-inner { justify-content: space-between; padding: 14px 16px; gap: 16px; }
   .svu-header-brand { flex-basis: auto; width: 290px; max-width: calc(100% - 60px); }
