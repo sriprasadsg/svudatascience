@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/base/button";
 import { SvuHeader } from "./components/svu-header";
 import { SvuFooter } from "./components/svu-footer";
+import { TechStrip } from "./components/tech-strip";
 import internationalImage from "@/assets/svu-international.jpg.asset.json";
 import admissionsImage from "@/assets/svu-admissions.jpg.asset.json";
 
