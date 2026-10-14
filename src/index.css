@@ -246,13 +246,13 @@
   flex-direction: column;
   padding: 1.5rem;
 }
-.brochure-card__body h3 {
+.landing .brochure-card__body h3 {
   color: #153b82;
   font-size: 15px;
   line-height: 20px;
   font-weight: 500;
 }
-.brochure-card__body p {
+.landing .brochure-card__body p {
   color: #444b57;
   font-size: 13.5px;
   line-height: 20px;
@@ -268,7 +268,7 @@
   color: #ffffff;
 }
 .brochure-btn:disabled {
-  background-color: #5a7ab5;
+  background-color: #153b82;
   color: #ffffff;
   opacity: 1;
   cursor: not-allowed;
