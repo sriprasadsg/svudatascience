@@ -40,4 +40,4 @@
 - [x] "How you will learn" title placed directly above the four cards (Practical work, Mentorship, Projects, Learning resources); the 80/20 tiles and LMS box follow below.
 - [x] Brochure unlock is per programme: the contact form opens only the brochure for the programme selected — verified in preview and covered by a test.
 - [x] Add the technology logo strip to the International Students page, sized to its content width (done).
-- [ ] Clarify and apply the top header bar's font site-wide (Poppins vs Google Sans — awaiting the user's choice).
+- [x] Site-wide font switched to Poppins — the same font the top header bar uses; footer unchanged (done).
