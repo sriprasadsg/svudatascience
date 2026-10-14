@@ -159,3 +159,10 @@
     line-height: 28px;
   }
 }
+
+/* FAQ heading — deliberately smaller than the standard section title */
+.landing h2.faq-heading {
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: normal;
+}
