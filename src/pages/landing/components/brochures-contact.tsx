@@ -47,7 +47,7 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
                   </a>
                 </Button>
               ) : (
-                <Button variant="outline" disabled className="mt-5" title="Fill in the contact form below to unlock downloads">
+                <Button variant="outline" disabled className="mt-5" title="Please complete the contact form to download the brochure.">
                   <IconLock className="size-4" /> Download brochure
                 </Button>
               )}
