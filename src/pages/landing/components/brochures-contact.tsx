@@ -16,16 +16,19 @@ const brochures = [
     title: "M.S. Data\u00A0Science",
     note: "Two-year Master's programme",
     file: msBrochure,
+    unlocksFor: (p: string) => p.startsWith("M.S."),
   },
   {
     title: "PG Diploma in Data\u00A0Science",
     note: "One-year postgraduate diploma",
     file: pgBrochure,
+    unlocksFor: (p: string) => p.startsWith("PG Diploma"),
   },
   {
     title: "Specialist Diplomas",
     note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies",
     file: diplomaBrochure,
+    unlocksFor: (p: string) => p.startsWith("Specialist Diploma"),
   },
 ];
 
