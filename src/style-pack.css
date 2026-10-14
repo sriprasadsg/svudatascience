@@ -11,8 +11,8 @@
 
 :root {
   /* Font families — swapped per style pack */
-  --font-heading: "Google Sans", "Google Sans Text", sans-serif;
-  --font-body: "Google Sans Text", "Google Sans", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
 
   /* Font weight defaults — overridable via TDP postMessage */
   --font-heading-weight: 400;
