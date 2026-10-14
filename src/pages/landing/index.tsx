@@ -141,10 +141,14 @@ function Hero() {
         <p className="mb-4 text-sm font-semibold text-primary">
           Sri Venkateswara University, Tirupati · in collaboration with Exafluence Education
         </p>
-        <h1 className="display mb-6">Data Science Education Connected to Industry</h1>
+        <h1 className="display mb-6">
+          Data Science Education
+          <br />
+          with Industry Experience
+        </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          Master's, postgraduate diploma and specialist diploma programmes in data science, AI, data
-          visualization and cloud technologies, for learners in Andhra Pradesh and international applicants.
+          Explore Master's and Diploma Programmes in Data Science, AI, Generative AI, Data
+          Visualization and Cloud Technologies.
         </p>
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-2 sm:flex-row">
           <Select value={choice} onValueChange={setChoice}>
