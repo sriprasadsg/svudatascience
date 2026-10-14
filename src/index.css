@@ -115,10 +115,12 @@
 .svu-header-inner { display: flex; align-items: center; gap: 36px; padding: 8px 20px; max-width: 1920px; margin: auto; }
 .svu-header-brand { flex: 0 0 24%; max-width: 430px; }
 .svu-header-brand img { width: 100%; height: auto; }
-.svu-header-nav { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 14px; }
-.svu-header-nav > a, .svu-header-nav > div > button { font-size: 14px; line-height: 24px; font-weight: 500; white-space: nowrap; letter-spacing: 0; }
-.svu-header-nav > a { padding: 7px 0; }
-.svu-header-nav > div > button { background: transparent; color: inherit; border-radius: 0; padding: 7px 0; height: auto; box-shadow: none; }
+.svu-header-nav { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.svu-header-row { display: flex; flex-wrap: nowrap; align-items: center; gap: 0 clamp(8px, 1.1vw, 18px); }
+.svu-header-row > div { display: flex; }
+.svu-header-row > a, .svu-header-row > div > button { font-size: clamp(12px, 1.05vw, 14px); line-height: 24px; font-weight: 500; white-space: nowrap; letter-spacing: 0; }
+.svu-header-row > a { padding: 7px 0; }
+.svu-header-row > div > button { background: transparent; color: inherit; border-radius: 0; padding: 7px 0; height: auto; box-shadow: none; }
 .svu-header-new { color: var(--svu-header-highlight); }
 .svu-header-dropdown { max-height: 65vh; overflow: auto; width: 290px; padding: 6px; font-family: "Poppins", sans-serif; }
 .svu-header-dropdown a { display: block; padding: 9px 12px; font-size: 13px; line-height: 1.5; }
