@@ -329,10 +329,10 @@ function Admissions() {
             Dates are expected windows. Exact dates are subject to official university and APPGCET announcements.
           </p>
         </div>
-        <ol className="mx-auto max-w-2xl space-y-6 border-l-2 border-primary/30 pl-6">
+        <ol className="svu-timeline mx-auto max-w-2xl space-y-6 border-l-2 border-primary/30 pl-6">
           {steps.map((s) => (
             <li key={s.when} className="relative">
-              <span className="absolute -left-[33px] top-1 size-4 rounded-full border-2 border-primary bg-background" />
+              <span className="svu-dot absolute -left-[33px] top-1 size-4 rounded-full border-2 border-primary bg-background" />
               <p className="font-semibold">{s.when}</p>
               <p className="mt-1 text-muted-foreground">{s.what}</p>
             </li>

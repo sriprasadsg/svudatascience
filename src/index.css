@@ -205,3 +205,50 @@
 .icon-anim { animation: icon-float 7s ease-in-out infinite, icon-hue 14s ease-in-out infinite; }
 .icon-nudge { animation: icon-nudge 3s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .icon-anim, .icon-nudge { animation: none; } }
+
+/* Admissions timeline: a soft glow travels down the line and each dot pulses in turn */
+.svu-timeline { position: relative; }
+.svu-timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 26%;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, transparent, var(--color-primary), transparent);
+  animation: svu-line-travel 7s linear infinite;
+  pointer-events: none;
+}
+@keyframes svu-line-travel {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% { transform: translateY(385%); opacity: 0; }
+}
+.svu-dot { animation: svu-dot-breathe 7s ease-in-out infinite; }
+.svu-dot::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  border: 2px solid var(--color-primary);
+  opacity: 0;
+  animation: svu-dot-halo 7s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes svu-dot-halo {
+  0% { transform: scale(0.9); opacity: 0; }
+  10% { opacity: 0.55; }
+  55%, 100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes svu-dot-breathe {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.12); }
+  30% { transform: scale(1); }
+}
+.svu-timeline li:nth-child(1) .svu-dot, .svu-timeline li:nth-child(1) .svu-dot::before { animation-delay: 0.2s; }
+.svu-timeline li:nth-child(2) .svu-dot, .svu-timeline li:nth-child(2) .svu-dot::before { animation-delay: 2s; }
+.svu-timeline li:nth-child(3) .svu-dot, .svu-timeline li:nth-child(3) .svu-dot::before { animation-delay: 3.9s; }
+.svu-timeline li:nth-child(4) .svu-dot, .svu-timeline li:nth-child(4) .svu-dot::before { animation-delay: 5.7s; }
+@media (prefers-reduced-motion: reduce) { .svu-timeline::after, .svu-dot, .svu-dot::before { animation: none; } }
