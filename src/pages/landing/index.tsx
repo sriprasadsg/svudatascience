@@ -109,7 +109,7 @@ function Header() {
         <a href="#top" className="flex items-center gap-3">
           <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-7 w-auto" />
           <span aria-hidden="true" className="h-6 w-px bg-border" />
-          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto" />
+          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-7 w-auto" />
         </a>
         <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
           {nav.map((n) => (
@@ -145,7 +145,7 @@ function Hero() {
       <div className="mx-auto mb-6 flex max-w-4xl flex-nowrap items-center justify-center gap-x-5 gap-y-3 px-6">
         <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
         <span className="shrink-0 text-sm font-normal text-muted-foreground">in collaboration with</span>
-        <img src={exfeduLogo.url} alt="Exafluence Education" className="h-9 w-auto min-w-0 shrink sm:h-11" />
+        <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto min-w-0 shrink sm:h-9" />
       </div>
       <div className="mx-auto max-w-3xl px-6 text-center">
         <h1 className="display mb-6">
