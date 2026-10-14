@@ -29,3 +29,4 @@
 - [x] Contact form moved above the brochure boxes.
 - [x] FAQs moved between the "Ready to take the next step?" form and the "Contact us" form.
 - [x] Brochure boxes trimmed to the note, programme title and download button only.
+- [x] Brochure cards restyled: navy 20% band with white icon over a sky-blue body, navy button, small one-line titles.
