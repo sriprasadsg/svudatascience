@@ -152,9 +152,9 @@ function Hero() {
           with Industry Experience
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          Explore Master's and Diploma Programmes
+          Explore Master's and Diploma Programmes{" "}
           <br className="hidden sm:block" />
-          in Data Science, AI, Generative AI,
+          in Data Science, AI, Generative AI,{" "}
           <br className="hidden sm:block" />
           Data Visualization and Cloud Technologies.
         </p>
