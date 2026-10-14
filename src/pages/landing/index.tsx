@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { Brochures, ContactForm } from "./components/brochures-contact";
+import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 import {
@@ -519,6 +520,7 @@ function Register() {
 }
 
 export default function Landing() {
+  const [brochuresUnlocked, setBrochuresUnlocked] = useState(false);
   return (
     <>
       <Header />
@@ -531,8 +533,8 @@ export default function Landing() {
         <International />
         <Faqs />
         <Register />
-        <Brochures />
-        <ContactForm />
+        <Brochures unlocked={brochuresUnlocked} />
+        <ContactForm onSubmitted={() => setBrochuresUnlocked(true)} />
       </main>
       <SvuFooter />
     </>
