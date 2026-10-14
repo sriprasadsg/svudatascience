@@ -10,3 +10,4 @@
 - [ ] Build the separate programme pages listed in the SVU plan.
 - [x] Specialist diploma cards: Data Visualization + Cloud Technologies on the lower row (done)
 - [x] Gentle looping animation on the admissions timeline dots and connecting line (done)
+- [ ] Fix the empty space in the programmes section: a single card leaves most of the blue band blank and looks unaligned.
