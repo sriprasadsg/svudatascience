@@ -491,7 +491,7 @@ function Faqs() {
         <Accordion type="single" collapsible>
           {faqs.map(([q, a]) => (
             <AccordionItem key={q} value={q}>
-              <AccordionTrigger className="text-left">{q}</AccordionTrigger>
+              <AccordionTrigger className="text-left text-sm font-normal">{q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">{a}</AccordionContent>
             </AccordionItem>
           ))}
