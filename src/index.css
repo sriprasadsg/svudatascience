@@ -120,28 +120,34 @@
   --svu-enquiries-muted: hsl(215 14% 43%);
   --svu-enquiries-rule: hsl(215 25% 88%);
   --svu-enquiries-surface: hsl(215 40% 98%);
+  --svu-enquiries-chip: hsl(219 64% 42% / 0.10);
   font-family: "Poppins", sans-serif;
   letter-spacing: 0;
   color: var(--svu-text);
 }
 .svu-official-footer a { text-decoration: none; }
 .svu-official-footer a:focus-visible { outline: 2px solid var(--svu-contact); outline-offset: 3px; }
-.svu-enquiries { background: var(--svu-enquiries-surface); border-top: 3px solid var(--svu-enquiries-accent); border-bottom: 1px solid var(--svu-enquiries-rule); padding: 52px 32px; }
-.svu-enquiries-inner { max-width: 1200px; margin: auto; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, .7fr); gap: 32px; text-align: left; }
-.svu-enquiries-inner > div { min-width: 0; }
-.svu-enquiries h4 { font-family: inherit; color: var(--svu-heading); font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: 0; margin-bottom: 12px; }
-.svu-admissions-contact h4 { font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 20px; }
-.svu-enquiries-label { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; text-transform: uppercase; color: var(--svu-enquiries-accent); margin-bottom: 14px; }
+.svu-enquiries { background: linear-gradient(180deg, var(--svu-enquiries-surface), var(--svu-surface)); border-top: 3px solid var(--svu-enquiries-accent); border-bottom: 1px solid var(--svu-enquiries-rule); padding: 0 32px; }
+.svu-enquiries-inner { max-width: 1200px; margin: auto; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, .78fr); gap: 0; text-align: left; }
+.svu-enquiries-inner > div { min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 28px 32px; }
+.svu-enquiries-inner > div:first-child { padding-left: 0; }
+.svu-enquiries-inner > div:last-child { padding-right: 0; }
+.svu-enquiries h4 { font-family: inherit; color: var(--svu-heading); font-size: 17px; line-height: 1.45; font-weight: 600; letter-spacing: 0; margin-bottom: 10px; }
+.svu-admissions-contact h4 { font-size: 25px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 14px; }
+.svu-enquiries-label { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--svu-enquiries-accent); margin-bottom: 12px; }
+.svu-enquiries-chip { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 9px; background: var(--svu-enquiries-chip); color: var(--svu-enquiries-accent); }
 .svu-enquiries a { color: var(--svu-enquiries-accent); }
 .svu-enquiries a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.svu-enquiries-email { display: flex; align-items: center; gap: 10px; font-size: 14px; }
-.svu-enquiries-email svg { flex-shrink: 0; }
+.svu-enquiries-email { display: inline-flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; padding: 6px 16px 6px 6px; border: 1px solid var(--svu-enquiries-rule); border-radius: 999px; background: var(--svu-surface); box-shadow: 0 1px 2px hsl(215 25% 60% / 0.08); font-size: 14px; font-weight: 500; color: var(--svu-enquiries-accent); transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease; }
+.svu-enquiries-email .svu-enquiries-chip { width: 28px; height: 28px; }
+.svu-enquiries-email:hover { text-decoration: none; border-color: var(--svu-enquiries-accent); background: var(--svu-enquiries-chip); box-shadow: 0 3px 10px hsl(219 64% 42% / 0.14); }
 .svu-enquiries-email span { overflow-wrap: anywhere; }
-.svu-enquiries-address { border-left: 1px solid var(--svu-enquiries-rule); padding-left: 32px; }
-.svu-enquiries-address address { font-style: normal; font-size: 14px; line-height: 1.85; color: var(--svu-enquiries-muted); }
-.svu-enquiries-numbers { border-left: 1px solid var(--svu-enquiries-rule); padding-left: 32px; display: flex; flex-direction: column; align-items: flex-start; }
-.svu-enquiries-numbers > a { font-size: 15px; line-height: 1.8; font-weight: 500; }
-.svu-enquiries-number-label { font-size: 12px; color: var(--svu-enquiries-muted); margin-top: 12px; margin-bottom: 3px; }
+.svu-enquiries-address { border-left: 1px solid var(--svu-enquiries-rule); }
+.svu-enquiries-address address { font-style: normal; font-size: 14px; line-height: 1.7; color: var(--svu-enquiries-muted); }
+.svu-enquiries-numbers { border-left: 1px solid var(--svu-enquiries-rule); display: flex; flex-direction: column; align-items: flex-start; }
+.svu-enquiries-numbers > a { font-size: 15px; line-height: 1.55; font-weight: 500; }
+.svu-enquiries-numbers .svu-enquiries-landline { font-size: 18px; font-weight: 600; }
+.svu-enquiries-number-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--svu-enquiries-muted); margin-top: 10px; margin-bottom: 4px; }
 .svu-footer-band { position: relative; padding-top: 48px; padding-bottom: 48px; background: var(--svu-footer-trim); border-radius: 150px 150px 0 0; margin-top: 48px; }
 .svu-footer-main { background: var(--svu-surface); padding: 48px 12px; position: relative; z-index: 1; }
 .svu-footer-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 2fr)) minmax(0, 3fr); gap: 24px; padding-left: calc((100% + 24px) / 12); }
@@ -171,16 +177,20 @@
 .svu-footer-decoration { position: absolute; bottom: 0; left: 30px; width: 318px; height: 119px; transform: rotate(180deg); pointer-events: none; }
 .svu-official-footer .svu-back-to-top { position: absolute; right: 20px; margin-top: -58px; z-index: 2; background: var(--svu-top); color: var(--svu-text); border-radius: 4px; }
 @media (max-width: 991px) {
-  .svu-enquiries-inner { grid-template-columns: 1fr; gap: 32px; }
-  .svu-enquiries-address, .svu-enquiries-numbers { border-left: 0; border-top: 1px solid var(--svu-enquiries-rule); padding-left: 0; padding-top: 24px; }
+  .svu-enquiries { padding: 0 24px; }
+  .svu-enquiries-inner { grid-template-columns: 1fr; }
+  .svu-enquiries-inner > div { padding: 20px 0; }
+  .svu-enquiries-inner > div:first-child { padding-top: 26px; }
+  .svu-enquiries-inner > div:last-child { padding-bottom: 26px; }
+  .svu-enquiries-address, .svu-enquiries-numbers { border-left: 0; border-top: 1px solid var(--svu-enquiries-rule); }
   .svu-footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-left: 0; gap: 32px 24px; }
   .svu-university-contact { grid-column: 1 / -1; }
   .svu-footer-main { padding: 32px 24px; }
   .svu-government-logos { margin-top: 32px; }
 }
 @media (max-width: 575px) {
-  .svu-enquiries { padding: 36px 24px; }
-  .svu-admissions-contact h4 { font-size: 26px; }
+  .svu-enquiries-inner > div { padding: 18px 0; }
+  .svu-admissions-contact h4 { font-size: 22px; }
   .svu-footer-columns { gap: 28px 16px; }
   .svu-footer-columns h5 { font-size: 14px; }
   .svu-footer-links li { font-size: 12px; }
