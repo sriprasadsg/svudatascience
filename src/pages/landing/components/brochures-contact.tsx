@@ -106,7 +106,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2>Contact us</h2>
-          <p className="mt-3 text-muted-foreground">Send us your details and we will get back to you with admission updates.</p>
+          <p className="mt-3 text-muted-foreground">Please complete the contact form to download the brochure.</p>
         </div>
         <form onSubmit={onSubmit} className="mt-8 grid gap-4 rounded-xl border bg-card p-6 sm:grid-cols-2">
           <div className="grid gap-2"><Label htmlFor="full_name">Full name</Label><Input id="full_name" name="full_name" maxLength={100} required /></div>
