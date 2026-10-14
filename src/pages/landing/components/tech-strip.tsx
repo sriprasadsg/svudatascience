@@ -22,7 +22,7 @@ export const technologies = [
 export function TechStrip({ compact = false }: { compact?: boolean }) {
   const loop = [...technologies, ...technologies];
   return (
-    <div className={compact ? "" : "mt-14"}>
+    <div className={compact ? "mt-10" : "mt-14"}>
       <p className="mb-5 text-center text-sm font-medium text-primary">Tools &amp; technologies you will work with</p>
       <div className="tech-marquee overflow-hidden">
         <ul className={`tech-track flex w-max gap-4`}>
