@@ -87,7 +87,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
   }
 
   return (
-    <section id="contact" className="landing py-20">
+    <section id="contact" className="landing pt-20 pb-10">
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2>Contact us</h2>
