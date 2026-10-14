@@ -139,7 +139,7 @@
 }
 .student-page-hero { position: relative; isolation: isolate; min-height: 340px; display: flex; align-items: flex-end; padding: 48px 24px; background: var(--color-primary); }
 .student-page-hero > img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -2; }
-.student-page-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 88%, transparent), color-mix(in srgb, var(--color-primary) 30%, transparent)); }
+.student-page-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--color-heading) 94%, transparent), color-mix(in srgb, var(--color-heading) 36%, transparent)); }
 .student-page-hero-content { width: 100%; max-width: 1136px; margin: auto; color: var(--color-primary-foreground); }
 .landing .student-page-hero h1 { color: var(--color-primary-foreground); font-size: 40px; line-height: 1.2; letter-spacing: 0; }
 .student-page-hero p { max-width: 650px; margin-top: 16px; line-height: 1.7; }
