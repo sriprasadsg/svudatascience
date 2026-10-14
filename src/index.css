@@ -222,17 +222,57 @@
 
 /* Brochure cards: two-colour frames (deep navy + blue). The whole card, title
    included, sits inside the coloured frame. */
-.brochure-card { border-width: 1.5px; }
-.brochure-card--navy {
-  border-color: color-mix(in srgb, var(--color-heading) 68%, var(--color-border));
-  background-color: color-mix(in srgb, var(--color-heading) 10%, var(--color-card));
+/* Brochure cards: navy header band over a sky-blue body, per brand spec */
+.brochure-card {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  min-height: 268px;
+  overflow: hidden;
+  border: 1.5px solid color-mix(in srgb, #153b82 40%, var(--color-border));
+  border-radius: 0.75rem;
+  background-color: #d9f0ff;
 }
-.brochure-card--navy .brochure-icon { color: var(--color-heading); }
-.brochure-card--blue {
-  border-color: color-mix(in srgb, #3b82f6 72%, var(--color-border));
-  background-color: color-mix(in srgb, #3b82f6 10%, var(--color-card));
+.brochure-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #153b82;
 }
-.brochure-card--blue .brochure-icon { color: #3b82f6; }
+.brochure-card__top .brochure-icon {
+  color: #ffffff;
+}
+.brochure-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.brochure-card__body h3 {
+  color: #153b82;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.brochure-card__body p {
+  color: #444b57;
+  font-size: 13.5px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.brochure-btn {
+  background-color: #153b82;
+  color: #ffffff;
+  font-weight: 500;
+}
+.brochure-btn:hover {
+  background-color: color-mix(in srgb, #153b82 86%, #ffffff);
+  color: #ffffff;
+}
+.brochure-btn:disabled {
+  background-color: #5a7ab5;
+  color: #ffffff;
+  opacity: 1;
+  cursor: not-allowed;
+}
 @media (prefers-reduced-motion: reduce) { .learn-tile, .learn-lms { animation: none; } }
 
 /* Admissions timeline: a soft glow travels down the line and each dot pulses in turn */

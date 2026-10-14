@@ -12,9 +12,21 @@ import pgBrochure from "@/assets/brochure-PG_Diploma_Data_Science.pptx.asset.jso
 import diplomaBrochure from "@/assets/brochure-Specialist_Diplomas.pptx.asset.json";
 
 const brochures = [
-  { title: "M.S. Data Science", note: "Two-year Master's programme", file: msBrochure },
-  { title: "PG Diploma in Data Science", note: "One-year postgraduate diploma", file: pgBrochure },
-  { title: "Specialist Diplomas", note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies", file: diplomaBrochure },
+  {
+    title: "M.S. Data\u00A0Science",
+    note: "Two-year Master's programme",
+    file: msBrochure,
+  },
+  {
+    title: "PG Diploma in Data\u00A0Science",
+    note: "One-year postgraduate diploma",
+    file: pgBrochure,
+  },
+  {
+    title: "Specialist Diplomas",
+    note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies",
+    file: diplomaBrochure,
+  },
 ];
 
 export function Brochures({ unlocked }: { unlocked: boolean }) {
