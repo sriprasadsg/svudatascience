@@ -45,13 +45,13 @@ export function SvuHeader() {
           <img src={banner.url} alt="Sri Venkateswara University — Accredited by NAAC with A+ Grade" width={557} height={186} />
         </a>
         <nav className="svu-header-nav" aria-label="Official university navigation">
-          {navigation.map((item) => item.children.length ? <div key={item.label}><DropdownMenu>
+          {[[0,10],[10,21],[21,27]].map(([a,b]) => <div className="svu-header-row" key={a}>{navigation.slice(a,b).map((item) => item.children.length ? <div key={item.label}><DropdownMenu>
             <DropdownMenuTrigger asChild><Button variant="ghost">{item.label}<IconChevronDown size={14} /></Button></DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="svu-header-dropdown">
               {item.href && <DropdownMenuItem asChild><a href={item.href}>{item.label}</a></DropdownMenuItem>}
               <MenuItems items={item.children} />
             </DropdownMenuContent>
-          </DropdownMenu></div> : <a key={item.label} href={item.href ?? "https://svudatascience.in/"}>{item.label.includes("(New)") ? <>Diploma Fees <span className="svu-header-new">(New)</span></> : item.label}</a>)}
+          </DropdownMenu></div> : <a key={item.label} href={item.href ?? "https://svudatascience.in/"}>{item.label.includes("(New)") ? <>Diploma Fees <span className="svu-header-new">(New)</span></> : item.label}</a>)}</div>)}
         </nav>
         <div className="svu-header-mobile"><Sheet>
           <SheetTrigger asChild><Button variant="ghost" size="icon" aria-label="Open university menu" title="University menu"><IconMenu2 size={22} /></Button></SheetTrigger>
