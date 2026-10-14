@@ -212,6 +212,15 @@
 .icon-nudge { animation: icon-nudge 2s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .icon-anim, .icon-nudge { animation: none; } }
 
+/* Learning highlights: tiles glow softly in turn, without stealing the hover lift */
+@keyframes learn-glow {
+  0%, 100% { border-color: var(--border); box-shadow: 0 0 0 0 transparent; }
+  50% { border-color: color-mix(in srgb, #3b82f6 40%, var(--color-border)); box-shadow: 0 10px 24px -10px color-mix(in srgb, #3b82f6 35%, transparent); }
+}
+.learn-tile { animation: learn-glow 6s ease-in-out infinite; }
+.learn-lms { animation: learn-glow 6s ease-in-out infinite 4.8s; }
+@media (prefers-reduced-motion: reduce) { .learn-tile, .learn-lms { animation: none; } }
+
 /* Admissions timeline: a soft glow travels down the line and each dot pulses in turn */
 .svu-timeline { position: relative; }
 .svu-timeline::after {

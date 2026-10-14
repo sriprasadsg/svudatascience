@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { IconDownload, IconFileTypePpt } from "@tabler/icons-react";
+import { IconDownload, IconFileTypePpt, IconLock } from "@tabler/icons-react";
 import { toast } from "sonner";
 import { Button } from "@/components/base/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
+import { programmeOptions } from "./register-interest";
 import msBrochure from "@/assets/brochure-MS_Data_Science_Brochure.pptx.asset.json";
 import pgBrochure from "@/assets/brochure-PG_Diploma_Data_Science.pptx.asset.json";
 import diplomaBrochure from "@/assets/brochure-Specialist_Diplomas.pptx.asset.json";
@@ -16,21 +17,17 @@ const brochures = [
   { title: "Specialist Diplomas", note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies", file: diplomaBrochure },
 ];
 
-const programmeOptions = [
-  "M.S. Data Science",
-  "PG Diploma in Data Science",
-  "Specialist Diploma – Python for AI, ML & Generative AI",
-  "Specialist Diploma – Data Visualization",
-  "Specialist Diploma – Cloud Technologies",
-];
-
-export function Brochures() {
+export function Brochures({ unlocked }: { unlocked: boolean }) {
   return (
     <section id="brochures" className="landing py-20">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2>Programme brochures</h2>
-          <p className="mt-3 text-muted-foreground">Download the brochure for the programme you are interested in.</p>
+          <p className="mt-3 text-muted-foreground">
+            {unlocked
+              ? "Your downloads are unlocked — take any brochure you like."
+              : "Fill in the contact form below to unlock the brochure downloads."}
+          </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {brochures.map((b) => (
@@ -38,11 +35,17 @@ export function Brochures() {
               <IconFileTypePpt className="size-9 text-primary icon-float" />
               <h3 className="mt-4 text-lg">{b.title}</h3>
               <p className="mt-1 flex-1 text-sm text-muted-foreground">{b.note}</p>
-              <Button asChild variant="outline" className="mt-5">
-                <a href={b.file.url} download={b.file.original_filename}>
-                  <IconDownload className="size-4" /> Download brochure
-                </a>
-              </Button>
+              {unlocked ? (
+                <Button asChild variant="outline" className="mt-5">
+                  <a href={b.file.url} download={b.file.original_filename}>
+                    <IconDownload className="size-4" /> Download brochure
+                  </a>
+                </Button>
+              ) : (
+                <Button variant="outline" disabled className="mt-5" title="Fill in the contact form below to unlock downloads">
+                  <IconLock className="size-4" /> Download brochure
+                </Button>
+              )}
             </div>
           ))}
         </div>
@@ -51,7 +54,7 @@ export function Brochures() {
   );
 }
 
-export function ContactForm() {
+export function ContactForm({ onSubmitted }: { onSubmitted?: () => void }) {
   const [sending, setSending] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -74,7 +77,8 @@ export function ContactForm() {
     setSending(false);
     if (error) { toast.error("Sorry, your enquiry could not be sent. Please try again."); return; }
     form.reset();
-    toast.success("Thank you — our admissions team will contact you soon.");
+    onSubmitted?.();
+    toast.success("Thank you — your downloads are unlocked, and our admissions team will contact you soon.");
   }
 
   return (

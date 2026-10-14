@@ -151,6 +151,36 @@ export type Database = {
         }
         Relationships: []
       }
+      registrations: {
+        Row: {
+          created_at: string
+          education_qualification: string
+          full_name: string
+          id: string
+          location: string
+          occupation: string
+          programme: string
+        }
+        Insert: {
+          created_at?: string
+          education_qualification: string
+          full_name: string
+          id?: string
+          location: string
+          occupation: string
+          programme: string
+        }
+        Update: {
+          created_at?: string
+          education_qualification?: string
+          full_name?: string
+          id?: string
+          location?: string
+          occupation?: string
+          programme?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { Brochures, ContactForm } from "./components/brochures-contact";
+import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 import {
@@ -8,6 +9,9 @@ import {
   IconBook2,
   IconBriefcase,
   IconCode,
+  IconDatabase,
+  IconDeviceLaptop,
+  IconTarget,
   IconUsers,
   IconWorld,
   IconBuildingBank,
@@ -384,6 +388,32 @@ function Learning() {
           <p className="text-sm font-medium text-primary">Learning experience</p>
           <h2 className="mt-2 text-balance">How you will learn</h2>
         </div>
+        <div className="learn-highlights mx-auto mb-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: IconTarget, strong: "80%", label: "Practical Learning", c: 1 },
+            { icon: IconBook2, strong: "20%", label: "Theoretical Foundation", c: 2 },
+            { icon: IconDeviceLaptop, strong: "", label: "Online Sessions", c: 3 },
+            { icon: IconUsers, strong: "", label: "Industry Professionals & Mentors", c: 4 },
+          ].map((h, i) => (
+            <div
+              key={h.label}
+              className="learn-tile soft-lift rounded-xl border border-border bg-card p-5 text-center"
+              style={{ animationDelay: `${i * 1.2}s` }}
+            >
+              <h.icon className={`mx-auto mb-3 size-7 icon-anim icon-c${h.c}`} />
+              <p className="text-sm leading-snug">
+                {h.strong && <span className="mr-1 text-lg font-medium text-primary">{h.strong}</span>}
+                {h.label}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="learn-lms soft-lift mx-auto mb-12 flex max-w-4xl items-center gap-3 rounded-xl border border-border bg-card px-5 py-4">
+          <IconDatabase className="size-6 shrink-0 icon-anim icon-c1" />
+          <p className="text-sm leading-snug">
+            <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and study resources 24/7
+          </p>
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
             <div key={c.title} className="soft-lift rounded-xl border border-border bg-card p-6">
@@ -505,21 +535,21 @@ function Faqs() {
 function Register() {
   return (
     <section id="register" className="landing py-24">
-      <div className="mx-auto max-w-2xl px-6 text-center">
-        <h2 className="text-balance">Ready to take the next step?</h2>
-        <p className="mt-4 text-muted-foreground">
-          Register your interest to receive admission notifications and programme updates.
-        </p>
-        <div className="mt-6 flex justify-center gap-3">
-          <Button asChild><a href="#contact">Register Interest</a></Button>
-          <Button variant="outline" asChild><a href="#programmes">View programmes</a></Button>
+      <div className="mx-auto max-w-2xl px-6">
+        <div className="text-center">
+          <h2 className="text-balance">Ready to take the next step?</h2>
+          <p className="mt-4 text-muted-foreground">
+            Register your interest to receive admission notifications and programme updates.
+          </p>
         </div>
+        <RegisterInterest />
       </div>
     </section>
   );
 }
 
 export default function Landing() {
+  const [brochuresUnlocked, setBrochuresUnlocked] = useState(false);
   return (
     <>
       <Header />
@@ -532,8 +562,8 @@ export default function Landing() {
         <International />
         <Faqs />
         <Register />
-        <Brochures />
-        <ContactForm />
+        <Brochures unlocked={brochuresUnlocked} />
+        <ContactForm onSubmitted={() => setBrochuresUnlocked(true)} />
       </main>
       <SvuFooter />
     </>
