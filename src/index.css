@@ -215,7 +215,7 @@
 /* Learning highlights: tiles glow softly in turn, without stealing the hover lift */
 @keyframes learn-glow {
   0%, 100% { border-color: var(--border); box-shadow: 0 0 0 0 transparent; }
-  50% { border-color: color-mix(in srgb, var(--color-primary) 45%, var(--border)); box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--color-primary) 40%, transparent); }
+  50% { border-color: color-mix(in srgb, var(--color-primary) 35%, var(--border)); box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--color-primary) 30%, transparent); }
 }
 .learn-tile { animation: learn-glow 6s ease-in-out infinite; }
 .learn-lms { animation: learn-glow 6s ease-in-out infinite 4.8s; }
