@@ -277,6 +277,8 @@
    included, sits inside the coloured frame. */
 /* Brochure cards: navy header band over a sky-blue body, per brand spec */
 .brochure-card {
+  /* Site font, stated explicitly so card text can never drift to another face. */
+  font-family: var(--font-body);
   --brochure-navy: hsl(219 72% 30%);
   --brochure-sky: hsl(204 100% 93%);
   --brochure-ink: hsl(218 12% 30%);

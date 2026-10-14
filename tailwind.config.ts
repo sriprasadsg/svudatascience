@@ -111,17 +111,14 @@ export default {
   		fontFamily: {
   			sans: [
   				'var(--font-body)',
-  				'Google Sans',
   				'sans-serif'
   			],
   			heading: [
   				'var(--font-heading)',
-  				'Google Sans',
   				'sans-serif'
   			],
   			body: [
   				'var(--font-body)',
-  				'Google Sans',
   				'sans-serif'
   			],
   			serif: [
