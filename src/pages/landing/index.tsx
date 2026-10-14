@@ -299,7 +299,7 @@ function Learning() {
           <h2 className="mt-2 text-balance">How you will learn</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c) => (
+          {cards.map((c, i) => (
             <div key={c.title} className="rounded-xl border border-border bg-card p-6">
               <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
               <h4 className="font-semibold">{c.title}</h4>
