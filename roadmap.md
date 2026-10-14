@@ -28,3 +28,4 @@
 - [x] Contact form programme dropdown aligned with the other fields (no longer extended past the card).
 - [x] Contact form moved above the brochure boxes.
 - [x] FAQs moved between the "Ready to take the next step?" form and the "Contact us" form.
+- [x] Brochure boxes trimmed to the note, programme title and download button only.
