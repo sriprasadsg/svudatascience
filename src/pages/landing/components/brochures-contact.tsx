@@ -42,26 +42,30 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {brochures.map((b, i) => (
-            <div
-              key={b.title}
-              className={`brochure-card soft-lift flex flex-col rounded-xl border p-6 ${
-                i % 2 ? "brochure-card--blue" : "brochure-card--navy"
-              }`}
-            >
-              <IconFileTypePpt className="brochure-icon size-9 icon-float" />
-              <h3 className="mt-4 flex-1 text-lg">{b.title}</h3>
-              {unlocked ? (
-                <Button asChild variant="outline" className="mt-5">
-                  <a href={b.file.url} download={b.file.original_filename}>
-                    <IconDownload className="size-4" /> Download brochure
-                  </a>
-                </Button>
-              ) : (
-                <Button variant="outline" disabled className="mt-5" title="Please complete the contact form to download the brochure.">
-                  <IconLock className="size-4" /> Download brochure
-                </Button>
-              )}
+          {brochures.map((b) => (
+            <div key={b.title} className="brochure-card soft-lift">
+              <div className="brochure-card__top">
+                <IconFileTypePpt className="brochure-icon size-8 icon-float" />
+              </div>
+              <div className="brochure-card__body">
+                <h3>{b.title}</h3>
+                <p className="mt-2 flex-1">{b.note}</p>
+                {unlocked ? (
+                  <Button asChild className="brochure-btn mt-5 w-full">
+                    <a href={b.file.url} download={b.file.original_filename}>
+                      <IconDownload className="size-4" /> Download brochure
+                    </a>
+                  </Button>
+                ) : (
+                  <Button
+                    className="brochure-btn mt-5 w-full"
+                    disabled
+                    title="Please complete the contact form to download the brochure."
+                  >
+                    <IconLock className="size-4" /> Download brochure
+                  </Button>
+                )}
+              </div>
             </div>
           ))}
         </div>
