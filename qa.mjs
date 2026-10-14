@@ -65,7 +65,8 @@ function assert(cond, msg) { if (!cond) throw new Error(msg || 'assertion failed
     await page.waitForSelector('text=LinkShort');
   });
   await s('Click Shorten tab', async () => {
-    await page.getByRole('button', { name: 'Shorten', exact: true }).click();
+    // Scope to the showcase section — the hero's "Shorten" submit button shares the name.
+    await page.locator('#how-it-works').getByRole('button', { name: 'Shorten', exact: true }).click();
     await page.waitForTimeout(200);
   });
   await s('Click Customize tab', async () => {
@@ -311,7 +312,7 @@ function assert(cond, msg) { if (!cond) throw new Error(msg || 'assertion failed
   });
   await s('Detail card copy → toast', async () => {
     // Copy icon button in Short URL row
-    await page.locator('code:has-text("lnk.sh/signup")').locator('..').locator('button').click();
+    await page.locator('code:has-text("/s/signup")').locator('..').locator('button').click();
     await page.waitForSelector('text=Copied to clipboard');
   });
   await s('Share popover opens', async () => {
@@ -444,7 +445,7 @@ function assert(cond, msg) { if (!cond) throw new Error(msg || 'assertion failed
     await page.getByRole('menuitem', { name: /^Edit$/ }).click();
     await page.fill('#title', 'Launch Checklist');
     await page.getByRole('button', { name: /Save changes/i }).click();
-    await page.waitForSelector('h1:has-text("Launch Checklist"), text=Launch Checklist');
+    await page.waitForSelector('text=Launch Checklist');
   });
 
   // Open destination (3 paths)
@@ -642,7 +643,7 @@ function assert(cond, msg) { if (!cond) throw new Error(msg || 'assertion failed
   });
   await s('Demo row → detail', async () => {
     await page.locator('tbody tr').first().click();
-    await page.waitForURL(/\/demo\/links\/[a-f0-9-]+/);
+    await page.waitForURL(/\/demo\/links\/[^/]+/);
   });
   await s('/demo/settings profile shows Alex Johnson', async () => {
     await page.goto(BASE + '/demo/settings');
