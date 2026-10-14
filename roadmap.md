@@ -9,3 +9,4 @@
 - [ ] Decide what the Register Interest form collects and its consent wording.
 - [ ] Build the separate programme pages listed in the SVU plan.
 - [x] Specialist diploma cards: Data Visualization + Cloud Technologies on the lower row (done)
+- [x] Gentle looping animation on the admissions timeline dots and connecting line (done)
