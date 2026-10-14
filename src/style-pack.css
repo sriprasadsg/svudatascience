@@ -18,6 +18,9 @@
   --font-heading-weight: 600;
   --font-body-weight: 400;
 
+  /* Deep navy — title/heading colour across the marketing pages */
+  --color-heading: oklch(0.3 0.085 255);
+
   /* Sky tint — primary color override */
   --color-primary: oklch(0.588 0.158 241.966);
   --color-primary-foreground: oklch(0.985 0 0);
