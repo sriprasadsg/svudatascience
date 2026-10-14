@@ -52,6 +52,36 @@ export type Database = {
           },
         ]
       }
+      enquiries: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          message: string | null
+          phone: string | null
+          programme: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          programme: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          programme?: string
+        }
+        Relationships: []
+      }
       links: {
         Row: {
           claim_token: string
