@@ -15,7 +15,7 @@
   --font-body: "Google Sans Text", "Google Sans", sans-serif;
 
   /* Font weight defaults — overridable via TDP postMessage */
-  --font-heading-weight: 500;
+  --font-heading-weight: 400;
   --font-body-weight: 400;
 
   /* Deep navy — title/heading colour across the marketing pages */
