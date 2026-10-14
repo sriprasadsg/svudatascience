@@ -133,7 +133,7 @@
 
 /* Fluid hero — modifier class for the primary landing headline */
 .landing h1.display {
-  font-size: clamp(2.75rem, -2rem + 8vw, 5.5rem);
+  font-size: clamp(2.25rem, -1.5rem + 6vw, 4.5rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
 }
