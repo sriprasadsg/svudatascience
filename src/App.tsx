@@ -7,6 +7,7 @@ import { ProtectedRoute } from "@/components/protected-route";
 import { SeedDataProvider, SupabaseDataProvider } from "@/lib/data-provider";
 import ApplicationLayout from "./layouts/application-layout";
 import Landing from "./pages/landing";
+import StudentInformation from "./pages/landing/student-information";
 import AuthPage from "./pages/auth";
 import AuthCallback from "./pages/auth/callback";
 import LinksPage from "./pages/links";
@@ -34,6 +35,8 @@ const App = () => (
             {/* Public routes */}
             <Route element={<ApplicationLayout />}>
               <Route path="/" element={<Landing />} />
+              <Route path="/admissions" element={<StudentInformation />} />
+              <Route path="/international-students" element={<StudentInformation international />} />
             </Route>
             <Route path="/auth" element={<AuthPage />} />
             {/* Managed OAuth + email-confirmation return. SocialAuthButtons always

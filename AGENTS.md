@@ -4,3 +4,5 @@
 - Store downloaded official footer media as Lovable Assets pointers, not external hotlinks, so the page serves stable copies of the approved source artwork.
 - Colour marketing-page titles through the `--color-heading` token (defined in the style pack, applied to `.landing` headings in `src/base.css`) with inverse rules for headings on dark bands, so a title can be retoned from one place and never turns navy-on-navy.
 - Override a section's title styling with a `.landing`-prefixed selector (e.g. `.landing .brochure-card__body h3`), because `src/base.css` loads after `src/index.css` and its `.landing :is(h1..h6)` rule beats a plain class selector of equal specificity.
+- Keep the official university header in a shared component backed by the source navigation hierarchy, with scoped styling and stable artwork, so university destinations remain unchanged across public pages.
+- Serve admissions and international student information on separate public routes with a shared source-attributed page template, so eligibility and application information can be reviewed without disturbing the homepage.

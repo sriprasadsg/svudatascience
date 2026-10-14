@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
+import { SvuHeader } from "./components/svu-header";
+import { Link } from "react-router-dom";
 import { Brochures, ContactForm } from "./components/brochures-contact";
 import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
@@ -97,43 +99,6 @@ const programmes: Programme[] = [
     intake: "January and July intakes",
   },
 ];
-
-const nav = [
-  { label: "Home", href: "#top" },
-  { label: "Programmes", href: "#programmes" },
-  { label: "Industry Collaboration", href: "#collaboration" },
-  { label: "Admissions", href: "#admissions" },
-  { label: "International Students", href: "#international" },
-  { label: "Contact", href: "#contact" },
-];
-
-function Header() {
-  return (
-    <header className="landing sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-6 px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-3">
-          <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-7 w-auto" />
-          <span aria-hidden="true" className="h-6 w-px bg-border" />
-          <img src={exfeduLogo.url} alt="Exafluence Education" className="h-7 w-auto" />
-        </a>
-        <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
-          {nav.map((n) => (
-            <a
-              key={n.label}
-              href={n.href}
-              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <Button asChild>
-          <a href="#register">Register Interest</a>
-        </Button>
-      </div>
-    </header>
-  );
-}
 
 function Hero() {
   const [choice, setChoice] = useState<string>("");
@@ -455,7 +420,7 @@ function Admissions() {
             </li>
           ))}
         </ol>
-        <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-6 grid max-w-3xl gap-6 md:grid-cols-2">
           <div className="soft-lift rounded-xl border border-border bg-card p-6">
             <h4 className="font-medium">M.S. Data Science seats per year</h4>
             <dl className="mt-3 space-y-1 text-sm">
@@ -472,6 +437,7 @@ function Admissions() {
             </p>
           </div>
         </div>
+        <div className="mt-6 text-center"><Button variant="outline" asChild><Link to="/admissions">Admission process & eligibility <IconArrowRight size={16} /></Link></Button></div>
       </div>
     </section>
   );
@@ -487,6 +453,7 @@ function International() {
           <p className="mt-4 text-muted-foreground">
             30 seats each year are reserved for international applicants to the M.S. Data Science programme.
           </p>
+          <Button asChild className="mt-5"><Link to="/international-students">International student admissions <IconArrowRight size={16} /></Link></Button>
         </div>
         <ul className="space-y-4">
           {[
@@ -552,7 +519,7 @@ export default function Landing() {
   const [enquiredProgrammes, setEnquiredProgrammes] = useState<string[]>([]);
   return (
     <>
-      <Header />
+      <SvuHeader />
       <main>
         <Hero />
         <Collaboration />
