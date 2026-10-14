@@ -255,7 +255,7 @@ function TechStrip() {
         <ul className="tech-track flex w-max gap-4">
           {loop.map((t, i) => (
             <li key={i} aria-hidden={i >= technologies.length} className="tech-tile soft-lift flex h-24 w-36 flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card">
-              <img src={t.src} alt={t.name} loading="lazy" className="h-10 w-10 object-contain" />
+              <img src={t.src} alt={t.name} className="h-10 w-10 object-contain" />
               <span className="text-xs text-muted-foreground">{t.name}</span>
             </li>
           ))}
