@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import type { ComponentType } from "react";
 import { IconArrowUp, IconBrandFacebookFilled, IconBrandLinkedinFilled, IconBrandInstagram, IconBrandYoutubeFilled, IconMapPinFilled, IconPhoneFilled, IconMailFilled } from "@tabler/icons-react";
 import { Button } from "@/components/base/button";
 import indiaLogo from "@/assets/svu-indiagov.png.asset.json";
@@ -12,6 +13,14 @@ const columns = [
   { title: "Resources", links: [["Sports & Games", "sports-games/"], ["SVU Health Centre", "health-center-at-svu/"], ["Exams Results", "exams-results/"], ["Internet Facility", "internet-facility/"], ["Committees", "committees-cell-bodies"], ["MoU's", "mous/"]] },
   { title: "Important Links", links: [["Academic Calendar", "storage/2022/10/academic-calendar.pdf"], ["Notifications", "notifications/"], ["Campus Tour", "campus-tour"], ["Privacy Policy", "privacy-ploicy/"], ["Terms & Conditions", "terms-conditions/"], ["Copyright Policy", "copyright-policy/"]] },
 ];
+
+function EnquiryChip({ icon: Icon }: { icon: ComponentType<{ size?: number | string }> }) {
+  return (
+    <span className="svu-enquiries-chip" aria-hidden="true">
+      <Icon size={16} />
+    </span>
+  );
+}
 
 export function SvuFooter() {
   useEffect(() => {
@@ -31,16 +40,25 @@ export function SvuFooter() {
           <div className="svu-admissions-contact">
             <span className="svu-enquiries-label">SVU × Exafluence</span>
             <h4>Admissions &amp; enquiries</h4>
-            <a className="svu-enquiries-email" href="mailto:admissions@svudatascience.in"><IconMailFilled size={20} aria-hidden="true" /><span>admissions@svudatascience.in</span></a>
+            <a className="svu-enquiries-email" href="mailto:admissions@svudatascience.in">
+              <EnquiryChip icon={IconMailFilled} />
+              <span>admissions@svudatascience.in</span>
+            </a>
           </div>
           <div className="svu-enquiries-address">
-            <span className="svu-enquiries-label"><IconMapPinFilled size={16} aria-hidden="true" /> Visit us</span>
+            <span className="svu-enquiries-label">
+              <EnquiryChip icon={IconMapPinFilled} />
+              Visit us
+            </span>
             <h4>Exafluence Education Centre</h4>
             <address>Next to Centre for Distance &amp; Online Education<br />SV University Campus<br />Tirupati – 517502</address>
           </div>
           <div className="svu-enquiries-numbers">
-            <span className="svu-enquiries-label"><IconPhoneFilled size={16} aria-hidden="true" /> Call us</span>
-            <a href="tel:08772248094">0877 - 2248094</a>
+            <span className="svu-enquiries-label">
+              <EnquiryChip icon={IconPhoneFilled} />
+              Call us
+            </span>
+            <a className="svu-enquiries-landline" href="tel:08772248094">0877 - 2248094</a>
             <span className="svu-enquiries-number-label">Mobile</span>
             <a href="tel:+917396866627">+91 7396866627</a>
             <a href="tel:+917396866628">+91 7396866628</a>
