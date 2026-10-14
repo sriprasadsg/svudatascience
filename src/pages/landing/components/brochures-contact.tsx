@@ -26,7 +26,7 @@ export function Brochures({ unlocked }: { unlocked: boolean }) {
           <p className="mt-3 text-muted-foreground">
             {unlocked
               ? "Your downloads are unlocked — take any brochure you like."
-              : "Fill in the contact form below to unlock the brochure downloads."}
+              : "Please complete the contact form to download the brochure."}
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
