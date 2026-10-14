@@ -487,7 +487,7 @@ function Faqs() {
   return (
     <section className="landing bg-muted/40 py-20">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="mb-8 text-center">Frequently asked questions</h2>
+        <h2 className="mb-8 text-center text-[22px]">Frequently asked questions</h2>
         <Accordion type="single" collapsible>
           {faqs.map(([q, a]) => (
             <AccordionItem key={q} value={q}>
