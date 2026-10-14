@@ -8,3 +8,4 @@
 - [ ] Replace the written programme and learning-card summaries with approved wording.
 - [ ] Decide what the Register Interest form collects and its consent wording.
 - [ ] Build the separate programme pages listed in the SVU plan.
+- [x] Specialist diploma cards: Data Visualization + Cloud Technologies on the lower row (done)
