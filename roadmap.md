@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Make official banner categories and nested sublinks clickable, retain the three navigation rows, and verify desktop and mobile navigation.
+
 - [x] Show a selected-programme brochure download after a successful registration and verify the saved submission and download.
 
 - [x] Require every registration field and add a required phone number; verify validation and saved submissions.

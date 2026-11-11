@@ -112,7 +112,7 @@
           },
           {
             "label": "Principal",
-            "href": "https://svudatascience.in/college-principal-cfa/",
+            "href": "https://svuniversity.edu.in/college-principal-cfa/",
             "children": []
           },
           {
@@ -500,7 +500,7 @@
   },
   {
     "label": "Antiragging",
-    "href": "https://svudatascience.in/#",
+    "href": null,
     "children": [
       {
         "label": "Antiragging Guidelines",
@@ -561,12 +561,12 @@
       },
       {
         "label": "Best Practices",
-        "href": "https://svudatascience.in/#",
+        "href": null,
         "children": []
       },
       {
         "label": "Institution Distinctiveness",
-        "href": "https://svudatascience.in/#",
+        "href": null,
         "children": []
       }
     ]
