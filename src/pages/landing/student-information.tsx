@@ -50,7 +50,7 @@ export default function StudentInformation({ international = false }: { internat
           <section><h2>Programme funding</h2><p>The official website identifies the collaborative Data Science programmes as self-supporting programmes and states that government scholarships are not applicable.</p></section>
           <section><h2>Applying from outside India?</h2><p>Review degree-equivalence requirements, the international entrance process and semester-end examination arrangements.</p><Button asChild className="mt-4"><Link to="/international-students">International student admissions</Link></Button></section>
         </>}
-        <section><h2>Enquiries</h2><p>Contact Exafluence Education at <a href="mailto:contact@exafluence.com" className="text-primary hover:underline">contact@exafluence.com</a>, or submit the contact form for your chosen programme.</p><Button asChild className="mt-4"><Link to="/#contact">Contact form & brochures</Link></Button><p className="mt-6 text-sm">Source: <a href={`https://svudatascience.in/${international ? "#internationStudents" : ""}`} className="text-primary hover:underline">Official SVU Data Science website</a></p></section>
+        <section><h2>Enquiries</h2><p>Contact admissions at <a href="mailto:admissions@svudatascience.in" className="text-primary hover:underline">admissions@svudatascience.in</a>, or submit the contact form for your chosen programme.</p><Button asChild className="mt-4"><Link to="/#contact">Contact form & brochures</Link></Button><p className="mt-6 text-sm">Source: <a href={`https://svudatascience.in/${international ? "#internationStudents" : ""}`} className="text-primary hover:underline">Official SVU Data Science website</a></p></section>
       </div>
     </main>
     <SvuFooter />
