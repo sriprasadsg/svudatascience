@@ -76,22 +76,21 @@
  * the pointer with a small lift and a soft shadow. Kept slow and shallow
  * so it reads as a nudge, not a jump.
  */
-.landing .soft-lift,
-.landing .programme-card {
+.landing {
+  --box-shadow-rest: 0 1px 2px color-mix(in oklab, var(--color-heading) 8%, transparent);
+  --box-shadow-lift: 0 16px 34px -18px color-mix(in oklab, var(--color-heading) 35%, transparent);
+}
+.landing :is(.soft-lift, .programme-card, .brochure-card, .tech-tile, div.rounded-lg.border, div.rounded-xl.border) {
+  transform-origin: center bottom;
   transition:
     transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1),
     box-shadow 0.34s cubic-bezier(0.22, 0.61, 0.36, 1);
-  box-shadow: 0 1px 2px oklch(0.2 0.05 255 / 0.08);
+  box-shadow: var(--box-shadow-rest);
 }
 
-.landing .soft-lift:hover,
-.landing .soft-lift:focus-within,
-.landing .programme-card:hover,
-.landing .programme-card:focus-within {
-  transform: translateY(-4px);
-  box-shadow:
-    0 16px 34px -18px oklch(0.2 0.06 255 / 0.45),
-    0 2px 6px oklch(0.2 0.05 255 / 0.1);
+.landing :is(.soft-lift, .programme-card, .brochure-card, .tech-tile, div.rounded-lg.border, div.rounded-xl.border):is(:hover, :focus-within) {
+  transform: perspective(1000px) translateY(-3px) rotateX(2deg);
+  box-shadow: var(--box-shadow-lift);
 }
 
 /* Smaller boxes — tabs, buttons, the programme selector and the
@@ -107,8 +106,8 @@
 .landing [role="tab"]:hover,
 .landing :is(button, a).inline-flex:hover,
 .landing button[data-state]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 9px 20px -14px oklch(0.2 0.06 255 / 0.5);
+  transform: perspective(1000px) translateY(-2px) rotateX(1deg);
+  box-shadow: var(--box-shadow-lift);
 }
 
 /* Table rows warm instead of lifting. */
@@ -120,10 +119,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .landing .soft-lift:hover,
-  .landing .soft-lift:focus-within,
-  .landing .programme-card:hover,
-  .landing .programme-card:focus-within,
+  .landing :is(.soft-lift, .programme-card, .brochure-card, .tech-tile, div.rounded-lg.border, div.rounded-xl.border):is(:hover, :focus-within),
   .landing [role="tab"]:hover,
   .landing :is(button, a).inline-flex:hover,
   .landing button[data-state]:hover {

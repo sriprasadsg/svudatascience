@@ -261,7 +261,7 @@
 }
 
 /* Colourful, continuously animated landing icons (footer excluded) */
-.icon-c1 { color: #3b82f6; } .icon-c2 { color: #f59e0b; } .icon-c3 { color: #10b981; } .icon-c4 { color: #ec4899; }
+.icon-c1 { color: #3b82f6; } .icon-c2 { color: #f59e0b; } .icon-c3 { color: var(--color-heading); } .icon-c4 { color: #ec4899; }
 @keyframes icon-float { 0%,100% { transform: translateY(0) rotate(0) scale(1); } 25% { transform: translateY(-3px) rotate(-3deg) scale(1.07); } 75% { transform: translateY(2px) rotate(3deg) scale(0.97); } }
 @keyframes icon-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
 @keyframes icon-hue { 0%,100% { filter: hue-rotate(0deg) drop-shadow(0 0 0 transparent); } 50% { filter: hue-rotate(18deg) drop-shadow(0 1px 3px color-mix(in srgb, currentColor 40%, transparent)); } }
