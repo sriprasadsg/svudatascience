@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Require every registration field and add a required phone number; verify validation and saved submissions.
+
 - [x] Match the official site's top header and all original navigation destinations.
 - [x] Reduce excess gaps around collaboration, admissions, international students, FAQs, contact and brochures.
 - [x] Add linked admissions and international-student pages with relevant official hero imagery and verified information.

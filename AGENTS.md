@@ -6,3 +6,4 @@
 - Override a section's title styling with a `.landing`-prefixed selector (e.g. `.landing .brochure-card__body h3`), because `src/base.css` loads after `src/index.css` and its `.landing :is(h1..h6)` rule beats a plain class selector of equal specificity.
 - Keep the official university header in a shared component backed by the source navigation hierarchy, with scoped styling and stable artwork, so university destinations remain unchanged across public pages.
 - Serve admissions and international student information on separate public routes with a shared source-attributed page template, so eligibility and application information can be reviewed without disturbing the homepage.
+- Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.

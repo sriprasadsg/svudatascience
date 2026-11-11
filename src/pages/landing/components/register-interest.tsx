@@ -4,16 +4,8 @@ import { Button } from "@/components/base/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
-
-export const programmeOptions = [
-  "M.S. Data Science",
-  "PG Diploma in Data Science",
-  "Specialist Diploma – Python for AI, ML & Generative AI",
-  "Specialist Diploma – Data Visualization",
-  "Specialist Diploma – Cloud Technologies",
-];
-
-const occupationOptions = ["Student", "Working Professional"];
+import { occupationOptions, programmeOptions, registrationSchema } from "./registration-validation";
+export { programmeOptions } from "./registration-validation";
 
 const selectClass =
   "h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm soft-lift";
@@ -25,19 +17,15 @@ export function RegisterInterest() {
     e.preventDefault();
     const form = e.currentTarget;
     const d = new FormData(form);
-    const full_name = String(d.get("full_name") ?? "").trim();
-    const education_qualification = String(d.get("education_qualification") ?? "").trim();
-    const programme = String(d.get("programme") ?? "");
-    const location = String(d.get("location") ?? "").trim();
-    const occupation = String(d.get("occupation") ?? "");
-    if (!full_name || !education_qualification || !programme || !location || !occupation) {
-      toast.error("Please fill in all the fields.");
+    const result = registrationSchema.safeParse(Object.fromEntries(d));
+    if (!result.success) {
+      toast.error(result.error.issues[0]?.message ?? "Please fill in all the fields.");
       return;
     }
     setSending(true);
     const { error } = await supabase
       .from("registrations")
-      .insert({ full_name, education_qualification, programme, location, occupation });
+      .insert(result.data);
     setSending(false);
     if (error) {
       toast.error("Sorry, your registration could not be submitted. Please try again.");
@@ -50,11 +38,11 @@ export function RegisterInterest() {
   return (
     <form onSubmit={onSubmit} className="mt-8 grid gap-4 rounded-xl border bg-card p-6 sm:grid-cols-2">
       <div className="grid gap-2">
-        <Label htmlFor="reg_full_name">Name</Label>
+        <Label htmlFor="reg_full_name">Name *</Label>
         <Input id="reg_full_name" name="full_name" maxLength={100} required />
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="reg_education">Education qualification</Label>
+        <Label htmlFor="reg_education">Education qualification *</Label>
         <Input
           id="reg_education"
           name="education_qualification"
@@ -64,7 +52,7 @@ export function RegisterInterest() {
         />
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="reg_programme">Programme interested</Label>
+        <Label htmlFor="reg_programme">Programme interested *</Label>
         <select id="reg_programme" name="programme" required defaultValue="" className={selectClass}>
           <option value="" disabled>Select a programme</option>
           {programmeOptions.map((p) => (
@@ -73,17 +61,21 @@ export function RegisterInterest() {
         </select>
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="reg_location">Location</Label>
+        <Label htmlFor="reg_location">Location *</Label>
         <Input id="reg_location" name="location" placeholder="City, State" maxLength={100} required />
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="reg_occupation">Occupation</Label>
+        <Label htmlFor="reg_occupation">Occupation *</Label>
         <select id="reg_occupation" name="occupation" required defaultValue="" className={selectClass}>
           <option value="" disabled>Select your occupation</option>
           {occupationOptions.map((o) => (
             <option key={o}>{o}</option>
           ))}
         </select>
+      </div>
+      <div className="grid gap-2">
+        <Label htmlFor="reg_phone">Phone number *</Label>
+        <Input id="reg_phone" name="phone" type="tel" autoComplete="tel" maxLength={20} required />
       </div>
       <div className="sm:col-span-2">
         <Button type="submit" disabled={sending} className="w-full">
