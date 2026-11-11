@@ -314,9 +314,7 @@ function Learning() {
           <p className="text-sm font-medium text-primary">Learning experience</p>
           <h2 className="mt-2 text-balance">How you will learn</h2>
         </div>
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
-        <div className="min-w-0">
-        <div className="mb-10 grid gap-6 sm:grid-cols-2">
+        <div className="mb-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
             <div key={c.title} className="soft-lift rounded-xl border border-border bg-card p-6">
               <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
@@ -325,7 +323,7 @@ function Learning() {
             </div>
           ))}
         </div>
-        <div className="learn-highlights mx-auto mb-10 grid max-w-4xl gap-4 sm:grid-cols-2">
+        <div className="learn-highlights mx-auto mb-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: IconTarget, strong: "80%", label: "Practical Learning", c: 1 },
             { icon: IconBook2, strong: "20%", label: "Theoretical Foundation", c: 2 },
@@ -351,8 +349,8 @@ function Learning() {
             <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and study resources 24/7
           </p>
         </div>
-        </div>
-        <TechStrip vertical />
+        <div className="min-w-0 rounded-lg border border-border bg-card px-4 pb-6 sm:px-6">
+          <TechStrip />
         </div>
       </div>
     </section>

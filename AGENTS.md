@@ -8,4 +8,4 @@
 - Serve admissions and international student information on separate public routes with a shared source-attributed page template, so eligibility and application information can be reviewed without disturbing the homepage.
 - Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.
 - Keep programme-to-brochure assets in a shared registry for registration confirmations and contact downloads, so both select the same approved file.
-- Use the shared technology display's vertical variant for the homepage learning sidebar, so the logo registry stays consistent with other pages.
+- Use the shared horizontal technology display beneath the homepage learning content, so the logo registry stays consistent with other pages.
