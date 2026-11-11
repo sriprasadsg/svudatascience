@@ -346,7 +346,7 @@ function Learning() {
         <div className="learn-lms soft-lift mx-auto mb-12 max-w-4xl rounded-xl border border-border bg-card px-6 py-6 text-center">
           <IconDatabase className="mx-auto mb-3 size-7 icon-anim icon-c1" />
           <p className="text-sm leading-relaxed">
-            <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and study resources 24/7
+            <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and industry mentor support
           </p>
         </div>
         <div className="min-w-0 rounded-lg border border-border bg-card px-4 pb-6 sm:px-6">
