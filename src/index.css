@@ -271,10 +271,17 @@
 
 /* Learning highlights: tiles glow softly in turn, without stealing the hover lift */
 @keyframes learn-glow {
-  0%, 100% { border-color: var(--border); box-shadow: 0 0 0 0 transparent; }
-  50% { border-color: color-mix(in srgb, #3b82f6 40%, var(--color-border)); box-shadow: 0 10px 24px -10px color-mix(in srgb, #3b82f6 35%, transparent); }
+  0%, 100% { border-color: color-mix(in srgb, var(--learning-accent, var(--color-primary)) 24%, var(--color-border)); box-shadow: 0 0 0 0 transparent; }
+  50% { border-color: color-mix(in srgb, var(--learning-accent, var(--color-primary)) 50%, var(--color-border)); box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--learning-accent, var(--color-primary)) 35%, transparent); }
 }
 .learn-tile { animation: learn-glow 6s ease-in-out infinite; }
+.landing .learn-highlights { --learning-blue: hsl(212 85% 48%); --learning-amber: hsl(38 85% 45%); --learning-rose: hsl(336 70% 48%); }
+.landing .learn-tile:nth-child(1) { --learning-accent: var(--learning-blue); }
+.landing .learn-tile:nth-child(2) { --learning-accent: var(--learning-amber); }
+.landing .learn-tile:nth-child(3) { --learning-accent: var(--color-heading); }
+.landing .learn-tile:nth-child(4) { --learning-accent: var(--learning-rose); }
+.landing .learn-tile { background-color: color-mix(in srgb, var(--learning-accent) 9%, var(--color-card)); }
+.landing .lms-support-band { background-color: color-mix(in srgb, var(--color-heading) 6%, var(--color-background)); border-color: color-mix(in srgb, var(--color-heading) 20%, var(--color-border)); }
 .learn-lms { animation: learn-glow 6s ease-in-out infinite 4.8s; }
 
 /* Brochure cards: two-colour frames (deep navy + blue). The whole card, title

@@ -343,7 +343,7 @@ function Learning() {
             </div>
           ))}
         </div>
-        <section aria-labelledby="lms-heading" className="mx-auto mb-12 max-w-4xl border-y border-border bg-muted/40 px-6 py-8 sm:px-8">
+        <section aria-labelledby="lms-heading" className="lms-support-band mx-auto mb-12 max-w-4xl border-y border-border px-6 py-8 sm:px-8">
           <div className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)] md:gap-8">
             <div className="flex items-center gap-4 md:flex-col md:items-start md:justify-center md:border-r md:border-border md:pr-6">
               <IconDatabase aria-hidden="true" className="size-9 shrink-0 icon-anim icon-c1" />
