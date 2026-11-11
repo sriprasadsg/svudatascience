@@ -29,6 +29,20 @@
       "when": 1794390481287,
       "tag": "0003_require_registration_phone_and_fields",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794398316593,
+      "tag": "0004_require_registration_email",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794398352105,
+      "tag": "0005_fix_registration_email_pattern",
+      "breakpoints": true
     }
   ]
 }

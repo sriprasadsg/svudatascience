@@ -155,6 +155,7 @@ export type Database = {
         Row: {
           created_at: string
           education_qualification: string
+          email: string | null
           full_name: string
           id: string
           location: string
@@ -165,6 +166,7 @@ export type Database = {
         Insert: {
           created_at?: string
           education_qualification: string
+          email?: string | null
           full_name: string
           id?: string
           location: string
@@ -175,6 +177,7 @@ export type Database = {
         Update: {
           created_at?: string
           education_qualification?: string
+          email?: string | null
           full_name?: string
           id?: string
           location?: string

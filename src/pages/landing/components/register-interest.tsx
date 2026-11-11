@@ -80,6 +80,10 @@ export function RegisterInterest() {
         <Label htmlFor="reg_phone">Phone number *</Label>
         <Input id="reg_phone" name="phone" type="tel" autoComplete="tel" maxLength={20} required />
       </div>
+      <div className="grid gap-2 sm:col-span-2">
+        <Label htmlFor="reg_email">Email *</Label>
+        <Input id="reg_email" name="email" type="email" inputMode="email" autoComplete="email" placeholder="you@example.com" maxLength={255} required />
+      </div>
       <div className="sm:col-span-2">
         <Button type="submit" disabled={sending} className="w-full">
           {sending ? "Submitting…" : "Submit"}

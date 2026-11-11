@@ -8,6 +8,7 @@ const valid = {
   location: "Tirupati",
   occupation: "Student",
   phone: "+91 98765 43210",
+  email: "applicant@example.com",
 };
 
 describe("required registration fields", () => {
@@ -37,5 +38,13 @@ describe("required registration fields", () => {
     for (const field of ["full_name", "education_qualification", "location", "phone"]) {
       expect(registrationSchema.safeParse({ ...valid, [field]: "   " }).success).toBe(false);
     }
+  });
+  it("rejects invalid email addresses", () => {
+    for (const email of ["abc", "abc@", "@example.com", "a b@example.com", "abc@example"]) {
+      expect(registrationSchema.safeParse({ ...valid, email }).success).toBe(false);
+    }
+  });
+  it("accepts a normal email address", () => {
+    expect(registrationSchema.safeParse({ ...valid, email: "First.Last+tag@sub.domain.co.in" }).success).toBe(true);
   });
 });

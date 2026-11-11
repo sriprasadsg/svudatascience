@@ -16,6 +16,12 @@ const requiredText = (label: string) =>
 
 export const registrationSchema = z.object({
   full_name: requiredText("Name"),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required.")
+    .max(255, "Email must be 255 characters or fewer.")
+    .regex(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, "Please enter a valid email address."),
   education_qualification: z.enum(educationOptions, { error: "Please select your education qualification." }),
   programme: z.enum(programmeOptions, { error: "Please select a programme." }),
   location: requiredText("Location"),
