@@ -236,8 +236,8 @@
 .svu-university-contact address { font-style: normal; font-size: 14px; line-height: 25px; }
 .svu-campus-address svg { display: inline; vertical-align: -2px; margin-right: 16px; color: var(--svu-location); }
 .svu-map-row { display: flex; justify-content: flex-end; }
-.svu-official-footer .svu-map-button { border-radius: 6px; height: 38px; padding: 6px 12px; border: 1px solid var(--svu-map); font-size: 14px; font-weight: 400; background: var(--svu-map); color: var(--svu-text); box-shadow: none; transform: none; transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out; }
-.svu-official-footer .svu-map-button:hover { background: var(--svu-map-hover); border-color: var(--svu-map-hover-border); color: var(--svu-highlight); transform: none; }
+.svu-official-footer .svu-map-button { border-radius: 6px; height: 38px; padding: 6px 12px; border: 1px solid var(--svu-map); font-size: 14px; font-weight: 400; line-height: 21px; white-space: nowrap; cursor: pointer; background: var(--svu-map); color: var(--svu-text); box-shadow: none; transform: none; transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out; }
+.svu-official-footer .svu-map-button:hover { background: var(--svu-map-hover); border-color: var(--svu-map-hover-border); color: var(--svu-text); transform: none; }
 .svu-official-footer .svu-map-button:active { background: var(--svu-map-active); border-color: var(--svu-map-hover-border); }
 .svu-official-footer .svu-map-button:focus-visible { outline: 3px solid color-mix(in srgb, var(--svu-map) 50%, transparent); outline-offset: 2px; }
 .svu-contact-links li { display: flex; align-items: center; gap: 3px; border-bottom: 1px solid var(--svu-rule); color: var(--svu-contact); line-height: 28px; }

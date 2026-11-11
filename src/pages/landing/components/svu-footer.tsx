@@ -81,7 +81,7 @@ export function SvuFooter() {
               <h5>Contact Us</h5>
               <address>
                 <p className="svu-campus-address"><IconMapPinFilled size={16} aria-hidden="true" />Sri Venkateswara University, Tirupati, Andhra Pradesh - 517502</p>
-                <div className="svu-map-row"><Button asChild className="svu-map-button"><a href="https://goo.gl/maps/wrdsiNe4me6xYdzdA" target="_blank" rel="noopener noreferrer">View On Map</a></Button></div>
+                <div className="svu-map-row"><Button asChild className="svu-map-button"><a href="https://goo.gl/maps/wrdsiNe4me6xYdzdA" target="_blank" rel="noopener noreferrer" aria-label="View On Map" title="Open Sri Venkateswara University in Google Maps (new tab)">View On Map</a></Button></div>
                 <ul className="svu-contact-links">
                   <li><IconPhoneFilled size={15} aria-hidden="true" /><a href="tel:+918772289545">+91 (877) 2289545</a></li>
                   {[0, 1].map((i) => <li key={i}><IconMailFilled size={15} aria-hidden="true" /><a href="mailto:registrarsvu@gmail.com">registrarsvu@gmail.com</a></li>)}
