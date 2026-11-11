@@ -34,7 +34,7 @@ export function SvuFooter() {
   }, []);
 
   return (
-    <footer id="contact" className="svu-official-footer">
+    <footer id="university-contact" className="svu-official-footer">
       <div className="svu-enquiries">
         <div className="svu-enquiries-inner">
           <div className="svu-admissions-contact">

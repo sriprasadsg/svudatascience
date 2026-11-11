@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { TechStrip } from "./components/tech-strip";
 import { Brochures, ContactForm } from "./components/brochures-contact";
 import { RegisterInterest } from "./components/register-interest";
@@ -479,6 +479,14 @@ function Register() {
 
 export default function Landing() {
   const [enquiredProgrammes, setEnquiredProgrammes] = useState<string[]>([]);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash !== "#contact") return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById("contact")?.scrollIntoView({ block: "start", behavior: "instant" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [location.hash, location.key]);
   return (
     <>
       <SvuHeader />
