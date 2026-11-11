@@ -19,7 +19,24 @@ export const technologies = [
   { name: "Google Cloud", src: `${DI}/googlecloud/googlecloud-original.svg` },
 ];
 
-export function TechStrip({ compact = false }: { compact?: boolean }) {
+export function TechStrip({ compact = false, vertical = false }: { compact?: boolean; vertical?: boolean }) {
+  if (vertical) {
+    return (
+      <aside className="min-w-0 rounded-lg border border-border bg-card p-5" aria-labelledby="technology-heading">
+        <h3 id="technology-heading" className="mb-5 text-base font-normal leading-relaxed">Tools &amp; technologies you will work with</h3>
+        <div tabIndex={0} role="region" aria-label="Tools and technologies" className="max-h-[480px] overflow-y-auto overscroll-contain pr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring max-lg:max-h-80">
+          <ul className="flex flex-col gap-3 py-1">
+            {technologies.map((technology) => (
+              <li key={technology.name} className="tech-tile flex min-h-16 shrink-0 items-center gap-4 border-b border-border px-2 py-3 last:border-0">
+                <img src={technology.src} alt="" className="h-9 w-9 shrink-0 object-contain" />
+                <span className="min-w-0 text-sm text-muted-foreground">{technology.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    );
+  }
   const loop = [...technologies, ...technologies];
   return (
     <div className={compact ? "mt-10" : "mt-14"}>
