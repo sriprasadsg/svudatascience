@@ -162,10 +162,14 @@
   --svu-text: hsl(0 0% 0%);
   --svu-heading: hsl(0 0% 12%);
   --svu-blue: hsl(219 60% 66%);
-  --svu-footer-trim: hsl(210 17% 98%);
+  --svu-footer-trim: hsl(210 16.667% 97.647%);
+  --svu-footer-backdrop: hsl(219 76% 88%);
   --svu-rule: hsl(0 0% 94%);
   --svu-highlight: hsl(44 100% 49%);
-  --svu-map: hsl(45 100% 51%);
+  --svu-map: hsl(45 100% 51.373%);
+  --svu-map-hover: hsl(44.929 100% 58.627%);
+  --svu-map-hover-border: hsl(44.933 100% 56.275%);
+  --svu-map-active: hsl(44.848 100% 61.176%);
   --svu-contact: hsl(308 59% 35%);
   --svu-location: hsl(117 66% 43%);
   --svu-facebook: hsl(221 44% 41%);
@@ -212,9 +216,12 @@
 .svu-enquiries-numbers .svu-enquiries-landline { font-size: 17px; font-weight: 500; }
 .svu-enquiries-number-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--svu-enquiries-muted); margin-top: 10px; margin-bottom: 4px; }
 .svu-footer-band { position: relative; padding-top: 48px; padding-bottom: 48px; background: var(--svu-footer-trim); border-radius: 150px 150px 0 0; margin-top: 48px; }
+.svu-footer-band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--svu-footer-backdrop); }
+.svu-footer-band { isolation: isolate; }
 .svu-footer-main { background: var(--svu-surface); padding: 48px 12px; position: relative; z-index: 1; }
 .svu-footer-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 2fr)) minmax(0, 3fr); gap: 24px; padding-left: calc((100% + 24px) / 12); }
 .svu-footer-columns h5 { font-family: "Ubuntu", Arial, sans-serif; color: var(--svu-text); font-size: 16px; line-height: 19px; font-weight: 500; text-transform: uppercase; letter-spacing: 0; padding-bottom: 25px; }
+.svu-footer-columns > div { margin-bottom: 16px; }
 .svu-footer-links li { font-size: 14px; line-height: 28px; margin-bottom: 8px; border-bottom: 1px solid var(--svu-rule); }
 .svu-footer-links li::before { content: ">"; font-family: Arial, sans-serif; padding-right: 8px; font-size: 12px; font-weight: 700; }
 .svu-footer-links a { color: var(--svu-text); }
@@ -223,19 +230,24 @@
 .svu-university-contact address { font-style: normal; font-size: 14px; line-height: 25px; }
 .svu-campus-address svg { display: inline; vertical-align: -2px; margin-right: 16px; color: var(--svu-location); }
 .svu-map-row { display: flex; justify-content: flex-end; }
-.svu-official-footer .svu-map-button { border-radius: 6px; height: 38px; padding: 6px 12px; font-size: 14px; font-weight: 400; background: var(--svu-map); color: var(--svu-text); box-shadow: none; }
+.svu-official-footer .svu-map-button { border-radius: 6px; height: 38px; padding: 6px 12px; border: 1px solid var(--svu-map); font-size: 14px; font-weight: 400; background: var(--svu-map); color: var(--svu-text); box-shadow: none; transform: none; transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out; }
+.svu-official-footer .svu-map-button:hover { background: var(--svu-map-hover); border-color: var(--svu-map-hover-border); color: var(--svu-highlight); transform: none; }
+.svu-official-footer .svu-map-button:active { background: var(--svu-map-active); border-color: var(--svu-map-hover-border); }
+.svu-official-footer .svu-map-button:focus-visible { outline: 3px solid color-mix(in srgb, var(--svu-map) 50%, transparent); outline-offset: 2px; }
 .svu-contact-links li { display: flex; align-items: center; gap: 3px; border-bottom: 1px solid var(--svu-rule); color: var(--svu-contact); line-height: 28px; }
 .svu-contact-links li svg { flex-shrink: 0; }
 .svu-contact-links a { color: inherit; overflow-wrap: anywhere; }
+.svu-contact-links a:hover { color: var(--svu-highlight); }
 .svu-verification { margin-top: 16px; font-weight: 700; overflow-wrap: anywhere; }
 .svu-verification a { color: inherit; }
 .svu-socials { display: flex; gap: 12px; margin: 4px; }
 .svu-official-footer .svu-social-button { border-radius: 4px; width: 36px; height: 36px; padding: 0; color: var(--svu-surface); box-shadow: none; }
+.svu-official-footer .svu-social-button:hover { color: var(--svu-surface); transform: none; }
 .svu-official-footer .svu-facebook { background: var(--svu-facebook); }
 .svu-official-footer .svu-linkedin { background: var(--svu-linkedin); }
 .svu-official-footer .svu-instagram { background: var(--svu-instagram); }
 .svu-official-footer .svu-youtube { background: var(--svu-youtube); }
-.svu-government-logos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 20px; align-items: start; }
+.svu-government-logos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 0; align-items: start; }
 .svu-government-logos img { max-width: 100%; height: auto; object-fit: contain; }
 .svu-footer-decoration { position: absolute; bottom: 0; left: 30px; width: 318px; height: 119px; transform: rotate(180deg); pointer-events: none; }
 .svu-official-footer .svu-back-to-top { position: absolute; right: 20px; margin-top: -58px; z-index: 2; background: var(--svu-top); color: var(--svu-text); border-radius: 4px; }
