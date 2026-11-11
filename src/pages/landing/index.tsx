@@ -3,7 +3,6 @@ import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link, useLocation } from "react-router-dom";
 import { TechStrip } from "./components/tech-strip";
-import { Brochures, ContactForm } from "./components/brochures-contact";
 import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
@@ -464,6 +463,7 @@ function Faqs() {
 function Register() {
   return (
     <section id="register" className="landing py-12">
+      <span id="contact" aria-hidden="true" />
       <div className="mx-auto max-w-2xl px-6">
         <div className="text-center">
           <h2 className="text-balance">Ready to take the next step?</h2>
@@ -478,7 +478,6 @@ function Register() {
 }
 
 export default function Landing() {
-  const [enquiredProgrammes, setEnquiredProgrammes] = useState<string[]>([]);
   const location = useLocation();
   useEffect(() => {
     if (location.hash !== "#contact") return;
@@ -499,8 +498,6 @@ export default function Landing() {
         <International />
         <Register />
         <Faqs />
-        <ContactForm onSubmitted={(p) => setEnquiredProgrammes((prev) => (prev.includes(p) ? prev : [...prev, p]))} />
-        <Brochures unlockedFor={enquiredProgrammes} />
       </main>
       <SvuFooter />
     </>
