@@ -3,7 +3,7 @@ import { registrationSchema } from "./registration-validation";
 
 const valid = {
   full_name: "Test Applicant",
-  education_qualification: "Graduate",
+  education_qualification: "B.Sc.",
   programme: "M.S. Data Science",
   location: "Tirupati",
   occupation: "Student",
@@ -11,7 +11,7 @@ const valid = {
 };
 
 describe("required registration fields", () => {
-  for (const education_qualification of ["Undergraduate", "Graduate", "Postgraduate", "Working Professional"]) {
+  for (const education_qualification of ["B.Sc.", "B.Tech.", "M.Sc.", "M.Tech."]) {
     it(`accepts the ${education_qualification} qualification option`, () => {
       expect(registrationSchema.safeParse({ ...valid, education_qualification }).success).toBe(true);
     });
