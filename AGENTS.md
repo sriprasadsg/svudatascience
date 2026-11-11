@@ -7,3 +7,4 @@
 - Keep the official university header in a shared component backed by the source navigation hierarchy, with scoped styling and stable artwork, so university destinations remain unchanged across public pages.
 - Serve admissions and international student information on separate public routes with a shared source-attributed page template, so eligibility and application information can be reviewed without disturbing the homepage.
 - Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.
+- Keep programme-to-brochure assets in a shared registry for registration confirmations and contact downloads, so both select the same approved file.

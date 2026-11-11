@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { occupationOptions, programmeOptions, registrationSchema } from "./registration-validation";
+import { brochureForProgramme } from "./programme-brochures";
+import { IconDownload } from "@tabler/icons-react";
 export { programmeOptions } from "./registration-validation";
 
 const selectClass =
@@ -12,6 +14,8 @@ const selectClass =
 
 export function RegisterInterest() {
   const [sending, setSending] = useState(false);
+  const [submittedProgramme, setSubmittedProgramme] = useState("");
+  const brochure = brochureForProgramme(submittedProgramme);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -32,10 +36,12 @@ export function RegisterInterest() {
       return;
     }
     form.reset();
-    toast.success("Thank you — your interest has been registered. Our admissions team will contact you soon.");
+    setSubmittedProgramme(result.data.programme);
+    toast.success("Thank you — your interest has been registered. Your programme brochure is ready to download.");
   }
 
   return (
+    <>
     <form onSubmit={onSubmit} className="mt-8 grid gap-4 rounded-xl border bg-card p-6 sm:grid-cols-2">
       <div className="grid gap-2">
         <Label htmlFor="reg_full_name">Name *</Label>
@@ -83,5 +89,15 @@ export function RegisterInterest() {
         </Button>
       </div>
     </form>
+    {brochure && <div role="status" className="mt-6 text-center">
+      <p className="text-foreground">Thank you for registering your interest in {submittedProgramme}.</p>
+      <p className="mt-2 text-sm text-muted-foreground">Your selected programme brochure is ready to download.</p>
+      <Button asChild className="mt-4">
+        <a href={brochure.file.url} download={brochure.file.original_filename}>
+          <IconDownload className="size-4" /> Download {brochure.title} brochure
+        </a>
+      </Button>
+    </div>}
+    </>
   );
 }

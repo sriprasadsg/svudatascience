@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Show a selected-programme brochure download after a successful registration and verify the saved submission and download.
+
 - [x] Require every registration field and add a required phone number; verify validation and saved submissions.
 
 - [x] Match the official site's top header and all original navigation destinations.

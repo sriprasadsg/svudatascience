@@ -7,31 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { programmeOptions } from "./register-interest";
-import { unlockedBrochureIds, type BrochureId } from "./brochure-unlock";
-import msBrochure from "@/assets/brochure-MS_Data_Science_Brochure.pptx.asset.json";
-import pgBrochure from "@/assets/brochure-PG_Diploma_Data_Science.pptx.asset.json";
-import diplomaBrochure from "@/assets/brochure-Specialist_Diplomas.pptx.asset.json";
-
-const brochures = [
-  {
-    id: "ms" as BrochureId,
-    title: "M.S. Data\u00A0Science",
-    note: "Two-year Master's programme",
-    file: msBrochure,
-  },
-  {
-    id: "pg" as BrochureId,
-    title: "PG Diploma in Data\u00A0Science",
-    note: "One-year postgraduate diploma",
-    file: pgBrochure,
-  },
-  {
-    id: "specialist" as BrochureId,
-    title: "Specialist Diplomas",
-    note: "Python for AI, ML & Generative AI, Data Visualization, Cloud Technologies",
-    file: diplomaBrochure,
-  },
-];
+import { unlockedBrochureIds } from "./brochure-unlock";
+import { brochures } from "./programme-brochures";
 
 export function Brochures({ unlockedFor }: { unlockedFor: string[] }) {
   const openIds = unlockedBrochureIds(unlockedFor);
