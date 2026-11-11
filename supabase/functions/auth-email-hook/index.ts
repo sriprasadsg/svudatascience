@@ -16,9 +16,9 @@ const corsHeaders = {
 
 // Configuration
 const SITE_NAME = "Exfedu \u0026 SVU Collaboration Programmes Website"
-const SENDER_DOMAIN = "notify.exafluence.com"
-const ROOT_DOMAIN = "exafluence.com"
-const FROM_DOMAIN = "exafluence.com"
+const SENDER_DOMAIN = "notify.svudatascience.in"
+const ROOT_DOMAIN = "svudatascience.in"
+const FROM_DOMAIN = "svudatascience.in"
 const SITE_URL = `https://${ROOT_DOMAIN}`
 
 // Template mapping for preview mode
