@@ -381,15 +381,7 @@ function Admissions() {
             </li>
           ))}
         </ol>
-        <div className="mx-auto mt-6 grid max-w-3xl gap-6 md:grid-cols-2">
-          <div className="soft-lift rounded-xl border border-border bg-card p-6">
-            <h4 className="font-medium">M.S. Data Science seats per year</h4>
-            <dl className="mt-3 space-y-1 text-sm">
-              {[["Through APPGCET", "30"], ["Through DOA", "60"], ["International students", "30"], ["Total annual intake", "120"]].map(([k, v]) => (
-                <div key={k} className="flex justify-between"><dt className="text-muted-foreground">{k}</dt><dd className="font-medium">{v}</dd></div>
-              ))}
-            </dl>
-          </div>
+        <div className="mx-auto mt-6 max-w-3xl">
           <div className="soft-lift rounded-xl border border-border bg-card p-6">
             <h4 className="font-medium">Other programmes</h4>
             <p className="mt-3 text-sm text-muted-foreground">
