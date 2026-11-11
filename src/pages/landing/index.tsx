@@ -275,7 +275,7 @@ function Programmes() {
         <div className="mt-12 overflow-x-auto rounded-xl bg-background text-foreground">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Programme comparison</caption>
-            <thead className="border-b border-border">
+            <thead className="border-b border-border text-base leading-snug md:text-lg lg:text-xl">
               <tr>
                 <th className="p-4 font-medium">Programme</th>
                 <th className="p-4 font-medium">Duration</th>
