@@ -4,7 +4,7 @@ import { Button } from "@/components/base/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
-import { occupationOptions, programmeOptions, registrationSchema } from "./registration-validation";
+import { educationOptions, occupationOptions, programmeOptions, registrationSchema } from "./registration-validation";
 import { brochureForProgramme } from "./programme-brochures";
 import { IconDownload } from "@tabler/icons-react";
 export { programmeOptions } from "./registration-validation";
@@ -49,13 +49,10 @@ export function RegisterInterest() {
       </div>
       <div className="grid gap-2">
         <Label htmlFor="reg_education">Education qualification *</Label>
-        <Input
-          id="reg_education"
-          name="education_qualification"
-          placeholder="e.g. B.Sc. Computer Science"
-          maxLength={100}
-          required
-        />
+        <select id="reg_education" name="education_qualification" required defaultValue="" className={selectClass}>
+          <option value="" disabled>Select your qualification</option>
+          {educationOptions.map((qualification) => <option key={qualification}>{qualification}</option>)}
+        </select>
       </div>
       <div className="grid gap-2">
         <Label htmlFor="reg_programme">Programme interested *</Label>

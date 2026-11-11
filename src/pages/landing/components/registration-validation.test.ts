@@ -3,7 +3,7 @@ import { registrationSchema } from "./registration-validation";
 
 const valid = {
   full_name: "Test Applicant",
-  education_qualification: "B.Sc. Computer Science",
+  education_qualification: "Graduate",
   programme: "M.S. Data Science",
   location: "Tirupati",
   occupation: "Student",
@@ -11,6 +11,14 @@ const valid = {
 };
 
 describe("required registration fields", () => {
+  for (const education_qualification of ["Undergraduate", "Graduate", "Postgraduate", "Working Professional"]) {
+    it(`accepts the ${education_qualification} qualification option`, () => {
+      expect(registrationSchema.safeParse({ ...valid, education_qualification }).success).toBe(true);
+    });
+  }
+  it("rejects qualifications outside the dropdown options", () => {
+    expect(registrationSchema.safeParse({ ...valid, education_qualification: "Other" }).success).toBe(false);
+  });
   for (const field of Object.keys(valid)) {
     it(`rejects an empty ${field}`, () => {
       expect(registrationSchema.safeParse({ ...valid, [field]: "" }).success).toBe(false);

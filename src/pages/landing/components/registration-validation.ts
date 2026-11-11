@@ -9,13 +9,14 @@ export const programmeOptions = [
 ] as const;
 
 export const occupationOptions = ["Student", "Working Professional"] as const;
+export const educationOptions = ["Undergraduate", "Graduate", "Postgraduate", "Working Professional"] as const;
 
 const requiredText = (label: string) =>
   z.string().trim().min(1, `${label} is required.`).max(100, `${label} must be 100 characters or fewer.`);
 
 export const registrationSchema = z.object({
   full_name: requiredText("Name"),
-  education_qualification: requiredText("Education qualification"),
+  education_qualification: z.enum(educationOptions, { error: "Please select your education qualification." }),
   programme: z.enum(programmeOptions, { error: "Please select a programme." }),
   location: requiredText("Location"),
   occupation: z.enum(occupationOptions, { error: "Please select your occupation." }),
