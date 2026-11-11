@@ -343,12 +343,28 @@ function Learning() {
             </div>
           ))}
         </div>
-        <div className="learn-lms soft-lift mx-auto mb-12 max-w-4xl rounded-xl border border-border bg-card px-6 py-6 text-center">
-          <IconDatabase className="mx-auto mb-3 size-7 icon-anim icon-c1" />
-          <p className="text-sm leading-relaxed">
-            <span className="font-medium">LMS access</span> — course materials, lecture videos, real-time projects, case studies and industry mentor support
-          </p>
-        </div>
+        <section aria-labelledby="lms-heading" className="mx-auto mb-12 max-w-4xl border-y border-border bg-muted/40 px-6 py-8 sm:px-8">
+          <div className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)] md:gap-8">
+            <div className="flex items-center gap-4 md:flex-col md:items-start md:justify-center md:border-r md:border-border md:pr-6">
+              <IconDatabase aria-hidden="true" className="size-9 shrink-0 icon-anim icon-c1" />
+              <h3 id="lms-heading" className="text-xl font-normal">LMS access</h3>
+            </div>
+            <ul className="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+              {[
+                { label: "Course materials", icon: IconBook2 },
+                { label: "Lecture videos", icon: IconDeviceLaptop },
+                { label: "Real-time projects", icon: IconCode },
+                { label: "Case studies", icon: IconBriefcase },
+                { label: "Industry mentor support", icon: IconUsers },
+              ].map((item, index) => (
+                <li key={item.label} className="flex min-w-0 items-center gap-3">
+                  <item.icon aria-hidden="true" className={`size-5 shrink-0 icon-anim icon-c${(index % 4) + 1}`} />
+                  <span className="text-sm leading-relaxed text-foreground">{item.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
         <div className="min-w-0 rounded-lg border border-border bg-card px-4 pb-6 sm:px-6">
           <TechStrip />
         </div>
