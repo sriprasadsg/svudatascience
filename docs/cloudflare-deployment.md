@@ -66,3 +66,7 @@ If account sign-in routes are used, add the new site's exact HTTPS `/auth/callba
 6. Verify sender-domain status and notification delivery separately before announcing email availability.
 
 Cloudflare account access, creation of the Pages project, domain/DNS changes, and actual deployment must be completed by the infrastructure team. This repository configuration alone does not move the live site.
+## Required database migration: phone rule (0009)
+Before (or together with) deploying this release, apply `drizzle/migrations/0009_phone_digits_only_1_to_15.sql`, then redeploy the `submit-registration` function.
+- Phone is required on enquiries, registrations and online registration submissions: digits 0–9 only, 1–15 digits (`^[0-9]{1,15}$`). `+`, spaces, hyphens, parentheses and letters are rejected.
+- Historical rows are kept: the submissions check is added `NOT VALID`, and the registrations trigger and public insert rules only apply to new inserts. Two older registrations hold phones in the old format and are left untouched.

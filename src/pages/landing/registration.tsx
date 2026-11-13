@@ -57,7 +57,7 @@ export default function RegistrationPage() {
       {options ? <Select value={values[key] || ""} onValueChange={v => update(key, v)} disabled={busy}>
         <SelectTrigger id={key} aria-required={required} aria-invalid={Boolean(errors[key])} aria-describedby={errors[key] ? `${key}-error` : undefined}><SelectValue placeholder="Select an option" /></SelectTrigger>
         <SelectContent>{options.map(option => <SelectItem key={option} value={option}>{option}</SelectItem>)}</SelectContent>
-      </Select> : <Input id={key} name={key} type={type} required={required} value={values[key] || ""} onChange={e => update(key, e.target.value)} maxLength={key === "email" ? 255 : key === "phone" ? 20 : key === "college" ? 200 : 100} disabled={busy} aria-invalid={Boolean(errors[key])} aria-describedby={errors[key] ? `${key}-error` : undefined} />}
+      </Select> : <Input id={key} name={key} type={type} inputMode={key === "phone" ? "numeric" : undefined} pattern={key === "phone" ? "[0-9]{1,15}" : undefined} required={required} value={values[key] || ""} onChange={e => update(key, e.target.value)} maxLength={key === "email" ? 255 : key === "phone" ? 15 : key === "college" ? 200 : 100} disabled={busy} aria-invalid={Boolean(errors[key])} aria-describedby={errors[key] ? `${key}-error` : undefined} />}
       {errors[key] && <p id={`${key}-error`} className="text-xs text-destructive">{errors[key]}</p>}
     </div>;
   }

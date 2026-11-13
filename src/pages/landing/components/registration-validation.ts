@@ -26,10 +26,5 @@ export const registrationSchema = z.object({
   programme: z.enum(programmeOptions, { error: "Please select a programme." }),
   location: requiredText("Location"),
   occupation: z.enum(occupationOptions, { error: "Please select your occupation." }),
-  phone: z.string().trim().min(1, "Phone number is required.").max(20)
-    .regex(/^\+?[0-9 ()-]+$/, "Please enter a valid phone number.")
-    .refine((value) => {
-      const digits = value.replace(/\D/g, "");
-      return digits.length >= 7 && digits.length <= 15;
-    }, "Please enter a valid phone number with 7–15 digits."),
+  phone: z.string().min(1, "Phone number is required.").regex(/^[0-9]{1,15}$/, "Phone number must be 1 to 15 digits (0-9 only)."),
 });

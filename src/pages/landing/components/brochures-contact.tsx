@@ -63,16 +63,17 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: (programme: string)
     const d = new FormData(form);
     const full_name = String(d.get("full_name") ?? "").trim();
     const email = String(d.get("email") ?? "").trim();
-    const phone = String(d.get("phone") ?? "").trim();
+    const phone = String(d.get("phone") ?? "");
     const programme = String(d.get("programme") ?? "");
     const message = String(d.get("message") ?? "").trim();
+    if (!/^[0-9]{1,15}$/.test(phone)) { toast.error("Phone number must be 1 to 15 digits (0-9 only)."); return; }
     if (!full_name || !/^\S+@\S+\.\S+$/.test(email) || !programme) {
       toast.error("Please enter your name, a valid email and a programme.");
       return;
     }
     setSending(true);
     const { error } = await supabase.from("enquiries").insert({
-      full_name, email, programme, phone: phone || null, message: message || null,
+      full_name, email, programme, phone, message: message || null,
     });
     setSending(false);
     if (error) { toast.error("Sorry, your enquiry could not be sent. Please try again."); return; }
@@ -91,7 +92,7 @@ export function ContactForm({ onSubmitted }: { onSubmitted?: (programme: string)
         <form onSubmit={onSubmit} className="mt-8 grid gap-4 rounded-xl border bg-card p-6 sm:grid-cols-2">
           <div className="grid gap-2"><Label htmlFor="full_name">Full name</Label><Input id="full_name" name="full_name" maxLength={100} required /></div>
           <div className="grid gap-2"><Label htmlFor="email">Email</Label><Input id="email" name="email" type="email" maxLength={255} required /></div>
-          <div className="grid gap-2"><Label htmlFor="phone">Phone (optional)</Label><Input id="phone" name="phone" type="tel" maxLength={20} /></div>
+          <div className="grid gap-2"><Label htmlFor="phone">Phone</Label><Input id="phone" name="phone" type="tel" inputMode="numeric" pattern="[0-9]{1,15}" maxLength={15} required /></div>
           <div className="grid gap-2">
             <Label htmlFor="programme">Programme</Label>
             <select id="programme" name="programme" required defaultValue="" className="h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm soft-lift">

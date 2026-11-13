@@ -7,7 +7,7 @@ const valid = {
   programme: "M.S. Data Science",
   location: "Tirupati",
   occupation: "Student",
-  phone: "+91 98765 43210",
+  phone: "919876543210",
   email: "applicant@example.com",
 };
 
@@ -30,7 +30,7 @@ describe("required registration fields", () => {
     expect(registrationSchema.safeParse(valid).success).toBe(true);
   });
   it("rejects invalid phone numbers", () => {
-    for (const phone of ["abc1234567", "123", "1234567890123456"]) {
+    for (const phone of ["abc1234567", "+919876543210", "1234567890123456"]) {
       expect(registrationSchema.safeParse({ ...valid, phone }).success).toBe(false);
     }
   });

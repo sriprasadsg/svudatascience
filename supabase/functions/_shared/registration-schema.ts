@@ -14,7 +14,7 @@ export const years = Array.from({ length: 48 }, (_, i) => String(2027 - i));
 const text = (label: string, max = 100) => z.string().trim().min(1, `${label} is required.`).max(max);
 export const onlineRegistrationSchema = z.object({
   full_name: text("Name"),
-  phone: text("Mobile number", 20).regex(/^\+?[0-9 ()-]+$/, "Enter a valid mobile number.").refine(v => { const n = v.replace(/\D/g, "").length; return n >= 7 && n <= 15; }, "Enter a number with 7–15 digits."),
+  phone: z.string().min(1, "Mobile number is required.").regex(/^[0-9]{1,15}$/, "Mobile number must be 1 to 15 digits (0-9 only)."),
   email: z.string().trim().email("Enter a valid email address.").max(255).transform(v => v.toLowerCase()),
   courses: z.array(z.enum(courses)).min(1, "Select at least one course.").max(5).refine(v => new Set(v).size === v.length, "Choose each course once."),
   gender: z.union([z.enum(genders), z.literal("")]).optional().default(""),
