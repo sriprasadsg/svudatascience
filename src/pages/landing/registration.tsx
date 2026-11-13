@@ -9,7 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { supabase } from "@/integrations/supabase/client";
 import universityLogo from "@/assets/svu-logo.png.asset.json";
 import educationLogo from "@/assets/exfedu-logo.png.asset.json";
-import { courses, qualifications, occupations, genders, years, onlineRegistrationSchema } from "../../../supabase/functions/_shared/registration-schema";
+import { courses, qualifications, occupations, genders, onlineRegistrationSchema } from "../../../supabase/functions/_shared/registration-schema";
+import { YearPicker } from "./components/year-picker";
 
 export default function RegistrationPage() {
   const [values, setValues] = useState<Record<string, string>>({});
@@ -89,7 +90,14 @@ export default function RegistrationPage() {
         </fieldset>
         <div className="grid gap-5 sm:grid-cols-2">{field("gender", "Gender", false, genders)}{field("occupation", "Present Occupation", true, occupations)}</div>
         {field("college", "Name of the College")}
-        <div className="grid gap-5 sm:grid-cols-2">{field("education_qualification", "Educational Qualification", true, qualifications)}{field("passed_out_year", "Qualifying Examination – Passed out Year", false, years)}</div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {field("education_qualification", "Educational Qualification", true, qualifications)}
+          <div className="space-y-2">
+            <Label htmlFor="passed_out_year" className="font-normal">Qualifying Examination – Passed out Year</Label>
+            <YearPicker value={values.passed_out_year || ""} onChange={v => update("passed_out_year", v)} disabled={busy} invalid={Boolean(errors.passed_out_year)} />
+            {errors.passed_out_year && <p className="text-xs text-destructive">{errors.passed_out_year}</p>}
+          </div>
+        </div>
         {field("location", "Location")}
         <div className="space-y-2"><Label htmlFor="address" className="font-normal">Address of Correspondence</Label><Textarea id="address" value={values.address || ""} onChange={e => update("address", e.target.value)} maxLength={1000} disabled={busy} /></div>
         {submitError && <p role="alert" className="text-sm text-destructive">{submitError}</p>}
