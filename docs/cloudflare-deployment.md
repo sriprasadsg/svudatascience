@@ -4,6 +4,8 @@
 
 Connect this repository to a Cloudflare **Pages** project (not Workers).
 
+For the existing `svu-infra-handover-v2.exafluence.workers.dev` deployment, use the static-assets Workers alternative below instead.
+
 | Setting | Value |
 | --- | --- |
 | Framework preset | Vite |
@@ -29,6 +31,24 @@ After Vite builds, the Cloudflare build downloads every `src/**/*.asset.json` po
 Cloudflare Pages provides its default single-page-app fallback when there is no top-level `404.html`. Do not add one. Direct requests and reloads for `/registration`, `/admissions`, and `/international-students` should load the application. No Pages Functions or Cloudflare Worker is required.
 
 ## Registration and email
+
+## Existing Workers deployment: registration error
+
+The existing Workers host returns HTTP 200 for `/` but HTTP 500 for `/registration` (checked 13 November 2026). This is a hosting exception, not a mobile-only form error. The programme-card Register interest link now navigates within the running application, just like the fixed Registration button, without forcing a server request.
+
+To also fix direct links and reloads on the Workers host, deploy the frontend as **Worker Static Assets**, using the separate `wrangler.workers.jsonc` configuration. It serves missing navigation paths through the single-page application and does not invoke a custom Worker handler. Keep `wrangler.jsonc` for Pages; do not mix the two configurations.
+
+```sh
+npm ci
+npm run build:cloudflare
+npx wrangler deploy --config wrangler.workers.jsonc
+```
+
+Authenticate with your infrastructure team's Cloudflare account. Change the Workers configuration's `name` if the actual deployment uses another Worker name. This replaces that Worker's existing handler with static frontend hosting; do not use it for an unrelated API Worker. No `main` script, email credentials, or database secrets belong in this frontend Worker. In Git-connected Workers builds, use `npm run build:cloudflare` as the build command and `npx wrangler deploy --config wrangler.workers.jsonc` as the deploy command.
+
+After redeploying, test the circled programme-card link on a phone, then open `/registration` directly, reload it, and use browser Back/Forward. Confirm the form, approved images, and year picker remain available. The repository change alone does not fix the already-deployed Worker.
+
+## Registration and email services
 
 Cloudflare hosts the frontend only. The existing Lovable Cloud submission function, private registration storage, validation, and email functions remain in their current service; they are not converted into Workers. Do not deploy the existing Deno email/submission function files as Cloudflare Workers. Existing cross-origin form requests use the submission function's CORS response.
 

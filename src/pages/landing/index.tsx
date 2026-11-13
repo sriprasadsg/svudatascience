@@ -189,9 +189,9 @@ function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
       <h3 className="text-xl">{p.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{p.duration} · {p.mode}</p>
       <p className="mt-4 text-muted-foreground">{p.summary}</p>
-      <a href="/registration" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+      <Link to="/registration" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
         Register interest <IconArrowRight className="size-4 icon-nudge" />
-      </a>
+      </Link>
     </article>
   );
 }

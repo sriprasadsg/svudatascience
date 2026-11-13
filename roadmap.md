@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Correct the programme-card Register interest link and supply Workers static-assets settings for mobile navigation and direct registration URLs.
+- [ ] Redeploy the existing Cloudflare Worker and verify direct registration links there (requires the infrastructure team's Cloudflare account).
+
 - [x] Prepare Cloudflare Pages hosting with portable approved assets, deployment instructions, and checks.
 - [ ] Deploy to Cloudflare Pages (requires the infrastructure team's Cloudflare account and hosting settings).
 

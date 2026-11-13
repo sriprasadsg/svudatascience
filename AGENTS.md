@@ -12,3 +12,4 @@
 - Keep registration on a standalone page without the university header or footer, using fields from the approved PDF and a shared client/server schema; save through the submission function to a private submissions table so online entries reach the owner without exposing applicant data.
 - Keep the registration year selector in a dedicated popover control with tested year pages, so navigation and selection cannot escape the approved range.
 - Deploy independent hosting through the Cloudflare Pages build script, which materializes approved asset pointers at their existing local URLs; keep submission and email functions on Lovable Cloud so hosting changes do not bypass data protection.
+- Use React Router links for in-app registration navigation and the separate Workers Static Assets configuration for Workers deployments, so card clicks avoid full reloads and direct page requests use the SPA fallback without invoking an unrelated handler.
