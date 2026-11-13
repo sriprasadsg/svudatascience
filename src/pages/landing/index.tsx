@@ -474,10 +474,10 @@ function Register() {
   return (
     <section id="register" className="landing py-12">
       <span id="contact" aria-hidden="true" />
-      <div className="mx-auto max-w-2xl px-6">
+      <div className="mx-auto max-w-4xl px-6">
         <div className="text-center">
           <h2 className="text-balance">Ready to take the next step?</h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-sm text-muted-foreground md:whitespace-nowrap">
             Register your interest to receive admission notifications and programme updates.
           </p>
         </div>
