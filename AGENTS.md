@@ -11,3 +11,4 @@
 - Use the shared horizontal technology display beneath the homepage learning content, so the logo registry stays consistent with other pages.
 - Keep registration on a standalone page without the university header or footer, using fields from the approved PDF and a shared client/server schema; save through the submission function to a private submissions table so online entries reach the owner without exposing applicant data.
 - Keep the registration year selector in a dedicated popover control with tested year pages, so navigation and selection cannot escape the approved range.
+- Deploy independent hosting through the Cloudflare Pages build script, which materializes approved asset pointers at their existing local URLs; keep submission and email functions on Lovable Cloud so hosting changes do not bypass data protection.

@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Prepare Cloudflare Pages hosting with portable approved assets, deployment instructions, and checks.
+- [ ] Deploy to Cloudflare Pages (requires the infrastructure team's Cloudflare account and hosting settings).
+
 - [x] Replace the standalone PDF viewer with a matching online form, save submissions securely, and verify Submit end to end.
 
 - [x] Replace the registration form with the uploaded fillable PDF and make it accessible on the International Students page.
