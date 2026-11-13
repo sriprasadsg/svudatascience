@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Replace the standalone PDF viewer with a matching online form, save submissions securely, and verify Submit end to end.
+
 - [x] Replace the registration form with the uploaded fillable PDF and make it accessible on the International Students page.
 
 - [x] Make official banner categories and nested sublinks clickable, retain the three navigation rows, and verify desktop and mobile navigation.

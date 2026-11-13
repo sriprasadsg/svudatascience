@@ -9,4 +9,4 @@
 - Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.
 - Keep programme-to-brochure assets in a shared registry for registration confirmations and contact downloads, so both select the same approved file.
 - Use the shared horizontal technology display beneath the homepage learning content, so the logo registry stays consistent with other pages.
-- Display the original fillable registration PDF in a full-viewport viewer on the standalone public registration page without the university header or footer; point registration links there and keep a fixed link on other university pages so registration stays accessible while scrolling.
+- Keep registration on a standalone page without the university header or footer, using fields from the approved PDF and a shared client/server schema; save through the submission function to a private submissions table so online entries reach the owner without exposing applicant data.

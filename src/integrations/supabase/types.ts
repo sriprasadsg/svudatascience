@@ -151,6 +151,54 @@ export type Database = {
         }
         Relationships: []
       }
+      registration_submissions: {
+        Row: {
+          address: string
+          college: string
+          courses: string[]
+          created_at: string
+          education_qualification: string
+          email: string
+          full_name: string
+          gender: string
+          id: string
+          location: string
+          occupation: string
+          passed_out_year: string
+          phone: string
+        }
+        Insert: {
+          address?: string
+          college: string
+          courses: string[]
+          created_at?: string
+          education_qualification: string
+          email: string
+          full_name: string
+          gender?: string
+          id?: string
+          location: string
+          occupation: string
+          passed_out_year?: string
+          phone: string
+        }
+        Update: {
+          address?: string
+          college?: string
+          courses?: string[]
+          created_at?: string
+          education_qualification?: string
+          email?: string
+          full_name?: string
+          gender?: string
+          id?: string
+          location?: string
+          occupation?: string
+          passed_out_year?: string
+          phone?: string
+        }
+        Relationships: []
+      }
       registrations: {
         Row: {
           created_at: string
