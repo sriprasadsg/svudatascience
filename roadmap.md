@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Replace the registration form with the uploaded fillable PDF and make it accessible on the International Students page.
+
 - [x] Make official banner categories and nested sublinks clickable, retain the three navigation rows, and verify desktop and mobile navigation.
 
 - [x] Show a selected-programme brochure download after a successful registration and verify the saved submission and download.

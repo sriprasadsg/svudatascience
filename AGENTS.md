@@ -9,3 +9,4 @@
 - Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.
 - Keep programme-to-brochure assets in a shared registry for registration confirmations and contact downloads, so both select the same approved file.
 - Use the shared horizontal technology display beneath the homepage learning content, so the logo registry stays consistent with other pages.
+- Display the uploaded fillable registration PDF through the shared registration component with open/download fallbacks, so the homepage and international page use the identical approved document without changing its fields.
