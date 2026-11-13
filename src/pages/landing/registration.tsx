@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import { SvuHeader } from "./components/svu-header";
-import { SvuFooter } from "./components/svu-footer";
-import { RegisterInterest } from "./components/register-interest";
+import registrationPdf from "@/assets/svu-registration-fillable.pdf.asset.json";
 
 export default function RegistrationPage() {
   useEffect(() => {
@@ -10,12 +8,9 @@ export default function RegistrationPage() {
     return () => { document.title = "SVU Data Science Programmes in Tirupati | Exafluence"; };
   }, []);
 
-  return <>
-    <SvuHeader />
-    <main className="landing mx-auto max-w-4xl px-6 py-10">
-      <h1 className="text-center">Registration form</h1>
-      <RegisterInterest />
-    </main>
-    <SvuFooter />
-  </>;
+  return <iframe
+    src={`${registrationPdf.url}#view=FitH`}
+    title="SVU fillable registration form"
+    className="fixed inset-0 h-dvh w-full border-0 bg-background"
+  />;
 }
