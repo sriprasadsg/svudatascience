@@ -4,7 +4,6 @@ import { Button } from "@/components/base/button";
 import { SvuHeader } from "./components/svu-header";
 import { SvuFooter } from "./components/svu-footer";
 import { TechStrip } from "./components/tech-strip";
-import { RegisterInterest } from "./components/register-interest";
 import internationalImage from "@/assets/svu-international-banner.png.asset.json";
 import admissionsImage from "@/assets/svu-admissions.jpg.asset.json";
 
@@ -30,7 +29,7 @@ export default function StudentInformation({ international = false }: { internat
           <p className="text-sm">Sri Venkateswara University · Exafluence Education</p>
           <h1 className="mt-3">{title}</h1>
           <p>{international ? "M.S. Data Science — university-led education with industry mentorship, practical learning and a global perspective." : "Explore the university’s admission routes for M.S. Data Science, the PG Diploma and specialist diplomas."}</p>
-          <div className="mt-6 flex flex-wrap gap-3"><Button variant="secondary" asChild><a href={international ? "#registration" : "https://svudatascience.in/register.html"}>Official registration</a></Button><Button asChild><Link to="/#contact">Send an enquiry</Link></Button></div>
+          <div className="mt-6 flex flex-wrap gap-3"><Button variant="secondary" asChild><Link to="/registration">Official registration</Link></Button><Button asChild><Link to="/#contact">Send an enquiry</Link></Button></div>
         </div>
       </section>
       <div className="student-page-content">
@@ -47,12 +46,11 @@ export default function StudentInformation({ international = false }: { internat
           <section><h2>Travel & student support</h2><p>Students need to plan travel to India for semester-end examinations. Exafluence Inc. provides travel assistance and accommodation coordination; additional costs apply.</p></section>
           <section><h2>Qualifications & certificates</h2><p>The university awards the postgraduate qualification on successful completion. Exafluence Inc., USA issues skill and participation certificates for hands-on experience, industry exposure, workshops, projects and technical training.</p></section>
         </> : <>
-          <section><h2>Schedules & official announcements</h2><p>Entrance-test dates, document-verification deadlines and enrolment instructions must be checked against current university and APPGCET announcements. The homepage’s dates are expected windows, not confirmed deadlines.</p><div className="mt-5 flex flex-wrap gap-3"><Button variant="outline" asChild><a href="https://svuniversity.edu.in/doa/">University Directorate of Admissions</a></Button><Button variant="outline" asChild><a href="https://svudatascience.in/register.html">Official programme registration</a></Button></div></section>
+          <section><h2>Schedules & official announcements</h2><p>Entrance-test dates, document-verification deadlines and enrolment instructions must be checked against current university and APPGCET announcements. The homepage’s dates are expected windows, not confirmed deadlines.</p><div className="mt-5 flex flex-wrap gap-3"><Button variant="outline" asChild><a href="https://svuniversity.edu.in/doa/">University Directorate of Admissions</a></Button><Button variant="outline" asChild><Link to="/registration">Official programme registration</Link></Button></div></section>
           <section><h2>Programme funding</h2><p>The official website identifies the collaborative Data Science programmes as self-supporting programmes and states that government scholarships are not applicable.</p></section>
           <section><h2>Applying from outside India?</h2><p>Review degree-equivalence requirements, the international entrance process and semester-end examination arrangements.</p><Button asChild className="mt-4"><Link to="/international-students">International student admissions</Link></Button></section>
         </>}
-        {international && <section id="registration" className="scroll-mt-6"><h2>Registration form</h2><RegisterInterest /></section>}
-        <section><h2>Enquiries</h2><p>Contact admissions at <a href="mailto:admissions@svudatascience.in" className="text-primary hover:underline">admissions@svudatascience.in</a>.</p><Button asChild className="mt-4"><a href={international ? "#registration" : "/#contact"}>Registration form</a></Button><p className="mt-6 text-sm">Source: <a href={`https://svudatascience.in/${international ? "#internationStudents" : ""}`} className="text-primary hover:underline">Official SVU Data Science website</a></p></section>
+        <section><h2>Enquiries</h2><p>Contact admissions at <a href="mailto:admissions@svudatascience.in" className="text-primary hover:underline">admissions@svudatascience.in</a>.</p><Button asChild className="mt-4"><Link to="/registration">Registration form</Link></Button><p className="mt-6 text-sm">Source: <a href={`https://svudatascience.in/${international ? "#internationStudents" : ""}`} className="text-primary hover:underline">Official SVU Data Science website</a></p></section>
       </div>
     </main>
     <SvuFooter />

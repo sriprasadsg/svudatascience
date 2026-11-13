@@ -20,7 +20,7 @@ const programmeNav: ProgrammeNavItem[] = [
   { label: "Admissions", to: "/admissions" },
   { label: "International Students", to: "/international-students", official: "https://svudatascience.in/#internationStudents" },
   { label: "Contact", href: "/#contact", official: "https://svudatascience.in/enquiry.html" },
-  { label: "Register Interest", href: "/#register", official: "https://svudatascience.in/register.html" },
+  { label: "Register Interest", to: "/registration" },
 ];
 
 function MenuItems({ items }: { items: UniversityLink[] }) {
@@ -86,5 +86,6 @@ export function SvuHeader() {
       </span>)}
       <span className="svu-page-nav-note">Marked links open the official SVU site</span>
     </div></nav>
+    <Button asChild className="fixed bottom-5 right-5 z-40 shadow-lg"><Link to="/registration" aria-label="Registration — open registration page">Registration</Link></Button>
   </>;
 }

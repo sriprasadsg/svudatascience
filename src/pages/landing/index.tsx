@@ -3,7 +3,6 @@ import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link, useLocation } from "react-router-dom";
 import { TechStrip } from "./components/tech-strip";
-import { RegisterInterest } from "./components/register-interest";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 import {
@@ -190,7 +189,7 @@ function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
       <h3 className="text-xl">{p.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{p.duration} · {p.mode}</p>
       <p className="mt-4 text-muted-foreground">{p.summary}</p>
-      <a href="#register" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+      <a href="/registration" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
         Register interest <IconArrowRight className="size-4 icon-nudge" />
       </a>
     </article>
@@ -481,7 +480,7 @@ function Register() {
             Register your interest to receive admission notifications and programme updates.
           </p>
         </div>
-        <RegisterInterest />
+        <div className="mt-6 text-center"><Button asChild><Link to="/registration">Registration</Link></Button></div>
       </div>
     </section>
   );
