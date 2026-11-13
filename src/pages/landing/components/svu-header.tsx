@@ -71,7 +71,7 @@ export function SvuHeader() {
         </nav>
         <div className="svu-header-mobile"><Sheet>
           <SheetTrigger asChild><Button variant="ghost" size="icon" aria-label="Open university menu" title="University menu"><IconMenu2 size={22} /></Button></SheetTrigger>
-          <SheetContent className="overflow-y-auto">
+          <SheetContent className="svu-mobile-menu overflow-y-auto">
             <SheetTitle>University navigation</SheetTitle>
             <SheetDescription className="sr-only">Official Sri Venkateswara University links</SheetDescription>
             <nav className="svu-mobile-links" aria-label="Official university mobile navigation"><MobileItems items={navigation} /></nav>
@@ -86,6 +86,6 @@ export function SvuHeader() {
       </span>)}
       <span className="svu-page-nav-note">Marked links open the official SVU site</span>
     </div></nav>
-    <Button asChild className="fixed bottom-5 right-5 z-40 shadow-lg"><Link to="/registration" aria-label="Registration — open registration page">Registration</Link></Button>
+    <Button asChild className="svu-registration-shortcut fixed bottom-5 right-5 z-40 shadow-lg"><Link to="/registration" aria-label="Registration — open registration page">Registration</Link></Button>
   </>;
 }

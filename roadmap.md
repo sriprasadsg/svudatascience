@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Review all public pages on phones, correct narrow-screen layouts, and verify menus, programme choices, and registration controls.
+
 - [x] Correct the programme-card Register interest link and supply Workers static-assets settings for mobile navigation and direct registration URLs.
 - [ ] Redeploy the existing Cloudflare Worker and verify direct registration links there (requires the infrastructure team's Cloudflare account).
 

@@ -61,7 +61,7 @@ export default function RegistrationPage() {
       {errors[key] && <p id={`${key}-error`} className="text-xs text-destructive">{errors[key]}</p>}
     </div>;
   }
-  return <main className="landing min-h-dvh bg-background px-4 py-6 text-foreground sm:py-10">
+  return <main className="landing registration-page min-h-dvh bg-background px-4 py-6 text-foreground sm:py-10">
     <div className="mx-auto max-w-3xl">
       <div className="flex items-center justify-between gap-5 border-b border-border pb-5">
         <img src={universityLogo.url} alt="Sri Venkateswara University" className="h-12 w-28 object-contain sm:w-36" />

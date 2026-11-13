@@ -13,3 +13,4 @@
 - Keep the registration year selector in a dedicated popover control with tested year pages, so navigation and selection cannot escape the approved range.
 - Deploy independent hosting through the Cloudflare Pages build script, which materializes approved asset pointers at their existing local URLs; keep submission and email functions on Lovable Cloud so hosting changes do not bypass data protection.
 - Use React Router links for in-app registration navigation and the separate Workers Static Assets configuration for Workers deployments, so card clicks avoid full reloads and direct page requests use the SPA fallback without invoking an unrelated handler.
+- Scope mobile layout overrides to the landing and registration pages; wrap long actions and programme tabs, and use the university menu below desktop widths so small screens retain reachable controls without changing the official desktop navigation.

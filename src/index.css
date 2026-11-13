@@ -136,19 +136,24 @@
 .svu-page-nav-official { display: inline-flex; align-items: center; color: var(--color-muted-foreground); opacity: .8; }
 .svu-page-nav a.svu-page-nav-official:hover { opacity: 1; color: var(--color-primary); text-decoration: none; }
 .svu-page-nav-note { align-self: center; font-size: 11px; color: var(--color-muted-foreground); }
-@media (min-width: 768px) and (max-width: 1399px) {
+@media (min-width: 1024px) and (max-width: 1399px) {
   .svu-header-inner { flex-wrap: wrap; gap: 8px; }
   .svu-header-brand { flex-basis: 100%; max-width: 290px; }
   .svu-header-nav { flex-basis: 100%; }
   .svu-header-row > a, .svu-header-row > div > a, .svu-header-row > div > button { font-size: 12px; }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .svu-header-inner { justify-content: space-between; padding: 14px 16px; gap: 16px; }
   .svu-header-brand { flex-basis: auto; width: 290px; max-width: calc(100% - 60px); }
   .svu-header-nav { display: none; }
   .svu-header-mobile { display: block; }
   .svu-page-nav-inner { gap: 4px 16px; padding: 8px 16px; }
 }
+.svu-mobile-menu { width: min(360px, calc(100% - 32px)); padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+.svu-mobile-menu > button { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+.svu-mobile-links a, .svu-mobile-links summary { min-height: 44px; overflow-wrap: anywhere; }
+.svu-mobile-links details details { margin-left: 12px; padding-left: 12px; border-left: 1px solid var(--color-border); }
+.svu-registration-shortcut { bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px)); right: max(20px, env(safe-area-inset-right)); min-height: 44px; }
 .student-page-hero { position: relative; isolation: isolate; min-height: 340px; display: flex; align-items: flex-end; padding: 48px 24px; background: var(--color-primary); }
 .student-page-hero > img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -2; }
 .student-page-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--color-heading) 94%, transparent), color-mix(in srgb, var(--color-heading) 36%, transparent)); }
@@ -275,6 +280,7 @@
   .svu-footer-columns { gap: 28px 16px; }
   .svu-footer-columns h5 { font-size: 14px; }
   .svu-footer-links li { font-size: 12px; }
+  .svu-footer-decoration { max-width: calc(100% - 30px); }
   .svu-government-logos { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 28px; }
 }
 

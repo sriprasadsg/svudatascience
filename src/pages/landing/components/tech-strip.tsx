@@ -1,3 +1,5 @@
+import awsLogo from "@/assets/aws-logo.svg.asset.json";
+
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 
 export const technologies = [
@@ -14,7 +16,7 @@ export const technologies = [
   { name: "Spark", src: `${DI}/apachespark/apachespark-original.svg` },
   { name: "Git", src: `${DI}/git/git-original.svg` },
   { name: "Docker", src: `${DI}/docker/docker-original.svg` },
-  { name: "AWS", src: `${DI}/amazonwebservices/amazonwebservices-original-wordmark.svg` },
+  { name: "AWS", src: awsLogo.url },
   { name: "Azure", src: `${DI}/azure/azure-original.svg` },
   { name: "Google Cloud", src: `${DI}/googlecloud/googlecloud-original.svg` },
 ];

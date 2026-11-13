@@ -170,3 +170,12 @@
   line-height: 30px;
   letter-spacing: normal;
 }
+
+/* Keep long mobile actions inside the page without changing desktop layouts. */
+@media (max-width: 767px) {
+  .landing a.inline-flex { max-width: 100%; white-space: normal; height: auto; min-height: 44px; text-align: center; }
+  .landing a.inline-flex svg { flex-shrink: 0; }
+  .registration-page :is(input, textarea, [role="combobox"]) { font-size: 16px; min-height: 44px; }
+  .registration-page form > div:last-child > button { width: 100%; }
+  .registration-page label[for^="course-"] { min-height: 44px; flex: 1; }
+}

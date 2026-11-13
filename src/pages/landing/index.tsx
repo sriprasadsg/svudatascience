@@ -130,12 +130,12 @@ function Hero() {
         </p>
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-2 sm:flex-row">
           <Select value={choice} onValueChange={setChoice}>
-            <SelectTrigger className="h-14 text-base" aria-label="Choose a programme">
+            <SelectTrigger className="h-14 min-w-0 text-base [&>span]:min-w-0 [&>svg]:shrink-0" aria-label="Choose a programme">
               <SelectValue placeholder="Choose a programme…" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="w-[var(--radix-select-trigger-width)] max-w-[calc(100vw-2rem)]">
               {programmes.map((p) => (
-                <SelectItem key={p.slug} value={p.slug}>
+                <SelectItem key={p.slug} value={p.slug} className="min-h-11 whitespace-normal">
                   {p.name}
                 </SelectItem>
               ))}
@@ -244,9 +244,9 @@ function Programmes() {
           <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
         </div>
         <Tabs value={tab} onValueChange={setTab}>
-          <TabsList className="mx-auto mb-8 flex w-fit flex-wrap">
+          <TabsList className="mx-auto mb-8 flex h-auto min-h-11 w-fit max-w-full flex-wrap gap-1">
             {groups.map((g) => (
-              <TabsTrigger key={g.key} value={g.key}>{g.label}</TabsTrigger>
+              <TabsTrigger key={g.key} value={g.key} className="min-h-11">{g.label}</TabsTrigger>
             ))}
           </TabsList>
           {groups.map((g) => {
