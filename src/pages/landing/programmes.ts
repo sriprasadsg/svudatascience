@@ -74,7 +74,7 @@ export const programmes = [
     subtitle: "Connect data science knowledge with practical applications.",
     intro: "Develop an understanding of data science, artificial intelligence and machine learning through academic study, guided practice and project-based learning.",
     duration: "2 years",
-    mode: "Hybrid",
+    mode: "Full Time Regular Hybrid (Offline / Online)",
     highlights: [
       "Foundations of data science, artificial intelligence and machine learning",
       "Work with datasets and industry use cases",
@@ -91,7 +91,7 @@ export const programmes = [
     subtitle: "Strengthen your ability to work with data and interpret results.",
     intro: "Develop a practical understanding of data science through structured learning, guided exercises and applied project work.",
     duration: "1 year",
-    mode: "Hybrid / Part-time",
+    mode: "Part Time Hybrid (Offline / Online)",
     highlights: [
       "Data preparation, analysis and interpretation",
       "Practical exercises with data",
@@ -108,7 +108,7 @@ export const programmes = [
     subtitle: "Build programming skills for intelligent applications.",
     intro: "Develop Python programming knowledge and explore its applications in artificial intelligence, machine learning and generative AI.",
     duration: "6 months",
-    mode: "Part-time · Delivery mode: Confirm with the admissions team",
+    mode: "Part Time Hybrid (Offline / Online)",
     highlights: [
       "Python programming fundamentals",
       "Working with data",
@@ -125,7 +125,7 @@ export const programmes = [
     subtitle: "Turn data into clear and meaningful visual insights.",
     intro: "Learn visual analysis and presentation techniques to communicate findings and support informed decisions.",
     duration: "6 months",
-    mode: "Part-time · Delivery mode: Confirm with the admissions team",
+    mode: "Part Time Hybrid (Offline / Online)",
     highlights: [
       "Data visualization principles",
       "Chart selection for clear communication",
@@ -142,7 +142,7 @@ export const programmes = [
     subtitle: "Understand cloud technologies and their practical applications.",
     intro: "Develop foundational knowledge of cloud technologies and the services that support modern application environments.",
     duration: "6 months",
-    mode: "Part-time · Delivery mode: Confirm with the admissions team",
+    mode: "Part Time Hybrid (Offline / Online)",
     highlights: [
       "Cloud concepts and service models",
       "Compute, storage and networking",

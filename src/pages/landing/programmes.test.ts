@@ -36,9 +36,18 @@ describe("programme catalogue", () => {
     expect(programmes[0].admissionType).toBe("quantum");
   });
 
-  it("asks applicants to confirm specialist diploma delivery", () => {
-    for (const programme of programmes.slice(3)) {
-      expect(programme.mode).toContain("Confirm with the admissions team");
-    }
+  it("uses the approved M.S. Data Science mode", () => {
+    expect(programmes.find((programme) => programme.slug === "ms-data-science")?.mode)
+      .toBe("Full Time Regular Hybrid (Offline / Online)");
+  });
+
+  it.each([
+    "pg-diploma-data-science",
+    "diploma-python-ai-ml-generative-ai",
+    "diploma-data-visualization",
+    "diploma-cloud-technologies",
+  ])("uses the approved part-time hybrid mode for %s", (slug) => {
+    expect(programmes.find((programme) => programme.slug === slug)?.mode)
+      .toBe("Part Time Hybrid (Offline / Online)");
   });
 });

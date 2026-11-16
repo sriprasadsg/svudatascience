@@ -266,7 +266,7 @@ function International() {
 function Faqs() {
   const faqs = [
     ["Who awards the qualification?", "Sri Venkateswara University, Tirupati awards the qualification. Exafluence Education is the industry collaboration partner."],
-    ["How are programmes delivered?", "The M.S. is regular full-time in hybrid mode. The PG Diploma and specialist diplomas are part-time in hybrid mode."],
+    ["How are programmes delivered?", "M.S. Data Science: Full Time Regular Hybrid (Offline / Online). The PG Diploma and specialist diplomas: Part Time Hybrid (Offline / Online)."],
     ["Is the programme fully online?", "No. Semester-end examinations are primarily offline, and attendance in India may be required."],
     ["When are the entrance tests?", "For January 2027 entry, December 2026; for July 2027 entry, June 2027. The M.S. entrance is expected in May, possibly June 2027. Exact dates are subject to official announcement."],
   ];

@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Replace outdated delivery-mode wording with approved modes for M.S. Data Science and four diplomas; preserved Quantum and email settings, 17 tests and preview build passed, no obsolete placeholders or overflow on nine public routes at 1280/390/360px; no publication or deployment.
+
 - [x] Inspect original/duplicate backend isolation and activate compatible original registration notifications without publishing, sending emails or inserting records; registration and email preview deployed, 73 tests passed, non-sending live checks returned 400/401.
 - [x] Apply authorised original-only nullable enquiry fields without changing legacy consent, rows or policies; migration 0010 applied, original programme enquiry deployed, 42 tests passed and live POST/GET returned 400/405 without saving or sending.
 - [ ] Complete notification delivery verification (blocked: notify.svudatascience.in DNS verification and approval for a real delivery test; duplicate activation belongs in its own project).
