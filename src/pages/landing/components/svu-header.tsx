@@ -18,6 +18,7 @@ const programmeNav: ProgrammeNavItem[] = [
   { label: "Programmes", href: "/#programmes", official: "https://svudatascience.in/#courses" },
   { label: "Industry Collaboration", href: "/#collaboration" },
   { label: "Admissions", to: "/admissions" },
+  { label: "Admissions Timeline", href: "/#admissions" },
   { label: "International Students", to: "/international-students", official: "https://svudatascience.in/#internationStudents" },
   { label: "Contact", href: "/#contact", official: "https://svudatascience.in/enquiry.html" },
   { label: "Register Interest", to: "/registration" },
