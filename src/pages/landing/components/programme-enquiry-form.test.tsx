@@ -46,6 +46,35 @@ describe("programme enquiry form", () => {
     expect(screen.queryByText("Enquiry saved")).not.toBeInTheDocument();
   });
 
+  it("does not treat a response without a saved reference as acceptance", async () => {
+    mocks.invoke.mockResolvedValue({ data: { notificationSent: false }, error: null });
+    render(<ProgrammeEnquiryForm programme={programmes[2]} />);
+    completeForm();
+    fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
+    await screen.findByRole("alert");
+    expect(screen.getByLabelText(/Phone/)).toHaveValue("9876543210");
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+  });
+
+  it.each(programmes)("sends the identity of $name with its enquiry", async (programme) => {
+    mocks.invoke.mockResolvedValue({ data: { id: "mock-saved-reference", notificationSent: false }, error: null });
+    render(<ProgrammeEnquiryForm programme={programme} />);
+    expect(screen.getByLabelText("Programme")).toHaveValue(programme.name);
+    fireEvent.change(screen.getByLabelText(/Full name/), { target: { value: "Example Applicant" } });
+    fireEvent.change(screen.getByLabelText(/Email/), { target: { value: "applicant@example.com" } });
+    fireEvent.change(screen.getByLabelText(/Phone/), { target: { value: "7" } });
+    fireEvent.change(screen.getByLabelText(/^Enquiry/), { target: { value: "Please share admission information." } });
+    if (programme.hasPreferredSpell) {
+      fireEvent.change(screen.getByLabelText(/Preferred admission spell/), { target: { value: "July" } });
+    }
+    fireEvent.click(screen.getByLabelText(/I agree to be contacted/));
+    fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
+    await screen.findByRole("status");
+    expect(mocks.invoke).toHaveBeenCalledWith("submit-programme-enquiry", {
+      body: expect.objectContaining({ programme_id: programme.slug, phone: "7", preferred_spell: programme.hasPreferredSpell ? "July" : null }),
+    });
+  });
+
   it("does not send an invalid phone number", async () => {
     render(<ProgrammeEnquiryForm programme={programmes[0]} />);
     fireEvent.change(screen.getByLabelText(/Full name/), { target: { value: "Example Applicant" } });

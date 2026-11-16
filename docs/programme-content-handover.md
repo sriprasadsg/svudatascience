@@ -13,6 +13,18 @@ The overview at `/#programmes` links to six routes in this order:
 
 The Quantum admission content is the owner-approved BoS wording supplied with the change request. No January or July spell is assigned to Quantum.
 
+## Final prompt reconciliation — 16 November 2026
+
+The existing six routes, shared enquiry form and prepared submission service are reused, not duplicated. The homepage headline and supporting subtitle match pre-rework revision `b0ae2bc`; the programme heading is restored to `Choose the programme that fits your goals`, with the rework's added marketing subtitles removed. The existing website title is unchanged. Approved programme-specific subtitles and content remain intact.
+
+Quantum is first with a pale-blue panel, royal-blue border and slightly larger medium-weight heading. The other five overview cards use the same white background, thin borders, spacing and medium-weight headings. Detail pages use the same hierarchy without altering admissions wording.
+
+The prepared service stores accepted programme enquiries in `public.enquiries` (More → Database → enquiries), then attempts the distinct admissions notification with programme identity. This is not the account-email hook. The sender-domain status was checked again on 16 November and remains `Verifying DNS`; actual acceptance/storage and email delivery are untested because real submissions were prohibited. The review SQL and enquiry functions still require authorised application/deployment; neither was performed.
+
+Checks passed: 27 focused catalogue/schema/form tests, including all six programme identities, digits-only phone boundaries and rejection of responses without a saved reference; exact source comparison of the original headline, main subtitle and document title; all six card clicks and direct HTTP 200 routes at 1280px, 390px and 360px; correct prefill/admission-spell selectors and no horizontal overflow. Browser requests were intercepted to verify invalid-phone blocking, retained entries on failure and saved-reference display on mocked acceptance. No runtime errors occurred; the preview build reports `build OK`.
+
+Known preview limitation: the two existing programme-page logo asset URLs return HTML rather than image bytes on localhost, so they display their alternative text in this browser check. The approved asset pointers were not replaced; artwork rendering remains unverified in the hosted preview.
+
 ## Source verification limits
 
 The supplied M.S. Data Science, PG Diploma and Specialist Diplomas presentations support the existing broad learning and admission descriptions. They are brochures/presentations, not full authoritative syllabi for the three specialist diplomas. Their public delivery mode therefore says `Confirm with the admissions team`; replace this only after an approved syllabus or delivery confirmation is supplied. The learning highlights use the owner-approved wording from the change request, not inferred curriculum, fees, eligibility, dates, or employment guarantees.

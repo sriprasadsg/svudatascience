@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Reconcile final programme prompt against existing pages: exact original title/subtitle comparison, six links/direct routes at 1280/390/360px, 27 tests, mocked browser enquiries and clean preview build; record pending sender verification/deployment and existing localhost logo limitation; no publishing, deployment, migration or real submission.
+
 - [x] Restore pre-rework website titles/subtitles and refine Quantum-first blue hierarchy with five equally readable white programme cards; verified all six routes at 1366/390/360px, 30 focused tests and preview build; kept unpublished.
 
 - [x] Rework programme discovery into six linked overview cards, with Quantum Computing first, and add six shared-layout programme routes.

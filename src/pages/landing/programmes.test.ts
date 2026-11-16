@@ -9,6 +9,22 @@ describe("programme catalogue", () => {
     expect(programmePath(programmes[0])).toBe("/programmes/ms-quantum-computing");
   });
 
+  it("preserves the owner's final programme order", () => {
+    expect(programmes.map((programme) => programme.name)).toEqual([
+      "M.S. Quantum Computing",
+      "M.S. Data Science",
+      "PG Diploma in Data Science",
+      "Diploma in Python for AI, ML & Gen AI",
+      "Diploma in Data Visualization",
+      "Diploma in Cloud Technologies",
+    ]);
+  });
+
+  it("preserves Quantum's approved duration and hybrid mode", () => {
+    expect(programmes[0].duration).toBe("2 years / 4 semesters");
+    expect(programmes[0].mode).toBe("Hybrid (online / offline)");
+  });
+
   it("uses January and July spells only for the four diplomas", () => {
     expect(programmes.filter((programme) => programme.hasPreferredSpell)).toHaveLength(4);
     expect(programmes[0].hasPreferredSpell).toBe(false);
