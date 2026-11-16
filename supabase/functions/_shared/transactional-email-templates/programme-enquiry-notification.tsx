@@ -9,12 +9,13 @@ interface Props {
   fullName?: string
   email?: string
   phone?: string
+  educationalQualification?: string
   preferredSpell?: string | null
   enquiry?: string
   reference?: string
 }
 
-const Email = ({ programmeId, programmeName, submittedAt, fullName, email, phone, preferredSpell, enquiry, reference }: Props) => (
+const Email = ({ programmeId, programmeName, submittedAt, fullName, email, phone, educationalQualification, preferredSpell, enquiry, reference }: Props) => (
   <Html lang="en" dir="ltr">
     <Head />
     <Preview>New enquiry for {programmeName || 'an SVU programme'}</Preview>
@@ -32,6 +33,7 @@ const Email = ({ programmeId, programmeName, submittedAt, fullName, email, phone
         <Text style={detail}><strong>Name:</strong> {fullName || 'Not supplied'}</Text>
         <Text style={detail}><strong>Email:</strong> {email || 'Not supplied'}</Text>
         <Text style={detail}><strong>Phone:</strong> {phone || 'Not supplied'}</Text>
+        {educationalQualification ? <Text style={detail}><strong>Educational Qualification:</strong> {educationalQualification}</Text> : null}
         {preferredSpell ? <Text style={detail}><strong>Preferred spell:</strong> {preferredSpell}</Text> : null}
         <Text style={detail}><strong>Consent:</strong> Agreed to be contacted about this enquiry.</Text>
         <Text style={label}>Enquiry</Text>
@@ -53,6 +55,7 @@ export const template = {
     fullName: 'Example Applicant',
     email: 'applicant@example.com',
     phone: '9876543210',
+    educationalQualification: 'B.Sc. Mathematics (currently studying)',
     preferredSpell: null,
     enquiry: 'Please share information about the application process.',
     reference: '00000000-0000-0000-0000-000000000000',

@@ -35,6 +35,7 @@ export const programmeEnquirySchema = z.object({
   full_name: z.string().trim().min(1, "Full name is required.").max(100, "Full name must be 100 characters or fewer."),
   email: z.string().trim().email("Enter a valid email address.").max(255, "Email must be 255 characters or fewer.").transform((value) => value.toLowerCase()),
   phone: z.string().min(1, "Phone number is required.").regex(/^[0-9]{1,15}$/, "Phone number must be 1 to 15 digits (0-9 only)."),
+  educationalQualification: z.string().trim().max(200, "Educational Qualification must be 200 characters or fewer.").optional(),
   preferred_spell: z.enum(preferredSpells).nullable().optional(),
   enquiry: z.string().trim().min(1, "Please enter your enquiry.").max(2000, "Enquiry must be 2,000 characters or fewer."),
   consent: z.literal(true, { error: "Please agree to be contacted about this enquiry." }),

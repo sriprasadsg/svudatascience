@@ -25,6 +25,21 @@ describe("programme enquiry phone rule", () => {
 });
 
 describe("programme-specific enquiry fields", () => {
+  it("accepts missing or blank qualification for older and optional submissions", () => {
+    expect(programmeEnquirySchema.safeParse(base).success).toBe(true);
+    expect(programmeEnquirySchema.safeParse({ ...base, educationalQualification: "" }).success).toBe(true);
+  });
+
+  it("accepts current or completed qualifications without eligibility restrictions", () => {
+    for (const educationalQualification of ["B.Sc. Mathematics (currently studying)", "B.Tech. CSE", "BCA", "Other qualification"]) {
+      expect(programmeEnquirySchema.safeParse({ ...base, educationalQualification }).success).toBe(true);
+    }
+  });
+
+  it("limits qualification input to 200 characters", () => {
+    expect(programmeEnquirySchema.safeParse({ ...base, educationalQualification: "a".repeat(200) }).success).toBe(true);
+    expect(programmeEnquirySchema.safeParse({ ...base, educationalQualification: "a".repeat(201) }).success).toBe(false);
+  });
   it("accepts Quantum without a preferred spell", () => {
     expect(programmeEnquirySchema.safeParse(base).success).toBe(true);
   });

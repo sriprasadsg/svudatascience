@@ -35,6 +35,12 @@ Verified 30 tests and browser checks for all six CTA preselects, placeholder val
 
 ## Source verification limits (unchanged)
 
+### Optional Educational Qualification — 16 November 2026
+
+The common form includes an optional text field after Phone and before the diploma spell/Enquiry fields, with placeholder `e.g., B.Sc. Mathematics, B.Tech. CSE, BCA`. It accepts current or completed qualifications without eligibility inference. The frontend payload and shared client/server validation use `educationalQualification` (optional, trimmed, maximum 200 characters); missing values remain valid for older callers. The existing handler maps it to nullable `educational_qualification` storage and passes it to the fixed admissions notification, where the line appears only when populated. Entries persist on selection changes and submission errors.
+
+The nullable column and length constraint are added only to the review SQL above, not applied to the database. Before activation, apply the reviewed enquiry metadata/qualification SQL and deploy the existing submission and email preview functions together; the domain still needs verification before email delivery can be confirmed. No real submission, email, migration, deployment or publishing occurred. All 38 focused tests passed, including blank/populated payloads, backwards compatibility and qualification error retention; intercepted browser checks passed at 1280px, 390px and 360px, and the preview build reports `build OK`.
+
 The supplied M.S. Data Science, PG Diploma and Specialist Diplomas presentations support the existing broad learning and admission descriptions. They are brochures/presentations, not full authoritative syllabi for the three specialist diplomas. Their public delivery mode therefore says `Confirm with the admissions team`; replace this only after an approved syllabus or delivery confirmation is supplied. The learning highlights use the owner-approved wording from the change request, not inferred curriculum, fees, eligibility, dates, or employment guarantees.
 
 ## Prepared backend changes — not applied or deployed

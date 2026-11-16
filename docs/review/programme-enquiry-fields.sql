@@ -3,6 +3,13 @@
 ALTER TABLE public.enquiries ADD COLUMN IF NOT EXISTS programme_id text;
 ALTER TABLE public.enquiries ADD COLUMN IF NOT EXISTS preferred_spell text;
 ALTER TABLE public.enquiries ADD COLUMN IF NOT EXISTS consent boolean;
+ALTER TABLE public.enquiries ADD COLUMN IF NOT EXISTS educational_qualification text;
+
+ALTER TABLE public.enquiries
+  ADD CONSTRAINT enquiries_educational_qualification_length_check
+  CHECK (educational_qualification IS NULL OR length(educational_qualification) <= 200) NOT VALID;
+
+COMMENT ON COLUMN public.enquiries.educational_qualification IS 'Optional current or completed qualification; no programme eligibility inferred. Historical rows remain null.';
 
 ALTER TABLE public.enquiries
   ADD CONSTRAINT enquiries_programme_id_check

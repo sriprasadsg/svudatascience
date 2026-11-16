@@ -15,6 +15,7 @@ type FormValues = {
   full_name: string;
   email: string;
   phone: string;
+  educationalQualification: string;
   preferred_spell: "" | "January" | "July";
   enquiry: string;
   consent: boolean;
@@ -24,6 +25,7 @@ const initialValues: FormValues = {
   full_name: "",
   email: "",
   phone: "",
+  educationalQualification: "",
   preferred_spell: "",
   enquiry: "",
   consent: false,
@@ -66,6 +68,7 @@ export function ProgrammeEnquiryForm({ initialProgrammeId = "" }: { initialProgr
       full_name: values.full_name,
       email: values.email,
       phone: values.phone,
+      educationalQualification: values.educationalQualification,
       preferred_spell: values.preferred_spell || null,
       enquiry: values.enquiry,
       consent: values.consent,
@@ -124,6 +127,9 @@ export function ProgrammeEnquiryForm({ initialProgrammeId = "" }: { initialProgr
       <Field label="Phone" error={errors.phone} required>
         <Input id="phone" name="phone" type="tel" inputMode="numeric" pattern="[0-9]{1,15}" maxLength={15} autoComplete="tel" required value={values.phone} onChange={(event) => update("phone", event.target.value)} disabled={busy} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "phone-error" : undefined} placeholder="Digits only" />
       </Field>
+      <Field label="Educational Qualification" error={errors.educationalQualification} fullWidth>
+        <Input id="educationalQualification" name="educationalQualification" maxLength={200} value={values.educationalQualification} onChange={(event) => update("educationalQualification", event.target.value)} disabled={busy} aria-invalid={Boolean(errors.educationalQualification)} aria-describedby={errors.educationalQualification ? "educationalQualification-error" : undefined} placeholder="e.g., B.Sc. Mathematics, B.Tech. CSE, BCA" />
+      </Field>
       {programme?.hasPreferredSpell ? (
         <Field label="Preferred admission spell" error={errors.preferred_spell} required>
           <select id="preferred_spell" name="preferred_spell" required value={values.preferred_spell} onChange={(event) => update("preferred_spell", event.target.value as FormValues["preferred_spell"])} disabled={busy} aria-invalid={Boolean(errors.preferred_spell)} aria-describedby={errors.preferred_spell ? "preferred_spell-error" : undefined} className="h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm soft-lift">
@@ -132,7 +138,7 @@ export function ProgrammeEnquiryForm({ initialProgrammeId = "" }: { initialProgr
             <option value="July">July</option>
           </select>
         </Field>
-      ) : <div className="hidden sm:block" aria-hidden="true" />}
+      ) : null}
       <Field label="Enquiry" error={errors.enquiry} required fullWidth>
         <Textarea id="enquiry" name="enquiry" rows={5} maxLength={2000} required value={values.enquiry} onChange={(event) => update("enquiry", event.target.value)} disabled={busy} aria-invalid={Boolean(errors.enquiry)} aria-describedby={errors.enquiry ? "enquiry-error" : undefined} placeholder="How can we help you?" />
       </Field>
@@ -158,7 +164,7 @@ export function ProgrammeEnquiryForm({ initialProgrammeId = "" }: { initialProgr
 }
 
 function Field({ label, error, required = false, fullWidth = false, children }: { label: string; error?: string; required?: boolean; fullWidth?: boolean; children: ReactNode }) {
-  const id = label === "Full name" ? "full_name" : label === "Email" ? "email" : label === "Phone" ? "phone" : label === "Preferred admission spell" ? "preferred_spell" : "enquiry";
+  const id = label === "Full name" ? "full_name" : label === "Email" ? "email" : label === "Phone" ? "phone" : label === "Educational Qualification" ? "educationalQualification" : label === "Preferred admission spell" ? "preferred_spell" : "enquiry";
   return (
     <div className={`grid content-start gap-2 ${fullWidth ? "sm:col-span-2" : ""}`}>
       <Label htmlFor={id} className="font-normal">{label}{required && <span className="text-destructive"> *</span>}</Label>

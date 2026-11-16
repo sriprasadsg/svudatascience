@@ -127,4 +127,28 @@ describe("programme enquiry form", () => {
     rerender(<ProgrammeEnquiryForm initialProgrammeId={programmes[0].slug} />);
     expect(screen.queryByLabelText(/Preferred admission spell/)).not.toBeInTheDocument();
   });
+
+  it.each(["", "B.Sc. Mathematics (currently studying)", "B.Tech. CSE", "BCA"])("accepts optional qualification %j in the payload", async (educationalQualification) => {
+    mocks.invoke.mockResolvedValue({ data: { id: "mock-reference" }, error: null });
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
+    completeForm();
+    fireEvent.change(screen.getByLabelText("Educational Qualification"), { target: { value: educationalQualification } });
+    fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
+    await screen.findByRole("status");
+    expect(mocks.invoke).toHaveBeenCalledWith("submit-programme-enquiry", {
+      body: expect.objectContaining({ educationalQualification }),
+    });
+  });
+
+  it("retains qualification on programme changes and submission errors", async () => {
+    mocks.invoke.mockResolvedValue({ data: null, error: new Error("Unavailable") });
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
+    completeForm();
+    fireEvent.change(screen.getByLabelText("Educational Qualification"), { target: { value: "BCA (in progress)" } });
+    fireEvent.change(screen.getByRole("combobox", { name: /^Programme/ }), { target: { value: programmes[0].slug } });
+    expect(screen.getByLabelText("Educational Qualification")).toHaveValue("BCA (in progress)");
+    fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
+    await screen.findByRole("alert");
+    expect(screen.getByLabelText("Educational Qualification")).toHaveValue("BCA (in progress)");
+  });
 });
