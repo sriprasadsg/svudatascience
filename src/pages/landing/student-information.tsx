@@ -29,7 +29,7 @@ export default function StudentInformation({ international = false }: { internat
         <div className="student-page-hero-content">
           <p className="text-sm">Sri Venkateswara University · Exafluence Education</p>
           <h1 className="mt-3">{title}</h1>
-          <p>{international ? "M.S. Data Science — university-led education with industry mentorship, practical learning and a global perspective." : "Explore the university’s admission routes for M.S. Data Science, the PG Diploma and specialist diplomas."}</p>
+          <p>{international ? "Explore industry-collaborative programmes offered by Sri Venkateswara University (SVU) in collaboration with Exafluence, bringing together academic learning, practical experience and industry mentorship." : "Explore the university’s admission routes for M.S. Data Science, the PG Diploma and specialist diplomas."}</p>
           <div className="mt-6 flex flex-wrap gap-3"><Button variant="secondary" asChild><Link to="/registration">Official registration</Link></Button><Button asChild><Link to={international ? "/#programme-enquiry" : "/#contact"}>Send an enquiry</Link></Button></div>
         </div>
       </section>
