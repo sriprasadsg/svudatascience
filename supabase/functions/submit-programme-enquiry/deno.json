@@ -1,4 +1,5 @@
 {
+  "imports": { "zod": "npm:zod@4.4.3" },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "npm:react@18.3.1",

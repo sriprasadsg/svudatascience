@@ -1,5 +1,18 @@
 # Programme content and enquiry handover
 
+## Authorised enquiry activation completed — 16 November 2026, 13:15 UTC request
+
+This update supersedes the enquiry-schema/deployment blockers in the earlier activation record below. Changes were limited to the original project.
+
+- Applied `drizzle/migrations/0010_add_programme_enquiry_metadata.sql` to the original project's database through the migration tool. Added nullable `programme_id`, `preferred_spell`, `consent`, and `educational_qualification`, all without defaults. No legacy consent was assumed; no rows were backfilled, removed or modified.
+- The reviewed SQL's fixed checks were retained with conditional constraint creation so both ADD COLUMN and constraint additions are repeat-safe. Checks permit historical nulls and validate new non-null metadata against the original six programmes, January/July spells, true consent and qualification length of at most 200. Historical review SQL remains a reference, not an instruction to apply a second migration.
+- Before/after verification: 13 enquiries; original-column fingerprint unchanged (`5bdb17ea435c53cabeea50a14d10f8dc`); all four new fields null on all existing rows. Existing INSERT policy text and row-level security remained unchanged. Existing service-role INSERT/SELECT access was confirmed; no grants or policies were broadened.
+- First enquiry deployment failed because its Deno import map lacked the shared schema's bare `zod` resolution. Added the same pinned `npm:zod@4.4.3` import mapping already used by registration; redeployment succeeded. `submit-programme-enquiry` source SHA-256: `0b7c36cbdaf0aec6bf1c7c571f5977a9a516202275ba767037e77fa16ca82868`.
+- Original `submit-registration`, `submit-programme-enquiry`, and `preview-transactional-email` are now deployed. Notification templates still target `admissions@svudatascience.in` through Lovable managed app emails. No provider, sender, website content or duplicate-project configuration was changed.
+- Non-sending live checks: enquiry POST `{}` returned 400 required-field validation; GET returned 405 Method not allowed. These confirm startup/import resolution and early validation, not successful saving or email acceptance. No applicant records or emails were created. 42 focused registration/programme tests passed; preview build reports build OK.
+- Remaining blocker: `notify.svudatascience.in` still reports **Verifying DNS**. Review the assigned NS records in **More → Emails → Domain settings**; no DNS was changed. Required names remain `LOVABLE_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`; no new user-provided secret is known to be missing, and database runtime credential availability remains unverified by non-writing requests.
+- After sender verification, an explicitly approved save-and-notify test is still required to confirm database acceptance, email send events and inbox arrival. The website frontend was not published and the duplicate was not touched.
+
 ## Authorised original-only activation — 16 November 2026, 13:12 UTC request
 
 This section supersedes the historical deployment status below. Only the original project was changed; no frontend publication, provider change, DNS edit, migration, applicant insertion or email send was performed.

@@ -54,31 +54,43 @@ export type Database = {
       }
       enquiries: {
         Row: {
+          consent: boolean | null
           created_at: string
+          educational_qualification: string | null
           email: string
           full_name: string
           id: string
           message: string | null
           phone: string | null
+          preferred_spell: string | null
           programme: string
+          programme_id: string | null
         }
         Insert: {
+          consent?: boolean | null
           created_at?: string
+          educational_qualification?: string | null
           email: string
           full_name: string
           id?: string
           message?: string | null
           phone?: string | null
+          preferred_spell?: string | null
           programme: string
+          programme_id?: string | null
         }
         Update: {
+          consent?: boolean | null
           created_at?: string
+          educational_qualification?: string | null
           email?: string
           full_name?: string
           id?: string
           message?: string | null
           phone?: string | null
+          preferred_spell?: string | null
           programme?: string
+          programme_id?: string | null
         }
         Relationships: []
       }

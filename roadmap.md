@@ -1,7 +1,7 @@
 # Roadmap
 
 - [x] Inspect original/duplicate backend isolation and activate compatible original registration notifications without publishing, sending emails or inserting records; registration and email preview deployed, 73 tests passed, non-sending live checks returned 400/401.
-- [ ] Activate original programme enquiry handler (blocked: four missing enquiries columns; requires separate approval for the reviewed additive database change).
+- [x] Apply authorised original-only nullable enquiry fields without changing legacy consent, rows or policies; migration 0010 applied, original programme enquiry deployed, 42 tests passed and live POST/GET returned 400/405 without saving or sending.
 - [ ] Complete notification delivery verification (blocked: notify.svudatascience.in DNS verification and approval for a real delivery test; duplicate activation belongs in its own project).
 
 - [x] Add approved domestic Quantum eligibility and admission process first on Admissions; verified exact intro, preserved international content, editable enquiry preselection and 1280/390/360px layout, 45 tests and preview build. No publication or backend changes; pre-existing header/banner image-loading issues remain.
