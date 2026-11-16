@@ -500,9 +500,9 @@
 .programme-section-nav a { min-height: 40px; }
 #learning-focus, #admission-process { scroll-margin-top: 24px; }
 @media (min-width: 768px) {
-  .programme-catalogue-grid .programme-overview-card--quantum { grid-column: 1 / -1; min-height: 220px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px 32px; }
-  .programme-overview-card--quantum .programme-card__facts { margin-top: 0; border-top: 0; padding-top: 0; align-content: center; }
-  .programme-overview-card--quantum .programme-card__actions { grid-column: 1 / -1; padding-top: 8px; }
+  .programme-catalogue-grid { align-items: start; column-gap: 40px; row-gap: 32px; }
+  .programme-catalogue-grid > .programme-overview-card:nth-child(even) { margin-top: 80px; }
+  .programme-catalogue-grid > .programme-overview-card:nth-child(odd) { margin-bottom: 80px; }
 }
 .svu-main-page { --color-primary: hsl(218 72% 30%); }
 .svu-main-page .landing :is(h1, h2, h3, h4) { letter-spacing: 0; }
@@ -527,11 +527,6 @@
 .programme-explorer__panel { min-height: 550px; overflow-wrap: anywhere; }
 .landing .programme-explorer__panel h3 { font-weight: 500; }
 @media (max-width: 1023px) { .programme-explorer__panel { min-height: 0; } }
-@media (min-width: 768px) {
-  .svu-main-page .programme-overview-card--quantum { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
-  .svu-main-page .programme-overview-card--quantum .programme-card__content { grid-row: 1 / 3; }
-  .svu-main-page .programme-overview-card--quantum .programme-card__highlights { grid-column: 2; margin-top: 4px; }
-}
 .landing .programme-overview-card h3 {
   overflow-wrap: anywhere;
   font-family: inherit;
