@@ -25,8 +25,8 @@ describe("programme enquiry form", () => {
 
   it("prefills the programme and shows success only after backend acceptance", async () => {
     mocks.invoke.mockResolvedValue({ data: { id: "enquiry-reference" }, error: null });
-    render(<ProgrammeEnquiryForm programme={programmes[2]} />);
-    expect(screen.getByLabelText("Programme")).toHaveValue("PG Diploma in Data Science");
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
+    expect(screen.getByRole("combobox", { name: /^Programme/ })).toHaveValue("pg-diploma-data-science");
     completeForm();
     fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
     expect(await screen.findByRole("status")).toHaveTextContent("Enquiry saved");
@@ -37,7 +37,7 @@ describe("programme enquiry form", () => {
 
   it("preserves entries and shows no success when the backend rejects the enquiry", async () => {
     mocks.invoke.mockResolvedValue({ data: null, error: new Error("Unavailable") });
-    render(<ProgrammeEnquiryForm programme={programmes[2]} />);
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
     completeForm();
     fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
     expect(await screen.findByRole("alert")).toHaveTextContent("Your entries are still here");
@@ -48,7 +48,7 @@ describe("programme enquiry form", () => {
 
   it("does not treat a response without a saved reference as acceptance", async () => {
     mocks.invoke.mockResolvedValue({ data: { notificationSent: false }, error: null });
-    render(<ProgrammeEnquiryForm programme={programmes[2]} />);
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
     completeForm();
     fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
     await screen.findByRole("alert");
@@ -58,8 +58,8 @@ describe("programme enquiry form", () => {
 
   it.each(programmes)("sends the identity of $name with its enquiry", async (programme) => {
     mocks.invoke.mockResolvedValue({ data: { id: "mock-saved-reference", notificationSent: false }, error: null });
-    render(<ProgrammeEnquiryForm programme={programme} />);
-    expect(screen.getByLabelText("Programme")).toHaveValue(programme.name);
+    render(<ProgrammeEnquiryForm initialProgrammeId={programme.slug} />);
+    expect(screen.getByRole("combobox", { name: /^Programme/ })).toHaveValue(programme.slug);
     fireEvent.change(screen.getByLabelText(/Full name/), { target: { value: "Example Applicant" } });
     fireEvent.change(screen.getByLabelText(/Email/), { target: { value: "applicant@example.com" } });
     fireEvent.change(screen.getByLabelText(/Phone/), { target: { value: "7" } });
@@ -76,7 +76,7 @@ describe("programme enquiry form", () => {
   });
 
   it("does not send an invalid phone number", async () => {
-    render(<ProgrammeEnquiryForm programme={programmes[0]} />);
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[0].slug} />);
     fireEvent.change(screen.getByLabelText(/Full name/), { target: { value: "Example Applicant" } });
     fireEvent.change(screen.getByLabelText(/Email/), { target: { value: "applicant@example.com" } });
     fireEvent.change(screen.getByLabelText(/Phone/), { target: { value: "+91 98765" } });
@@ -87,10 +87,44 @@ describe("programme enquiry form", () => {
     expect(mocks.invoke).not.toHaveBeenCalled();
   });
 
+  it("requires an explicit programme on normal opening", async () => {
+    render(<ProgrammeEnquiryForm />);
+    expect(screen.getByRole("combobox", { name: /^Programme/ })).toHaveValue("");
+    fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
+    expect(await screen.findByText("Select a programme.")).toBeInTheDocument();
+    expect(mocks.invoke).not.toHaveBeenCalled();
+  });
+
+  it("keeps applicant details and clears a diploma spell when changing to either MS programme", () => {
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
+    completeForm();
+    const select = screen.getByRole("combobox", { name: /^Programme/ });
+    for (const programme of programmes.slice(0, 2)) {
+      fireEvent.change(select, { target: { value: programme.slug } });
+      expect(screen.queryByLabelText(/Preferred admission spell/)).not.toBeInTheDocument();
+      expect(screen.getByLabelText(/Full name/)).toHaveValue("Example Applicant");
+      expect(screen.getByLabelText(/Phone/)).toHaveValue("9876543210");
+      expect(screen.getByLabelText(/^Enquiry/)).toHaveValue("Please share admission information.");
+      expect(screen.getByLabelText(/I agree to be contacted/)).toBeChecked();
+      fireEvent.change(select, { target: { value: programmes[2].slug } });
+      expect(screen.getByLabelText(/Preferred admission spell/)).toHaveValue("");
+      fireEvent.change(screen.getByLabelText(/Preferred admission spell/), { target: { value: "January" } });
+    }
+  });
+
+  it("requires contact consent", async () => {
+    render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
+    completeForm();
+    fireEvent.click(screen.getByLabelText(/I agree to be contacted/));
+    fireEvent.click(screen.getByRole("button", { name: "Send Programme Enquiry" }));
+    expect(await screen.findByText("Please agree to be contacted about this enquiry.")).toBeInTheDocument();
+    expect(mocks.invoke).not.toHaveBeenCalled();
+  });
+
   it("shows a spell selector for diplomas but not Quantum", () => {
-    const { rerender } = render(<ProgrammeEnquiryForm programme={programmes[2]} />);
+    const { rerender } = render(<ProgrammeEnquiryForm initialProgrammeId={programmes[2].slug} />);
     expect(screen.getByLabelText(/Preferred admission spell/)).toBeInTheDocument();
-    rerender(<ProgrammeEnquiryForm programme={programmes[0]} />);
+    rerender(<ProgrammeEnquiryForm initialProgrammeId={programmes[0].slug} />);
     expect(screen.queryByLabelText(/Preferred admission spell/)).not.toBeInTheDocument();
   });
 });

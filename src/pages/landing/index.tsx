@@ -3,6 +3,7 @@ import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link, useLocation } from "react-router-dom";
 import { TechStrip } from "./components/tech-strip";
+import { ProgrammeEnquiryForm } from "./components/programme-enquiry-form";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 import {
@@ -135,6 +136,8 @@ function ProgrammeCard({ p }: { p: Programme }) {
 }
 
 function Programmes() {
+  const location = useLocation();
+  const initialProgrammeId = new URLSearchParams(location.search).get("programme") ?? "";
   return (
     <section id="programmes" className="landing programme-overview scroll-mt-4 bg-background py-16 text-foreground">
       <div className="mx-auto max-w-page px-6 lg:px-8">
@@ -169,6 +172,10 @@ function Programmes() {
             </tbody>
           </table>
         </div>
+        <section id="programme-enquiry" aria-labelledby="programme-enquiry-heading" className="mt-10 scroll-mt-6 border-t border-border pt-9">
+          <h2 id="programme-enquiry-heading">Programme enquiry</h2>
+          <ProgrammeEnquiryForm initialProgrammeId={initialProgrammeId} />
+        </section>
       </div>
     </section>
   );
@@ -364,9 +371,21 @@ function Register() {
 export default function Landing() {
   const location = useLocation();
   useEffect(() => {
-    if (location.hash !== "#contact") return;
+    const formSection = document.getElementById("programme-enquiry");
+    if (!formSection) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      document.body.classList.toggle("programme-enquiry-visible", Boolean(entry?.isIntersecting));
+    });
+    observer.observe(formSection);
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove("programme-enquiry-visible");
+    };
+  }, []);
+  useEffect(() => {
+    if (location.hash !== "#contact" && location.hash !== "#programme-enquiry") return;
     const frame = requestAnimationFrame(() => {
-      document.getElementById("contact")?.scrollIntoView({ block: "start", behavior: "instant" });
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start", behavior: "instant" });
     });
     return () => cancelAnimationFrame(frame);
   }, [location.hash, location.key]);

@@ -4,7 +4,6 @@ import { IconArrowLeft, IconArrowRight, IconCheck, IconClock, IconDeviceLaptop }
 import { Button } from "@/components/base/button";
 import { SvuHeader } from "./components/svu-header";
 import { SvuFooter } from "./components/svu-footer";
-import { ProgrammeEnquiryForm } from "./components/programme-enquiry-form";
 import { getProgramme, type AdmissionType } from "./programmes";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
@@ -58,6 +57,7 @@ export default function ProgrammePage() {
   }
 
   const admission = admissions[programme.admissionType];
+  const enquiryHref = `/?programme=${programme.slug}#programme-enquiry`;
 
   return (
     <>
@@ -91,7 +91,7 @@ export default function ProgrammePage() {
               <div className="programme-meta soft-lift"><IconClock className="size-5 shrink-0 text-primary" /><div><span>Duration</span><p>{programme.duration}</p></div></div>
               <div className="programme-meta soft-lift"><IconDeviceLaptop className="size-5 shrink-0 text-primary" /><div><span>Study and delivery mode</span><p>{programme.mode}</p></div></div>
             </div>
-            <Button asChild className="mt-7 min-h-11 font-medium"><a href="#programme-enquiry">Send a programme enquiry <IconArrowRight className="size-4" /></a></Button>
+            <Button asChild className="mt-7 min-h-11 font-medium"><Link to={enquiryHref}>Send a programme enquiry <IconArrowRight className="size-4" /></Link></Button>
           </div>
         </section>
 
@@ -128,12 +128,6 @@ export default function ProgrammePage() {
             <p className="mt-3 text-sm italic text-muted-foreground">{admission.footnote}</p>
           </section>
 
-          <section id="programme-enquiry" aria-labelledby="programme-enquiry-heading" className="mt-10 scroll-mt-6 border-t border-border pt-9">
-            <p className="text-sm font-medium text-primary">Ask about this programme</p>
-            <h2 id="programme-enquiry-heading" className="mt-2">Programme enquiry</h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">Send your question about {programme.name} to the SVU–Exafluence admissions team.</p>
-            <ProgrammeEnquiryForm programme={programme} />
-          </section>
         </div>
       </main>
       <SvuFooter />

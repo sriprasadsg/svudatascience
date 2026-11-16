@@ -27,6 +27,14 @@ Known preview limitation: the two existing programme-page logo asset URLs return
 
 ## Source verification limits
 
+## Common enquiry form correction — 16 November 2026
+
+One editable programme enquiry form now sits below the homepage programme list/comparison at `/#programme-enquiry`. Normal opening shows the required `Select a programme` placeholder; six detail-page CTAs use `/?programme=<slug>#programme-enquiry` for editable preselection. Detail pages no longer contain forms. The dropdown uses the owner's exact option labels and order, while the existing handler resolves the validated ID to its canonical programme name for storage and notification. Applicant details persist during selection changes; switching to either MS programme clears the diploma-only preferred spell. The floating Registration shortcut hides while the shared form is visible to avoid covering consent on phones.
+
+Verified 30 tests and browser checks for all six CTA preselects, placeholder validation, selection changes, consent, phone boundaries, selected identity payloads, spell clearing, retained error entries and mocked success. Desktop and 390px/360px mobile layouts have no horizontal overflow. No backend code, service deployment, migration, publishing or real enquiry/email submission was performed. The existing prepared handler and review SQL still require authorised activation; sender DNS remains verifying, so admissions email delivery is not confirmed.
+
+## Source verification limits (unchanged)
+
 The supplied M.S. Data Science, PG Diploma and Specialist Diplomas presentations support the existing broad learning and admission descriptions. They are brochures/presentations, not full authoritative syllabi for the three specialist diplomas. Their public delivery mode therefore says `Confirm with the admissions team`; replace this only after an approved syllabus or delivery confirmation is supplied. The learning highlights use the owner-approved wording from the change request, not inferred curriculum, fees, eligibility, dates, or employment guarantees.
 
 ## Prepared backend changes — not applied or deployed

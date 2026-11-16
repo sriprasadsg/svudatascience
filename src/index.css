@@ -154,6 +154,7 @@
 .svu-mobile-links a, .svu-mobile-links summary { min-height: 44px; overflow-wrap: anywhere; }
 .svu-mobile-links details details { margin-left: 12px; padding-left: 12px; border-left: 1px solid var(--color-border); }
 .svu-registration-shortcut { bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px)); right: max(20px, env(safe-area-inset-right)); min-height: 44px; }
+.programme-enquiry-visible .svu-registration-shortcut { visibility: hidden; pointer-events: none; }
 .student-page-hero { position: relative; isolation: isolate; min-height: 340px; display: flex; align-items: flex-end; padding: 48px 24px; background: var(--color-primary); }
 .student-page-hero > img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -2; }
 .student-page-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--color-heading) 94%, transparent), color-mix(in srgb, var(--color-heading) 36%, transparent)); }
@@ -549,8 +550,8 @@
 @media (max-width: 767px) {
   .landing .programme-page__title { font-size: 30px; line-height: 1.25; }
   .landing.programme-page--quantum .programme-page__title { font-size: 32px; }
-  .programme-page :is(input, textarea, select, [role="combobox"]) { font-size: 16px; min-height: 44px; }
-  .programme-page .programme-enquiry-form { padding: 18px; }
+  .programme-page :is(input, textarea, select, [role="combobox"]), .landing .programme-enquiry-form :is(input, textarea, select) { font-size: 16px; min-height: 44px; }
+  .landing .programme-enquiry-form { padding: 18px; }
   .programme-page .programme-meta { max-width: 100%; flex-basis: 100%; }
   .programme-overview-card { min-height: 240px; }
 }

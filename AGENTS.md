@@ -9,6 +9,7 @@
 - Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.
 - Keep programme-to-brochure assets in a shared registry for registration confirmations and contact downloads, so both select the same approved file.
 - Keep the six programme definitions in the shared landing-page catalogue and render overview cards and detail routes from it; use the shared programme enquiry schema so client and server validation agree, and keep unverified delivery details as admissions-confirmation wording rather than invented facts.
+- Render one programme enquiry form on the homepage overview; detail CTAs pass the catalogue slug via the programme query parameter, so selection stays editable and submissions reuse the existing handler.
 - Scope programme emphasis through catalogue-slug modifier classes and semantic tokens in the global stylesheet, using `.landing`-qualified heading selectors so the shared typography cannot override the hierarchy.
 - Use the shared horizontal technology display beneath the homepage learning content, so the logo registry stays consistent with other pages.
 - Keep registration on a standalone page without the university header or footer, using fields from the approved PDF and a shared client/server schema; save through the submission function to a private submissions table so online entries reach the owner without exposing applicant data.
