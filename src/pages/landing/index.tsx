@@ -6,7 +6,7 @@ import { TechStrip } from "./components/tech-strip";
 import { ProgrammeEnquiryForm } from "./components/programme-enquiry-form";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
-import learningHero from "@/assets/svu-learning-hero.jpg";
+import { Atom, Network, FileChartColumn, CodeXml, PanelsTopLeft, Cloud } from "lucide-react";
 import {
   IconArrowRight,
   IconBook2,
@@ -27,19 +27,21 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 function Hero() {
+  const heroLabels = ["Quantum Computing", "Data Science", "PG Diploma in Data Science", "Python for AI, ML & Gen AI", "Data Visualization", "Cloud Technologies"];
+  const heroIcons = [Atom, Network, FileChartColumn, CodeXml, PanelsTopLeft, Cloud];
   return (
-    <section id="top" className="landing svu-main-hero relative isolate overflow-hidden border-b border-border bg-background py-12 sm:py-16">
-      <img src={learningHero} alt="" aria-hidden="true" width={1920} height={1024} fetchPriority="high" className="svu-main-hero__image absolute inset-0 -z-10 h-full w-full object-cover" />
+    <section id="top" className="landing svu-main-hero relative isolate overflow-hidden border-b border-border bg-background">
       <div className="svu-main-hero__content mx-auto max-w-page px-6 lg:px-8">
       <div className="programme-brand-logos mb-7 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3">
         <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
         <span className="shrink-0 text-sm font-normal text-muted-foreground">in collaboration with</span>
         <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto min-w-0 shrink sm:h-9" />
       </div>
-      <div className="max-w-4xl">
+      <div className="svu-main-hero__layout">
+      <div className="svu-main-hero__copy min-w-0">
         <h1 className="display mb-6">
-          <span className="block sm:whitespace-nowrap">Data Science Education</span>
-          <span className="block sm:whitespace-nowrap">with Industry Experience</span>
+          <span className="block">Data Science Education</span>
+          <span className="block">with Industry Experience</span>
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
           Explore Master's and Diploma Programmes{" "}
@@ -48,10 +50,22 @@ function Hero() {
           <br className="hidden sm:block" />
           Data Visualization and Cloud Technologies.
         </p>
+        <p className="svu-main-hero__support mt-4 text-sm leading-6 text-muted-foreground">Explore Quantum Computing, Data Science, AI and cloud technologies through academic study and practical learning.</p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Button className="min-h-11 px-6" asChild><a href="#programmes">Explore Programmes <IconArrowRight className="size-4 icon-nudge" /></a></Button>
-          <Button variant="outline" className="min-h-11 px-6" asChild><a href="#programme-enquiry">Enquire <IconArrowRight className="size-4" /></a></Button>
+          <Button variant="outline" className="min-h-11 px-6" asChild><a href="#programme-enquiry">Enquire Now <IconArrowRight className="size-4" /></a></Button>
         </div>
+      </div>
+      <nav className="svu-main-hero__cards" aria-label="Featured programmes">
+        {programmes.map((programme, index) => {
+          const ProgrammeIcon = heroIcons[index] ?? Atom;
+          return <Link key={programme.slug} to={programmePath(programme)} className={`svu-main-hero__card ${index === 0 ? "svu-main-hero__card--quantum" : ""}`}>
+            <ProgrammeIcon aria-hidden="true" className="size-7 shrink-0 text-primary" strokeWidth={1.6} />
+            <span>{heroLabels[index]}</span>
+            <IconArrowRight aria-hidden="true" className="svu-main-hero__card-arrow size-4 text-primary" />
+          </Link>;
+        })}
+      </nav>
       </div>
       </div>
     </section>
