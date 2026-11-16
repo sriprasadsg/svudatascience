@@ -466,6 +466,21 @@
   min-height: 270px;
   text-decoration: none;
 }
+.programme-card__title-link::after { content: ""; position: absolute; inset: 0; }
+.programme-card__title-link:focus-visible::after { outline: 2px solid var(--color-ring); outline-offset: 3px; border-radius: var(--radius); }
+.programme-card__facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+.programme-card__facts dd, .programme-browse-link span { overflow-wrap: anywhere; }
+.programme-overview-card--quantum .programme-card__actions > a:first-child { background: var(--programme-feature-accent); color: var(--color-primary-foreground); }
+.programme-card__actions > a:first-child { background: var(--programme-feature-accent); color: var(--color-primary-foreground); }
+.programme-browse-link[aria-current="page"] { border-color: var(--color-primary); }
+.programme-browse-link--quantum { background: var(--programme-feature-panel); border-color: var(--programme-feature-border); }
+.programme-section-nav a { min-height: 40px; }
+#learning-focus, #admission-process { scroll-margin-top: 24px; }
+@media (min-width: 768px) {
+  .programme-catalogue-grid .programme-overview-card--quantum { grid-column: 1 / -1; min-height: 220px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px 32px; }
+  .programme-overview-card--quantum .programme-card__facts { margin-top: 0; border-top: 0; padding-top: 0; align-content: center; }
+  .programme-overview-card--quantum .programme-card__actions { grid-column: 1 / -1; padding-top: 8px; }
+}
 .landing .programme-overview-card h3 {
   overflow-wrap: anywhere;
   font-family: inherit;
@@ -515,7 +530,7 @@
   max-width: 440px;
   padding: 14px 16px;
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--color-card);
 }
 .programme-meta span {
@@ -548,6 +563,8 @@
   margin-top: 24px;
 }
 @media (max-width: 767px) {
+  .programme-admission-table :is(th, td) { min-width: 0; padding: 12px; overflow-wrap: anywhere; }
+  .programme-admission-table th { width: 38%; }
   .landing .programme-page__title { font-size: 30px; line-height: 1.25; }
   .landing.programme-page--quantum .programme-page__title { font-size: 32px; }
   .programme-page :is(input, textarea, select, [role="combobox"]), .landing .programme-enquiry-form :is(input, textarea, select) { font-size: 16px; min-height: 44px; }

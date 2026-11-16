@@ -11,6 +11,7 @@
 - Keep the six programme definitions in the shared landing-page catalogue and render overview cards and detail routes from it; use the shared programme enquiry schema so client and server validation agree, and keep unverified delivery details as admissions-confirmation wording rather than invented facts.
 - Render one programme enquiry form on the homepage overview; detail CTAs pass the catalogue slug via the programme query parameter, so selection stays editable and submissions reuse the existing handler.
 - Scope programme emphasis through catalogue-slug modifier classes and semantic tokens in the global stylesheet, using `.landing`-qualified heading selectors so the shared typography cannot override the hierarchy.
+- Keep programme cards as articles with a stretched title link and separately layered actions, so the card opens its detail route without nesting the editable-enquiry link inside another link.
 - Use the shared horizontal technology display beneath the homepage learning content, so the logo registry stays consistent with other pages.
 - Keep registration on a standalone page without the university header or footer, using fields from the approved PDF and a shared client/server schema; save through the submission function to a private submissions table so online entries reach the owner without exposing applicant data.
 - Keep the registration year selector in a dedicated popover control with tested year pages, so navigation and selection cannot escape the approved range.

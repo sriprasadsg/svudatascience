@@ -1,5 +1,13 @@
 # Programme content and enquiry handover
 
+## Reference-inspired layout — 16 November 2026
+
+Visually inspected `https://truehopefoundation.in/` through a fetched screenshot. Adapted its leading feature, category navigation and repeated content/action hierarchy, not its charity imagery, text, payment features or visual identity. Quantum now leads as a pale-blue full-row feature on desktop; five consistent white cards follow with compact duration/mode facts and separate View Programme/Enquire actions. Titles also open real detail routes. Programme category links jump to the relevant group without hiding courses or changing their order.
+
+All six detail routes share compact facts, section navigation, grouped learning/admissions sections, the retained admission tables (Quantum keeps only the three requested rows), shared-form enquiry links, and six-course onward navigation. Existing main title/subtitle source comparison passed; programme catalogue wording and backend/form code are unchanged. Mobile admission cells wrap without requiring horizontal scrolling.
+
+Checks: all six overview View Programme/Enquire actions and detail preselects, six direct HTTP 200 routes at 1280/390/360px, no page overflow/runtime errors; 38 focused tests and intercepted browser checks for placeholder selection, consent, numeric phone, qualification, spell clearing and saved/error states. Preview build reports `build OK`. Pending: existing review SQL, submission/email-function deployment and sender-domain DNS verification; none activated or applied. Notifications remain intended for `admissions@svudatascience.in` after storage in `enquiries`; no real delivery/storage test was performed. Original logo pointers remain unchanged and still do not render as image bytes in localhost checks.
+
 ## Public routes
 
 The overview at `/#programmes` links to six routes in this order:

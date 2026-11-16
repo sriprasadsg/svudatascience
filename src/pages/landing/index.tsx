@@ -17,6 +17,7 @@ import {
   IconUsers,
   IconWorld,
   IconBuildingBank,
+  IconClock,
 } from "@tabler/icons-react";
 import { Button } from "@/components/base/button";
 import { programmes, programmePath, type Programme } from "./programmes";
@@ -123,15 +124,21 @@ function Collaboration() {
 
 function ProgrammeCard({ p }: { p: Programme }) {
   return (
-    <Link id={`prog-${p.slug}`} to={programmePath(p)} className={`programme-card programme-overview-card ${p.slug === "ms-quantum-computing" ? "programme-overview-card--quantum" : ""} group flex min-w-0 scroll-mt-24 flex-col rounded-lg border border-border bg-background p-6 text-foreground`} aria-label={`View ${p.name}`}>
-      <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.duration}</p>
-      <h3 className="mt-3 text-xl group-hover:underline group-hover:underline-offset-4">{p.name}</h3>
-      <p className="mt-3 text-sm italic text-muted-foreground">{p.subtitle}</p>
-      <p className="mt-4 text-sm leading-6 text-muted-foreground">{p.mode}</p>
-      <span className="mt-auto inline-flex items-center gap-1 pt-6 text-sm font-medium text-primary">
-        View programme <IconArrowRight className="size-4 icon-nudge" />
-      </span>
-    </Link>
+    <article id={`prog-${p.slug}`} className={`programme-card programme-overview-card ${p.slug === "ms-quantum-computing" ? "programme-overview-card--quantum" : ""} group relative flex min-w-0 scroll-mt-24 flex-col rounded-lg border border-border bg-background p-6 text-foreground`}>
+      <div className="programme-card__content">
+        <p className="text-xs font-medium text-primary">{p.admissionType === "diploma" ? "Diploma programme" : "Master’s programme"}</p>
+        <h3 className="mt-3 text-xl"><Link to={programmePath(p)} className="programme-card__title-link hover:underline" aria-label={`View ${p.name}`}>{p.name}</Link></h3>
+        <p className="mt-3 text-sm italic text-muted-foreground">{p.subtitle}</p>
+      </div>
+      <dl className="programme-card__facts mt-5 grid gap-3 border-t border-border pt-4 text-sm">
+        <div className="flex items-start gap-2"><IconClock className="mt-0.5 size-4 shrink-0 text-primary" /><div><dt className="text-xs text-muted-foreground">Duration</dt><dd className="mt-1">{p.duration}</dd></div></div>
+        <div className="flex items-start gap-2"><IconDeviceLaptop className="mt-0.5 size-4 shrink-0 text-primary" /><div><dt className="text-xs text-muted-foreground">Mode</dt><dd className="mt-1 leading-5">{p.mode}</dd></div></div>
+      </dl>
+      <div className="programme-card__actions relative z-10 mt-auto flex flex-wrap gap-3 pt-6">
+        <Button asChild className="font-medium"><Link to={programmePath(p)}>View Programme <IconArrowRight className="size-4" /></Link></Button>
+        <Button asChild variant="outline" className="font-medium"><Link to={`/?programme=${p.slug}#programme-enquiry`}>Enquire</Link></Button>
+      </div>
+    </article>
   );
 }
 
@@ -145,7 +152,13 @@ function Programmes() {
           <p className="text-sm font-medium text-primary">Programmes</p>
           <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
         </div>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <nav aria-label="Programme categories" className="mb-6 flex flex-wrap justify-center gap-2">
+          <Button asChild variant="outline"><a href="#prog-ms-quantum-computing">All programmes</a></Button>
+          <Button asChild variant="outline"><a href="#prog-ms-quantum-computing">Master’s programmes</a></Button>
+          <Button asChild variant="outline"><a href="#prog-pg-diploma-data-science">Diploma programmes</a></Button>
+          <Button asChild variant="ghost"><a href="#programme-enquiry">Enquire <IconArrowRight className="size-4" /></a></Button>
+        </nav>
+        <div className="programme-catalogue-grid grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {programmes.map((programme) => <ProgrammeCard key={programme.slug} p={programme} />)}
         </div>
 

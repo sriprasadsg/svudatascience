@@ -4,7 +4,7 @@ import { IconArrowLeft, IconArrowRight, IconCheck, IconClock, IconDeviceLaptop }
 import { Button } from "@/components/base/button";
 import { SvuHeader } from "./components/svu-header";
 import { SvuFooter } from "./components/svu-footer";
-import { getProgramme, type AdmissionType } from "./programmes";
+import { getProgramme, programmes, programmePath, type AdmissionType } from "./programmes";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 
@@ -95,13 +95,21 @@ export default function ProgrammePage() {
           </div>
         </section>
 
-        <div className="mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
-          <section aria-labelledby="learning-focus">
+        <nav aria-label="Programme page sections" className="programme-section-nav border-b border-border bg-background">
+          <div className="mx-auto flex max-w-6xl flex-wrap gap-2 px-5 py-3 sm:px-6 lg:px-8">
+            <Button asChild variant="ghost"><a href="#learning-focus">Learning focus</a></Button>
+            <Button asChild variant="ghost"><a href="#admission-process">Admission process</a></Button>
+            <Button asChild variant="outline"><Link to={enquiryHref}>Enquire <IconArrowRight className="size-4" /></Link></Button>
+          </div>
+        </nav>
+
+        <div className="programme-detail-sections mx-auto grid max-w-6xl gap-10 px-5 py-10 sm:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-8">
+          <section aria-labelledby="learning-focus" className="min-w-0">
             <p className="text-sm font-medium text-primary">Programme overview</p>
             <h2 id="learning-focus" className="mt-2">Learning focus</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-0 divide-y divide-border border-y border-border">
               {programme.highlights.map((highlight) => (
-                <div key={highlight} className="soft-lift flex items-start gap-3 rounded-lg border border-border bg-card p-5">
+                <div key={highlight} className="flex items-start gap-3 py-5">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><IconCheck className="size-4" /></span>
                   <p className="leading-6 text-muted-foreground">{highlight}</p>
                 </div>
@@ -109,7 +117,7 @@ export default function ProgrammePage() {
             </div>
           </section>
 
-          <section aria-labelledby="admission-process" className="mt-10 border-t border-border pt-9">
+          <section aria-labelledby="admission-process" className="min-w-0 border-t border-border pt-9 lg:border-t-0 lg:pt-0">
             <p className="text-sm font-medium text-primary">How to apply</p>
             <h2 id="admission-process" className="mt-2">Admission process</h2>
             <div className="programme-admission-table mt-6 overflow-x-auto rounded-lg border border-border">
@@ -126,9 +134,15 @@ export default function ProgrammePage() {
               </table>
             </div>
             <p className="mt-3 text-sm italic text-muted-foreground">{admission.footnote}</p>
+            <Button asChild className="mt-6 font-medium"><Link to={enquiryHref}>Send a programme enquiry <IconArrowRight className="size-4" /></Link></Button>
           </section>
 
         </div>
+        <section className="border-t border-border bg-muted/30 py-8" aria-label="Browse programmes">
+          <nav className="mx-auto grid max-w-6xl gap-3 px-5 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 lg:px-8">
+            {programmes.map((item) => <Link key={item.slug} to={programmePath(item)} aria-current={item.slug === programme.slug ? "page" : undefined} className={`programme-browse-link flex min-w-0 items-center justify-between gap-3 rounded-md border border-border bg-background p-4 text-sm font-medium hover:border-primary ${item.slug === "ms-quantum-computing" ? "programme-browse-link--quantum" : ""}`}><span>{item.name}</span><IconArrowRight className="size-4 shrink-0 text-primary" /></Link>)}
+          </nav>
+        </section>
       </main>
       <SvuFooter />
     </>
