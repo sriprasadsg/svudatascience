@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Adapt International Students alone to the visually inspected UNSW editorial reference; retained approved admissions/support wording, verified six catalogue/preselect links and generic shared enquiry CTA, original heading/subtitle, artwork loading and 1280/390/360px layout; 38 tests and preview build passed. No verified campus/student photos, team or transport details were supplied, so no such claims/sections were invented; original header logo loading remains unverified. No publication or backend changes.
+
 - [x] Adapt the main page to the visually inspected AVIT reference using unchanged hero wording, benefits/highlights, programme summary panels and shared enquiry; 38 tests and desktop/mobile six-link/preselect/mocked-form checks passed without backend activation or publishing. Sender verification/configuration and existing logo rendering remain pending.
 
 - [x] Adapt the visually inspected True Hope browsing hierarchy to the programme overview and six detail pages, preserving wording/facts/shared form; verified six View/Enquire actions and preselects at 1280/390/360px, 38 tests and mocked validation; no backend activation or publishing.

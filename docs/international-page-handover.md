@@ -1,0 +1,11 @@
+# International Students editorial update
+
+Updated `/international-students` using the visually inspected heading/broad-image/introduction hierarchy and text-verified section structure at https://www.unsw.edu.au/bengaluru/about. This is an adaptation, not a full visual copy. AVIT remains the main-page reference; homepage, programme pages, form logic and backend are unchanged.
+
+Original title and subtitle remain exact. Existing degree eligibility/AIU equivalence, entrance process, document verification, learning/capstone, assessments/examinations, travel coordination costs and certificates wording is retained. Eligibility is explicitly scoped to M.S. Data Science rather than extended to all six programme links. Added only the already-published campus address and six shared-catalogue links, Quantum first. Generic enquiries open the single homepage form with its placeholder; programme links provide editable preselection.
+
+Images: retained approved data-science artwork, with an approved hosted-asset fallback for localhost image failures; verified natural image dimensions at desktop/mobile. Existing student artwork is not verified as an actual SVU campus/student photo, so it was not introduced as documentary campus imagery. No verified campus photos, team roster, transport routes, travel times or opening hours were available; corresponding reference sections were omitted, not filled with invented facts. Original header/footer assets are unchanged; the existing header logo remains broken in localhost checks and hosted logo rendering is unverified.
+
+Checks: 1280px, 390px and 360px layouts without horizontal overflow; original heading/subtitle; retained admissions/support phrases; hero artwork loaded; six View Programme links and six enquiry preselects; generic enquiry placeholder; no duplicate form; Admissions retained its existing layout; no runtime errors. All 38 existing programme/schema/form tests passed. Preview build reports build OK.
+
+Enquiry notification remains intended for admissions@svudatascience.in, including selected programme and optional qualification. Existing sender verification/configuration and reviewed migration/function activation remain pending; no delivery claim is made. No publishing, backend deployment, migration or real submission/email occurred.
