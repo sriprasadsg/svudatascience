@@ -1,3 +1,4 @@
+import { TitleHeading } from "./components/title-heading";
 import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
@@ -116,7 +117,7 @@ function Programmes() {
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-9 max-w-4xl text-center">
           <p className="text-sm font-medium text-primary">Programmes</p>
-          <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
+          <TitleHeading className="mt-2 text-balance">Choose the programme that fits your goals</TitleHeading>
         </div>
         <nav aria-label="Programme categories" className="programme-category-nav mb-7 flex flex-wrap justify-center gap-2 border-y border-border py-4">
           <Button asChild variant="outline"><a href="#prog-ms-quantum-computing">All programmes</a></Button>
@@ -138,7 +139,7 @@ function ProgrammeEnquiry() {
   const initialProgrammeId = new URLSearchParams(location.search).get("programme") ?? "";
   return (
     <section id="programme-enquiry" aria-labelledby="programme-enquiry-heading" className="landing scroll-mt-6 border-t border-border px-6 py-9 lg:px-8">
-      <h2 id="programme-enquiry-heading">Programme enquiry</h2>
+      <TitleHeading id="programme-enquiry-heading">Programme enquiry</TitleHeading>
       <ProgrammeEnquiryForm initialProgrammeId={initialProgrammeId} />
     </section>
   );
@@ -156,7 +157,7 @@ function Learning() {
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-8 max-w-2xl text-center">
           <p className="text-sm font-medium text-primary">Learning experience</p>
-          <h2 className="mt-2 text-balance">How you will learn</h2>
+          <TitleHeading className="mt-2 text-balance">How you will learn</TitleHeading>
         </div>
         <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
@@ -184,7 +185,7 @@ function Admissions() {
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-6 max-w-3xl text-center">
           <p className="text-sm font-medium text-primary">Admissions</p>
-          <h2 className="mt-2 text-balance">Admissions timeline</h2>
+          <TitleHeading className="mt-2 text-balance">Admissions timeline</TitleHeading>
           <p className="mt-4 text-[13px] text-muted-foreground max-sm:whitespace-normal sm:whitespace-nowrap">
             Dates are expected windows. Exact dates are subject to official university and APPGCET announcements.
           </p>
@@ -221,7 +222,7 @@ function International() {
       <div className="mx-auto grid max-w-page items-start gap-8 px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-sm font-medium text-primary">Programmes</p>
-          <h2 className="mt-2 text-balance">Quantum, Masters in Data Science &amp; Diploma Programmes</h2>
+          <TitleHeading className="mt-2 text-balance">Quantum, Masters in Data Science &amp; Diploma Programmes</TitleHeading>
           <div role="group" aria-label="Programme summaries" className="mt-6 grid gap-2">
             {programmes.map((programme) => (
               <Button key={programme.slug} variant="ghost" aria-pressed={activeSlug === programme.slug} aria-controls="programme-summary-panel" onMouseEnter={() => setActiveSlug(programme.slug)} onFocus={() => setActiveSlug(programme.slug)} onClick={() => setActiveSlug(programme.slug)} className={`programme-explorer__option ${programme.slug === "ms-quantum-computing" ? "programme-explorer__option--quantum" : ""} min-h-12 h-auto w-full justify-between whitespace-normal border border-border px-4 py-3 text-left font-medium`}>
@@ -272,7 +273,7 @@ function Faqs() {
   return (
     <section className="landing bg-muted/40 py-10">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="faq-heading mb-8 text-center">Frequently asked questions</h2>
+        <TitleHeading className="faq-heading mb-8 text-center">Frequently asked questions</TitleHeading>
         <Accordion type="single" collapsible>
           {faqs.map(([q, a]) => (
             <AccordionItem key={q} value={q}>
@@ -292,7 +293,7 @@ function Register() {
       <span id="contact" aria-hidden="true" />
       <div className="mx-auto max-w-4xl px-6">
         <div className="text-center">
-          <h2 className="text-balance">Ready to take the next step?</h2>
+          <TitleHeading className="text-balance">Ready to take the next step?</TitleHeading>
           <p className="mt-4 text-sm text-muted-foreground md:whitespace-nowrap">
             Register your interest to receive admission notifications and programme updates.
           </p>

@@ -1,3 +1,4 @@
+import { TitleHeading } from "./components/title-heading";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { IconArrowLeft, IconArrowRight, IconCheck, IconClock, IconDeviceLaptop } from "@tabler/icons-react";
@@ -56,7 +57,7 @@ export default function ProgrammePage() {
             </div>
             <div className="mt-7 max-w-4xl">
               <p className="text-sm font-medium text-primary">SVU–Exafluence programme</p>
-              <h1 className="programme-page__title mt-2">{programme.name}</h1>
+              <TitleHeading as="h1" className="programme-page__title mt-2">{programme.name}</TitleHeading>
               <p className="programme-page__subtitle mt-3 text-lg text-muted-foreground">{programme.subtitle}</p>
               <p className="mt-5 max-w-3xl leading-7 text-muted-foreground">{programme.intro}</p>
             </div>
@@ -79,7 +80,7 @@ export default function ProgrammePage() {
         <div className="programme-detail-sections mx-auto grid max-w-6xl gap-10 px-5 py-10 sm:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-8">
           <section aria-labelledby="learning-focus" className="min-w-0">
             <p className="text-sm font-medium text-primary">Programme overview</p>
-            <h2 id="learning-focus" className="mt-2">Learning focus</h2>
+            <TitleHeading id="learning-focus" className="mt-2">Learning focus</TitleHeading>
             <div className="mt-6 grid gap-0 divide-y divide-border border-y border-border">
               {programme.highlights.map((highlight) => (
                 <div key={highlight} className="flex items-start gap-3 py-5">
@@ -92,7 +93,7 @@ export default function ProgrammePage() {
 
           <section aria-labelledby="admission-process" className="min-w-0 border-t border-border pt-9 lg:border-t-0 lg:pt-0">
             <p className="text-sm font-medium text-primary">How to apply</p>
-            <h2 id="admission-process" className="mt-2">Admission process</h2>
+            <TitleHeading id="admission-process" className="mt-2">Admission process</TitleHeading>
             <div className="programme-admission-table mt-6 overflow-x-auto rounded-lg border border-border">
               <table className="w-full text-left text-sm">
                 <caption className="sr-only">{programme.name} admission process</caption>
