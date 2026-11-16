@@ -451,6 +451,9 @@
    already has it; otherwise the platform sans-serif face is used. */
 .programme-overview,
 .programme-page {
+  --programme-feature-accent: #153b82;
+  --programme-feature-panel: #f1f7ff;
+  --programme-feature-border: #b9d1f4;
   font-family: "Google Sans", sans-serif;
 }
 .programme-overview__subtitle,
@@ -462,20 +465,45 @@
   min-height: 270px;
   text-decoration: none;
 }
-.programme-overview-card h3 {
+.landing .programme-overview-card h3 {
   overflow-wrap: anywhere;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.landing .programme-overview-card--quantum {
+  background: var(--programme-feature-panel);
+  border-color: var(--programme-feature-border);
+  border-top: 3px solid var(--programme-feature-accent);
+}
+.landing .programme-overview-card--quantum h3 {
+  color: var(--programme-feature-accent);
+  font-size: 24px;
+  line-height: 32px;
+}
+.programme-page--quantum .programme-hero {
+  background: var(--programme-feature-panel);
+  border-color: var(--programme-feature-border);
 }
 .landing .programme-page__title {
   font-size: 40px;
   line-height: 1.18;
-  letter-spacing: -0.02em;
-  font-weight: 400;
+  letter-spacing: 0;
+  font-family: inherit;
+  font-weight: 500;
 }
-.programme-page h2,
-.programme-page h3,
-.programme-page h4 {
-  font-weight: 400;
-  letter-spacing: -0.01em;
+.landing.programme-page--quantum .programme-page__title {
+  font-size: 42px;
+  color: var(--programme-feature-accent);
+}
+.landing.programme-page h2,
+.landing.programme-page h3,
+.landing.programme-page h4 {
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 .programme-meta {
   display: flex;
@@ -520,6 +548,7 @@
 }
 @media (max-width: 767px) {
   .landing .programme-page__title { font-size: 30px; line-height: 1.25; }
+  .landing.programme-page--quantum .programme-page__title { font-size: 32px; }
   .programme-page :is(input, textarea, select, [role="combobox"]) { font-size: 16px; min-height: 44px; }
   .programme-page .programme-enquiry-form { padding: 18px; }
   .programme-page .programme-meta { max-width: 100%; flex-basis: 100%; }

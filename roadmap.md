@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Restore pre-rework website titles/subtitles and refine Quantum-first blue hierarchy with five equally readable white programme cards; verified all six routes at 1366/390/360px, 30 focused tests and preview build; kept unpublished.
+
 - [x] Rework programme discovery into six linked overview cards, with Quantum Computing first, and add six shared-layout programme routes.
 - [x] Add programme-specific enquiry forms with validated phone/consent fields, applicable admission spells, preserved input on failure, and a prepared server-side admissions notification flow; do not deploy, migrate, publish, or send test submissions.
 - [x] Verify all programme routes, direct loading, overview links, mobile overflow, form validation, programme prefill, spell differences, mocked success/failure, and the preview build.

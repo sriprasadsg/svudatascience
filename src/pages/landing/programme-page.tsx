@@ -65,7 +65,7 @@ export default function ProgrammePage() {
   return (
     <>
       <SvuHeader />
-      <main className="landing programme-page bg-background">
+      <main className={`landing programme-page bg-background ${programme.slug === "ms-quantum-computing" ? "programme-page--quantum" : ""}`}>
         <div className="mx-auto max-w-6xl px-5 py-6 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="flex min-w-0 flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <Link to="/#programmes" className="text-primary hover:underline">Programmes</Link>
@@ -77,7 +77,7 @@ export default function ProgrammePage() {
           </Link>
         </div>
 
-        <section className="programme-hero border-y border-border bg-muted/20">
+        <section className="programme-hero border-y border-border bg-background">
           <div className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-12 lg:px-8">
             <div className="programme-brand-logos flex items-center gap-5">
               <img src={svuLogo.url} alt="Sri Venkateswara University" className="h-10 w-auto sm:h-12" />

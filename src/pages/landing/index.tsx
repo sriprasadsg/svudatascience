@@ -122,7 +122,7 @@ function Collaboration() {
 
 function ProgrammeCard({ p }: { p: Programme }) {
   return (
-    <Link id={`prog-${p.slug}`} to={programmePath(p)} className="programme-card programme-overview-card group flex min-w-0 scroll-mt-24 flex-col rounded-xl border border-border bg-background p-6 text-foreground" aria-label={`View ${p.name}`}>
+    <Link id={`prog-${p.slug}`} to={programmePath(p)} className={`programme-card programme-overview-card ${p.slug === "ms-quantum-computing" ? "programme-overview-card--quantum" : ""} group flex min-w-0 scroll-mt-24 flex-col rounded-lg border border-border bg-background p-6 text-foreground`} aria-label={`View ${p.name}`}>
       <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.duration}</p>
       <h3 className="mt-3 text-xl group-hover:underline group-hover:underline-offset-4">{p.name}</h3>
       <p className="mt-3 text-sm italic text-muted-foreground">{p.subtitle}</p>
@@ -140,9 +140,7 @@ function Programmes() {
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-9 max-w-4xl text-center">
           <p className="text-sm font-medium text-primary">Programmes</p>
-          <h2 className="mt-2 text-balance">Explore Our Programmes</h2>
-          <p className="programme-overview__subtitle mt-3 text-lg text-muted-foreground">Industry-integrated learning in quantum computing, data science, AI and cloud technologies.</p>
-          <p className="mx-auto mt-4 max-w-3xl leading-7 text-muted-foreground">Explore postgraduate and diploma programmes offered by Sri Venkateswara University in collaboration with Exafluence. Select a programme to view its learning focus, duration, study mode and admission process.</p>
+          <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {programmes.map((programme) => <ProgrammeCard key={programme.slug} p={programme} />)}
