@@ -522,16 +522,17 @@
 }
 .svu-main-hero .text-muted-foreground { color: var(--color-heading); }
 .svu-main-hero__layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
-.landing.svu-main-hero h1.display { font-size: 36px; line-height: 1.2; margin-bottom: 18px; }
-.svu-main-hero__copy > p:first-of-type { font-size: 16px; line-height: 1.6; }
+.landing.svu-main-hero h1.display { font-size: 44px; line-height: 1.2; font-weight: 400; margin-bottom: 22px; }
+.svu-main-hero__copy > p:first-of-type { font-size: 18px; line-height: 1.7; max-width: 500px; }
 .svu-main-hero__illustration { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; max-height: 420px; object-fit: contain; }
-@media (min-width: 1600px) { .landing.svu-main-hero h1.display { font-size: 42px; } }
+@media (min-width: 1600px) { .landing.svu-main-hero h1.display { font-size: 48px; } }
 @media (max-width: 1023px) {
   .svu-main-hero__layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .svu-main-hero__illustration { max-width: 680px; margin-inline: auto; }
 }
 @media (max-width: 639px) {
-  .landing.svu-main-hero h1.display { font-size: 28px; }
+  .landing.svu-main-hero h1.display { font-size: 32px; }
+  .svu-main-hero__copy > p:first-of-type { font-size: 16px; }
 }
 .svu-main-hero p { max-width: 680px; }
 .svu-main-collaboration { background: color-mix(in oklab, var(--color-primary) 3%, var(--color-background)); }

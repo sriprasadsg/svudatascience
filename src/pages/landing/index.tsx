@@ -32,23 +32,17 @@ function Hero() {
       <div className="svu-main-hero__content mx-auto max-w-page px-6 lg:px-8">
       <div className="programme-brand-logos mb-7 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3">
         <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
-        <span className="shrink-0 text-sm font-normal text-muted-foreground">in collaboration with</span>
         <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto min-w-0 shrink sm:h-9" />
       </div>
       <div className="svu-main-hero__layout">
       <div className="svu-main-hero__copy min-w-0">
         <h1 className="display mb-6">
-          <span className="block">Data Science Education</span>
-          <span className="block">with Industry Experience</span>
+          <span className="block">Industry-Integrated</span>{" "}
+          <span className="block text-primary">Technology Education</span>
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          Explore Master's and Diploma Programmes{" "}
-          <br className="hidden sm:block" />
-          in Data Science, AI, Generative AI,{" "}
-          <br className="hidden sm:block" />
-          Data Visualization and Cloud Technologies.
+          Connect academic foundations with industry practice through applied learning, projects and expert mentorship.
         </p>
-        <p className="svu-main-hero__support mt-4 text-sm leading-6 text-muted-foreground">Explore Quantum Computing, Data Science, AI and cloud technologies through academic study and practical learning.</p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Button className="min-h-11 px-6" asChild><a href="#programmes">Explore Programmes <IconArrowRight className="size-4 icon-nudge" /></a></Button>
           <Button variant="outline" className="min-h-11 px-6" asChild><a href="#programme-enquiry">Enquire Now <IconArrowRight className="size-4" /></a></Button>
