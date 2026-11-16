@@ -6,6 +6,7 @@ import { TechStrip } from "./components/tech-strip";
 import { ProgrammeEnquiryForm } from "./components/programme-enquiry-form";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
+import learningHero from "@/assets/svu-learning-hero.jpg";
 import {
   IconArrowRight,
   IconBook2,
@@ -27,8 +28,9 @@ import {
 } from "@/components/ui/accordion";
 function Hero() {
   return (
-    <section id="top" className="landing svu-main-hero border-b border-border bg-background py-12 sm:py-16">
-      <div className="mx-auto max-w-page px-6 lg:px-8">
+    <section id="top" className="landing svu-main-hero relative isolate overflow-hidden border-b border-border bg-background py-12 sm:py-16">
+      <img src={learningHero} alt="" aria-hidden="true" width={1920} height={1024} fetchPriority="high" className="svu-main-hero__image absolute inset-0 -z-10 h-full w-full object-cover" />
+      <div className="svu-main-hero__content mx-auto max-w-page px-6 lg:px-8">
       <div className="programme-brand-logos mb-7 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3">
         <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
         <span className="shrink-0 text-sm font-normal text-muted-foreground">in collaboration with</span>

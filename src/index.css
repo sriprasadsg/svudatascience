@@ -515,7 +515,21 @@
 @media (min-width: 640px) {
   .svu-main-hero .programme-brand-logos { max-width: 760px; flex-wrap: nowrap; }
 }
-.svu-main-hero { border-top: 3px solid var(--color-heading); }
+.svu-main-hero {
+  --hero-surface: hsl(204 72% 93%);
+  border-top: 3px solid var(--color-heading);
+  background: var(--hero-surface);
+}
+.svu-main-hero__image { object-position: center; }
+.svu-main-hero .text-muted-foreground { color: var(--color-heading); }
+.svu-main-hero__content > .max-w-4xl { max-width: 760px; }
+@media (max-width: 1023px) {
+  .svu-main-hero__image { opacity: .35; object-position: 35% center; }
+}
+@media (max-width: 639px) {
+  .svu-main-hero { padding-bottom: 160px; }
+  .svu-main-hero__image { opacity: 1; object-fit: contain; object-position: right bottom; }
+}
 .svu-main-hero p { max-width: 680px; }
 .svu-main-collaboration { background: color-mix(in oklab, var(--color-primary) 3%, var(--color-background)); }
 .svu-main-learning .svu-benefit > svg { flex-shrink: 0; margin: 0; }
