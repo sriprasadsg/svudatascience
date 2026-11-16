@@ -322,10 +322,10 @@ export default function Landing() {
       <SvuHeader />
       <main className="svu-main-page bg-background text-foreground">
         <Hero />
+        <Collaboration />
         <Learning />
         <Programmes />
         <div className="mx-auto max-w-page px-6 pb-10 lg:px-8"><TechStrip /></div>
-        <Collaboration />
         <Admissions />
         <International />
         <Register />
