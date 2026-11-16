@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Adapt the main page to the visually inspected AVIT reference using unchanged hero wording, benefits/highlights, programme summary panels and shared enquiry; 38 tests and desktop/mobile six-link/preselect/mocked-form checks passed without backend activation or publishing. Sender verification/configuration and existing logo rendering remain pending.
+
 - [x] Adapt the visually inspected True Hope browsing hierarchy to the programme overview and six detail pages, preserving wording/facts/shared form; verified six View/Enquire actions and preselects at 1280/390/360px, 38 tests and mocked validation; no backend activation or publishing.
 
 - [x] Add optional Educational Qualification to the common enquiry form, shared validation, prepared storage SQL and notification; 38 tests plus blank/populated mocked browser checks and mobile layout passed; no migration, deployment or publishing.

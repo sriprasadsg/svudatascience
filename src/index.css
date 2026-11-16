@@ -481,6 +481,27 @@
   .programme-overview-card--quantum .programme-card__facts { margin-top: 0; border-top: 0; padding-top: 0; align-content: center; }
   .programme-overview-card--quantum .programme-card__actions { grid-column: 1 / -1; padding-top: 8px; }
 }
+.svu-main-page { --color-primary: hsl(218 72% 30%); }
+.svu-main-page .landing :is(h1, h2, h3, h4) { letter-spacing: 0; }
+.svu-main-page .icon-anim { color: var(--color-heading); }
+.svu-main-page .learn-tile { background: var(--color-background); }
+.svu-main-page .landing .learn-tile::before { display: none; }
+.svu-main-page .lms-support-band { background: color-mix(in oklab, var(--color-primary) 3%, var(--color-background)); }
+@media (min-width: 640px) {
+  .svu-main-hero .programme-brand-logos { max-width: 760px; flex-wrap: nowrap; }
+}
+.svu-main-hero { border-top: 3px solid var(--color-heading); }
+.svu-main-hero p { max-width: 680px; }
+.svu-main-collaboration { background: color-mix(in oklab, var(--color-primary) 3%, var(--color-background)); }
+.svu-main-learning .svu-benefit > svg { flex-shrink: 0; margin: 0; }
+.svu-main-page .programme-card__highlights { color: var(--color-foreground); }
+.svu-main-page #programme-enquiry { max-width: 900px; margin-left: auto; margin-right: auto; }
+.svu-main-page .programme-enquiry-form { border-radius: 8px; }
+@media (min-width: 768px) {
+  .svu-main-page .programme-overview-card--quantum { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+  .svu-main-page .programme-overview-card--quantum .programme-card__content { grid-row: 1 / 3; }
+  .svu-main-page .programme-overview-card--quantum .programme-card__highlights { grid-column: 2; margin-top: 4px; }
+}
 .landing .programme-overview-card h3 {
   overflow-wrap: anywhere;
   font-family: inherit;

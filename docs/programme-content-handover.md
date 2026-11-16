@@ -1,5 +1,15 @@
 # Programme content and enquiry handover
 
+## AVIT primary homepage reference — 16 November 2026
+
+Visually inspected a fetched screenshot and read `https://avit.ac.in/vemerge-plus/`. Adapted the visible introductory CTA/benefits layout and the text-verified grouped features/programme-summary hierarchy, not an exact visual reproduction of the full source page. AVIT supersedes True Hope for the main page only; existing coherent detail pages are retained.
+
+The homepage now opens with unchanged original headline/subtitle and Explore Programmes/Enquire anchors, followed by the existing concise learning-benefits grid and grouped learning resources, academic/industry collaboration, and six programme summary panels. Quantum leads with restrained blue emphasis; five equally styled white panels include approved duration/mode and two catalogue highlights with View Full Programme Details/Enquire links. The shared form remains below the programme list and comparison, and all admissions, international-student, contact, FAQ and official navigation/footer content is retained. No AVIT claims, fees, certifications, guarantees, assets or statistics were imported. Royal/navy accents are scoped to the main page.
+
+Changed public route: `/`. All six existing `/programmes/...` destinations are unchanged. Verified original hero wording against `b0ae2bc`, all six links/direct routes/preselects, both hero anchors, one common form, placeholder validation, numeric phone, consent, optional blank/populated qualification, stale spell clearing, error retention and mocked accepted references. All 38 focused tests passed; desktop 1280px and mobile 390px/360px checks had no overflow or runtime errors; preview build passed.
+
+Current email-domain listing reports the project's configured `svudatascience.in` domain is still verifying DNS. Existing notification setup uses `notify.svudatascience.in`; its sender configuration must be reconciled with the verified project domain before authorised activation. The existing review SQL and submission/email functions remain unapplied/undeployed. Programme identity and qualification inclusion are unchanged, with notifications intended for `admissions@svudatascience.in`. No actual acceptance/storage or delivery was tested, and no real submissions, migrations, deployments or publishing occurred. Existing approved logo asset pointers remain unchanged; localhost still returns non-image content for them, so hosted artwork rendering remains unverified.
+
 ## Reference-inspired layout — 16 November 2026
 
 Visually inspected `https://truehopefoundation.in/` through a fetched screenshot. Adapted its leading feature, category navigation and repeated content/action hierarchy, not its charity imagery, text, payment features or visual identity. Quantum now leads as a pale-blue full-row feature on desktop; five consistent white cards follow with compact duration/mode facts and separate View Programme/Enquire actions. Titles also open real detail routes. Programme category links jump to the relevant group without hiding courses or changing their order.

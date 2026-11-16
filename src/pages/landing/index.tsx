@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link, useLocation } from "react-router-dom";
@@ -27,33 +27,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-
 function Hero() {
-  const [choice, setChoice] = useState<string>("");
-  const selectedProgramme = programmes.find((programme) => programme.slug === choice);
   return (
-    <section id="top" className="landing relative isolate overflow-hidden py-24">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,black,transparent_80%)]"
-      >
-        <div aria-hidden="true" className="hero-motif absolute inset-0" />
-      </div>
-      <div aria-hidden="true" className="pointer-events-none absolute -top-24 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl" />
-      <div aria-hidden="true" className="pointer-events-none absolute top-40 right-1/4 -z-10 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
-      <div className="mx-auto mb-6 flex max-w-4xl flex-nowrap items-center justify-center gap-x-5 gap-y-3 px-6">
+    <section id="top" className="landing svu-main-hero border-b border-border bg-background py-12 sm:py-16">
+      <div className="mx-auto max-w-page px-6 lg:px-8">
+      <div className="programme-brand-logos mb-7 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3">
         <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
         <span className="shrink-0 text-sm font-normal text-muted-foreground">in collaboration with</span>
         <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto min-w-0 shrink sm:h-9" />
       </div>
-      <div className="mx-auto max-w-4xl px-6 text-center">
+      <div className="max-w-4xl">
         <h1 className="display mb-6">
           <span className="block sm:whitespace-nowrap">Data Science Education</span>
           <span className="block sm:whitespace-nowrap">with Industry Experience</span>
@@ -65,27 +48,11 @@ function Hero() {
           <br className="hidden sm:block" />
           Data Visualization and Cloud Technologies.
         </p>
-        <div className="mx-auto mt-8 flex max-w-xl flex-col gap-2 sm:flex-row">
-          <Select value={choice} onValueChange={setChoice}>
-            <SelectTrigger className="h-14 min-w-0 text-base [&>span]:min-w-0 [&>svg]:shrink-0" aria-label="Choose a programme">
-              <SelectValue placeholder="Choose a programme…" />
-            </SelectTrigger>
-            <SelectContent className="w-[var(--radix-select-trigger-width)] max-w-[calc(100vw-2rem)]">
-              {programmes.map((p) => (
-                <SelectItem key={p.slug} value={p.slug} className="min-h-11 whitespace-normal">
-                  {p.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Button className="h-14 px-6" asChild>
-            {selectedProgramme ? <Link to={programmePath(selectedProgramme)}>
-              Explore <IconArrowRight className="size-4 icon-nudge" />
-            </Link> : <a href="#programmes">
-              Explore <IconArrowRight className="size-4 icon-nudge" />
-            </a>}
-          </Button>
+        <div className="mt-7 flex flex-wrap gap-3">
+          <Button className="min-h-11 px-6" asChild><a href="#programmes">Explore Programmes <IconArrowRight className="size-4 icon-nudge" /></a></Button>
+          <Button variant="outline" className="min-h-11 px-6" asChild><a href="#programme-enquiry">Enquire <IconArrowRight className="size-4" /></a></Button>
         </div>
+      </div>
       </div>
     </section>
   );
@@ -93,14 +60,14 @@ function Hero() {
 
 function Collaboration() {
   return (
-    <section id="collaboration" className="landing py-10">
+    <section id="collaboration" className="landing svu-main-collaboration border-y border-border py-12">
       <div className="mx-auto max-w-page px-6 lg:px-8">
         <div className="mx-auto mb-6 max-w-2xl text-center">
           <p className="text-sm font-medium text-primary">Industry Collaboration</p>
           <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="soft-lift rounded-xl border border-border bg-card p-8">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="py-2 md:border-r md:border-border md:pr-8">
             <IconBuildingBank className="mb-4 size-8 icon-anim icon-c1" />
             <h3>Sri Venkateswara University</h3>
             <p className="mt-3 text-muted-foreground">
@@ -108,7 +75,7 @@ function Collaboration() {
               examinations and awards the qualification.
             </p>
           </div>
-          <div className="soft-lift rounded-xl border border-border bg-card p-8">
+          <div className="py-2">
             <IconBriefcase className="mb-4 size-8 icon-anim icon-c2" />
             <h3>Exafluence Education</h3>
             <p className="mt-3 text-muted-foreground">
@@ -134,8 +101,11 @@ function ProgrammeCard({ p }: { p: Programme }) {
         <div className="flex items-start gap-2"><IconClock className="mt-0.5 size-4 shrink-0 text-primary" /><div><dt className="text-xs text-muted-foreground">Duration</dt><dd className="mt-1">{p.duration}</dd></div></div>
         <div className="flex items-start gap-2"><IconDeviceLaptop className="mt-0.5 size-4 shrink-0 text-primary" /><div><dt className="text-xs text-muted-foreground">Mode</dt><dd className="mt-1 leading-5">{p.mode}</dd></div></div>
       </dl>
+      <ul className="programme-card__highlights mt-5 grid gap-2 border-t border-border pt-4 text-sm">
+        {p.highlights.slice(0, 2).map((highlight) => <li key={highlight} className="flex items-start gap-2"><IconTarget aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" /><span>{highlight}</span></li>)}
+      </ul>
       <div className="programme-card__actions relative z-10 mt-auto flex flex-wrap gap-3 pt-6">
-        <Button asChild className="font-medium"><Link to={programmePath(p)}>View Programme <IconArrowRight className="size-4" /></Link></Button>
+        <Button asChild className="font-medium"><Link to={programmePath(p)}>View Full Programme Details <IconArrowRight className="size-4" /></Link></Button>
         <Button asChild variant="outline" className="font-medium"><Link to={`/?programme=${p.slug}#programme-enquiry`}>Enquire</Link></Button>
       </div>
     </article>
@@ -152,17 +122,17 @@ function Programmes() {
           <p className="text-sm font-medium text-primary">Programmes</p>
           <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
         </div>
-        <nav aria-label="Programme categories" className="mb-6 flex flex-wrap justify-center gap-2">
+        <nav aria-label="Programme categories" className="programme-category-nav mb-7 flex flex-wrap justify-center gap-2 border-y border-border py-4">
           <Button asChild variant="outline"><a href="#prog-ms-quantum-computing">All programmes</a></Button>
           <Button asChild variant="outline"><a href="#prog-ms-quantum-computing">Master’s programmes</a></Button>
           <Button asChild variant="outline"><a href="#prog-pg-diploma-data-science">Diploma programmes</a></Button>
           <Button asChild variant="ghost"><a href="#programme-enquiry">Enquire <IconArrowRight className="size-4" /></a></Button>
         </nav>
-        <div className="programme-catalogue-grid grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="programme-catalogue-grid grid gap-5 md:grid-cols-2">
           {programmes.map((programme) => <ProgrammeCard key={programme.slug} p={programme} />)}
         </div>
 
-        <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-background text-foreground">
+        <div className="mt-10 overflow-x-auto border-y border-border bg-background text-foreground">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Programme comparison</caption>
             <thead className="border-b border-border text-base leading-snug md:text-lg">
@@ -202,18 +172,20 @@ function Learning() {
     { icon: IconBook2, title: "Learning resources", text: "Structured materials and resources to support hybrid study." },
   ];
   return (
-    <section className="landing py-20">
+    <section id="learning" className="landing svu-main-learning py-12">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-8 max-w-2xl text-center">
           <p className="text-sm font-medium text-primary">Learning experience</p>
           <h2 className="mt-2 text-balance">How you will learn</h2>
         </div>
-        <div className="mb-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-8 grid gap-4 sm:grid-cols-2">
           {cards.map((c, i) => (
-            <div key={c.title} className="soft-lift rounded-xl border border-border bg-card p-6">
+            <div key={c.title} className="svu-benefit soft-lift flex items-start gap-4 rounded-lg border border-border bg-card p-5">
               <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
+              <div>
               <h4 className="font-medium">{c.title}</h4>
               <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -375,7 +347,7 @@ function Register() {
             Register your interest to receive admission notifications and programme updates.
           </p>
         </div>
-        <div className="mt-6 text-center"><Button asChild><Link to="/registration">Registration</Link></Button></div>
+        <div className="mt-6 flex flex-wrap justify-center gap-3"><Button asChild><a href="#programme-enquiry">Enquire <IconArrowRight className="size-4" /></a></Button><Button variant="outline" asChild><Link to="/registration">Registration</Link></Button></div>
       </div>
     </section>
   );
@@ -405,11 +377,11 @@ export default function Landing() {
   return (
     <>
       <SvuHeader />
-      <main>
+      <main className="svu-main-page bg-background text-foreground">
         <Hero />
+        <Learning />
         <Collaboration />
         <Programmes />
-        <Learning />
         <Admissions />
         <International />
         <Register />
