@@ -346,9 +346,9 @@ export default function Landing() {
       <main className="svu-main-page bg-background text-foreground">
         <Hero />
         <Learning />
+        <Programmes />
         <div className="mx-auto max-w-page px-6 pb-10 lg:px-8"><TechStrip /></div>
         <Collaboration />
-        <Programmes />
         <Admissions />
         <International />
         <Register />
