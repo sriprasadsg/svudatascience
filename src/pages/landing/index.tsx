@@ -66,10 +66,6 @@ function Collaboration() {
   return (
     <section id="collaboration" className="landing svu-main-collaboration border-y border-border py-12">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-6 max-w-2xl text-center">
-          <p className="text-sm font-medium text-primary">Industry Collaboration</p>
-          <h2 className="mt-2 text-balance">Academic Learning with Industry Experience</h2>
-        </div>
         <div className="grid gap-8 md:grid-cols-2">
           <div className="py-2 md:border-r md:border-border md:pr-8">
             <IconBuildingBank className="mb-4 size-8 icon-anim icon-c1" />
