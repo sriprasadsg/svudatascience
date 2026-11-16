@@ -113,8 +113,6 @@ function ProgrammeCard({ p }: { p: Programme }) {
 }
 
 function Programmes() {
-  const location = useLocation();
-  const initialProgrammeId = new URLSearchParams(location.search).get("programme") ?? "";
   return (
     <section id="programmes" className="landing programme-overview scroll-mt-4 bg-background py-16 text-foreground">
       <div className="mx-auto max-w-page px-6 lg:px-8">
@@ -155,11 +153,18 @@ function Programmes() {
             </tbody>
           </table>
         </div>
-        <section id="programme-enquiry" aria-labelledby="programme-enquiry-heading" className="mt-10 scroll-mt-6 border-t border-border pt-9">
-          <h2 id="programme-enquiry-heading">Programme enquiry</h2>
-          <ProgrammeEnquiryForm initialProgrammeId={initialProgrammeId} />
-        </section>
       </div>
+    </section>
+  );
+}
+
+function ProgrammeEnquiry() {
+  const location = useLocation();
+  const initialProgrammeId = new URLSearchParams(location.search).get("programme") ?? "";
+  return (
+    <section id="programme-enquiry" aria-labelledby="programme-enquiry-heading" className="landing scroll-mt-6 border-t border-border px-6 py-9 lg:px-8">
+      <h2 id="programme-enquiry-heading">Programme enquiry</h2>
+      <ProgrammeEnquiryForm initialProgrammeId={initialProgrammeId} />
     </section>
   );
 }
@@ -385,6 +390,7 @@ export default function Landing() {
         <Admissions />
         <International />
         <Register />
+        <ProgrammeEnquiry />
         <Faqs />
       </main>
       <SvuFooter />

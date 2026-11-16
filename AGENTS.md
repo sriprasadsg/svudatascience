@@ -9,7 +9,7 @@
 - Validate registrations with a dedicated client schema and a database insert trigger, so direct submissions cannot bypass required fields while historical records remain intact.
 - Keep programme-to-brochure assets in a shared registry for registration confirmations and contact downloads, so both select the same approved file.
 - Keep the six programme definitions in the shared landing-page catalogue and render overview cards and detail routes from it; use the shared programme enquiry schema so client and server validation agree, and keep unverified delivery details as admissions-confirmation wording rather than invented facts.
-- Render one programme enquiry form on the homepage overview; detail CTAs pass the catalogue slug via the programme query parameter, so selection stays editable and submissions reuse the existing handler.
+- Render one programme enquiry form on the homepage immediately after the next-step section; detail CTAs pass the catalogue slug via the programme query parameter, so selection stays editable and submissions reuse the existing handler.
 - Scope programme emphasis through catalogue-slug modifier classes and semantic tokens in the global stylesheet, using `.landing`-qualified heading selectors so the shared typography cannot override the hierarchy.
 - Keep programme cards as articles with a stretched title link and separately layered actions, so the card opens its detail route without nesting the editable-enquiry link inside another link.
 - Compose the homepage from the existing hero, learning benefits/highlights, collaboration, catalogue and supporting sections in that order; reuse catalogue highlights in summary panels so the reference-inspired layout cannot introduce separate programme facts or duplicate enquiry forms.
