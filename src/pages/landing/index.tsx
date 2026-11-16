@@ -4,7 +4,6 @@ import { SvuHeader } from "./components/svu-header";
 import { Link, useLocation } from "react-router-dom";
 import { TechStrip } from "./components/tech-strip";
 import { ProgrammeEnquiryForm } from "./components/programme-enquiry-form";
-import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
 import onlineLearningIllustration from "@/assets/svu-online-learning.webp";
 import {
@@ -31,7 +30,6 @@ function Hero() {
     <section id="top" className="landing svu-main-hero relative isolate overflow-hidden border-b border-border bg-background">
       <div className="svu-main-hero__content mx-auto max-w-page px-6 lg:px-8">
       <div className="programme-brand-logos mb-7 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-3">
-        <img src={svuLogo.url} alt="Sri Venkateswara University, Tirupati" className="h-9 w-auto min-w-0 shrink sm:h-11" />
         <img src={exfeduLogo.url} alt="Exafluence Education" className="h-8 w-auto min-w-0 shrink sm:h-9" />
       </div>
       <div className="svu-main-hero__layout">
