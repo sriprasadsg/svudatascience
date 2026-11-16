@@ -297,7 +297,7 @@ function Register() {
             Register your interest to receive admission notifications and programme updates.
           </p>
         </div>
-        <div className="mt-6 flex flex-wrap justify-center gap-3"><Button asChild><a href="#programme-enquiry">Enquire <IconArrowRight className="size-4" /></a></Button><Button variant="outline" asChild><Link to="/registration">Registration</Link></Button></div>
+        <div className="mt-6 flex justify-center"><Button className="h-12 px-10 text-base" asChild><Link to="/registration">Registration</Link></Button></div>
       </div>
     </section>
   );
