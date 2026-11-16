@@ -18,7 +18,7 @@ import {
   IconClock,
 } from "@tabler/icons-react";
 import { Button } from "@/components/base/button";
-import { programmes, programmePath, type Programme } from "./programmes";
+import { programmes, programmePath, programmeAdmissions, type Programme } from "./programmes";
 import {
   Accordion,
   AccordionContent,
@@ -238,16 +238,23 @@ function International() {
             <div><dt className="text-xs text-muted-foreground">Duration</dt><dd className="mt-1 text-sm">{active.duration}</dd></div>
             <div><dt className="text-xs text-muted-foreground">Mode</dt><dd className="mt-1 text-sm">{active.mode}</dd></div>
           </dl>
-          <p className="mt-5 text-sm font-medium">Learning focus</p>
-          <ul className="mt-3 grid gap-3 text-sm">
-            {active.highlights.map((highlight) => <li key={highlight} className="flex items-start gap-3"><IconTarget aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" /><span>{highlight}</span></li>)}
-          </ul>
-          <p className="mt-5 text-sm font-medium">Admission</p>
-          <p className="mt-2 text-sm text-muted-foreground">{active.admissionSummary}</p>
+          <h4 className="mt-5 text-base font-medium">Admission</h4>
+          <dl className="mt-3 divide-y divide-border text-sm">
+            {programmeAdmissions[active.admissionType].rows.map(([label, value]) => (
+              <div key={label} className="py-3">
+                <dt className="font-medium">{label}</dt>
+                <dd className="mt-1 leading-6 text-muted-foreground">{value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-2 text-sm italic text-muted-foreground">{programmeAdmissions[active.admissionType].footnote}</p>
           {active.slug === "ms-data-science" && <p className="mt-3 text-sm text-muted-foreground">30 seats each year are reserved for international applicants to the M.S. Data Science programme.</p>}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild><Link to={programmePath(active)}>View Programme <IconArrowRight size={16} /></Link></Button>
-            <Button asChild variant="outline"><Link to={`/?programme=${active.slug}#programme-enquiry`}>Enquire <IconArrowRight size={16} /></Link></Button>
+          <div className="mt-6 border-t border-border pt-5">
+            <h4 className="text-base font-medium">Enquiry</h4>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <Button asChild><Link to={`/?programme=${active.slug}#programme-enquiry`}>Enquire <IconArrowRight size={16} /></Link></Button>
+              <Button asChild variant="outline"><Link to={programmePath(active)}>View Programme <IconArrowRight size={16} /></Link></Button>
+            </div>
           </div>
         </div>
       </div>

@@ -10,6 +10,33 @@ export const programmeSlugs = [
 export type ProgrammeSlug = (typeof programmeSlugs)[number];
 export type AdmissionType = "quantum" | "data-science" | "diploma";
 
+export const programmeAdmissions: Record<AdmissionType, { rows: [string, string][]; footnote: string }> = {
+  quantum: {
+    rows: [
+      ["Entrance examination", "Online examination"],
+      ["Selection and verification", "Entrance qualification followed by counselling and certificate verification through the SVU Directorate of Admissions"],
+      ["Admission spell", "As notified by SVU"],
+    ],
+    footnote: "Admission arrangements are subject to official SVU notification.",
+  },
+  "data-science": {
+    rows: [
+      ["Admission routes", "APPGCET or the SVU Directorate of Admissions online proctored test, according to the admission route"],
+      ["Admission schedule", "Annual admission as officially notified"],
+      ["Selection and verification", "Entrance qualification followed by university admission and document-verification procedures"],
+    ],
+    footnote: "Admission dates are subject to official notification.",
+  },
+  diploma: {
+    rows: [
+      ["Selection process", "Common online proctored entrance test conducted by the SVU Directorate of Admissions"],
+      ["January spell", "Entrance examination in the preceding December"],
+      ["July spell", "Entrance examination in June"],
+    ],
+    footnote: "Admission dates are subject to official notification.",
+  },
+};
+
 export type Programme = {
   slug: ProgrammeSlug;
   name: string;

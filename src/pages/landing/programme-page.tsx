@@ -4,36 +4,9 @@ import { IconArrowLeft, IconArrowRight, IconCheck, IconClock, IconDeviceLaptop }
 import { Button } from "@/components/base/button";
 import { SvuHeader } from "./components/svu-header";
 import { SvuFooter } from "./components/svu-footer";
-import { getProgramme, programmes, programmePath, type AdmissionType } from "./programmes";
+import { getProgramme, programmes, programmePath, programmeAdmissions } from "./programmes";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
-
-const admissions: Record<AdmissionType, { rows: [string, string][]; footnote: string }> = {
-  quantum: {
-    rows: [
-      ["Entrance examination", "Online examination"],
-      ["Selection and verification", "Entrance qualification followed by counselling and certificate verification through the SVU Directorate of Admissions"],
-      ["Admission spell", "As notified by SVU"],
-    ],
-    footnote: "Admission arrangements are subject to official SVU notification.",
-  },
-  "data-science": {
-    rows: [
-      ["Admission routes", "APPGCET or the SVU Directorate of Admissions online proctored test, according to the admission route"],
-      ["Admission schedule", "Annual admission as officially notified"],
-      ["Selection and verification", "Entrance qualification followed by university admission and document-verification procedures"],
-    ],
-    footnote: "Admission dates are subject to official notification.",
-  },
-  diploma: {
-    rows: [
-      ["Selection process", "Common online proctored entrance test conducted by the SVU Directorate of Admissions"],
-      ["January spell", "Entrance examination in the preceding December"],
-      ["July spell", "Entrance examination in June"],
-    ],
-    footnote: "Admission dates are subject to official notification.",
-  },
-};
 
 export default function ProgrammePage() {
   const { programmeSlug } = useParams();
@@ -56,7 +29,7 @@ export default function ProgrammePage() {
     return <><SvuHeader /><main className="landing programme-page mx-auto max-w-3xl px-6 py-16"><h1>Programme not found</h1><Button asChild className="mt-6"><Link to="/#programmes">Back to programmes</Link></Button></main><SvuFooter /></>;
   }
 
-  const admission = admissions[programme.admissionType];
+  const admission = programmeAdmissions[programme.admissionType];
   const enquiryHref = `/?programme=${programme.slug}#programme-enquiry`;
 
   return (
