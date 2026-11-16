@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SvuFooter } from "./components/svu-footer";
 import { SvuHeader } from "./components/svu-header";
 import { Link, useLocation } from "react-router-dom";
@@ -286,32 +286,42 @@ function Admissions() {
 }
 
 function International() {
+  const [activeSlug, setActiveSlug] = useState(programmes[0].slug as Programme["slug"]);
+  const active = programmes.find((programme) => programme.slug === activeSlug) ?? programmes[0];
   return (
-    <section id="international" className="landing py-10">
-      <div className="mx-auto grid max-w-page items-center gap-10 px-6 lg:grid-cols-2 lg:px-8">
+    <section id="international" className="landing programme-explorer py-10">
+      <div className="mx-auto grid max-w-page items-start gap-8 px-6 lg:grid-cols-2 lg:px-8">
         <div>
-          <p className="text-sm font-medium text-primary">International Students</p>
-          <h2 className="mt-2 text-balance">Studying M.S. Data Science from outside India</h2>
-          <p className="mt-4 text-muted-foreground">
-            30 seats each year are reserved for international applicants to the M.S. Data Science programme.
-          </p>
-          <Button asChild className="mt-5"><Link to="/international-students">International student admissions <IconArrowRight size={16} /></Link></Button>
+          <p className="text-sm font-medium text-primary">Programmes</p>
+          <h2 className="mt-2 text-balance">Master’s and Diploma Programmes</h2>
+          <div role="group" aria-label="Programme summaries" className="mt-6 grid gap-2">
+            {programmes.map((programme) => (
+              <Button key={programme.slug} variant="ghost" aria-pressed={activeSlug === programme.slug} aria-controls="programme-summary-panel" onMouseEnter={() => setActiveSlug(programme.slug)} onFocus={() => setActiveSlug(programme.slug)} onClick={() => setActiveSlug(programme.slug)} className={`programme-explorer__option ${programme.slug === "ms-quantum-computing" ? "programme-explorer__option--quantum" : ""} min-h-12 h-auto w-full justify-between whitespace-normal border border-border px-4 py-3 text-left font-medium`}>
+                <span>{programme.name}</span><IconArrowRight aria-hidden="true" className="size-4 shrink-0" />
+              </Button>
+            ))}
+          </div>
+          <Button asChild variant="outline" className="mt-5"><Link to="/international-students"><IconWorld size={16} /> International student admissions</Link></Button>
         </div>
-        <ul className="space-y-4">
-          {[
-            ["Eligibility", "A qualifying degree, subject to the university's recognition or equivalence process."],
-            ["Selection and documents", "Selection follows the university's international admissions route; required documents will be listed on the International Students page."],
-            ["Examinations", "Learning is hybrid. Semester-end examinations are primarily offline, so travel to India may be required."],
-          ].map(([t, d]) => (
-            <li key={t} className="soft-lift flex gap-4 rounded-xl border border-border bg-card p-5">
-              <IconWorld className="size-6 shrink-0 icon-anim icon-c3" />
-              <div>
-                <p className="font-medium">{t}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div id="programme-summary-panel" role="region" aria-label="Selected programme summary" aria-live="polite" className="programme-explorer__panel min-w-0 border-t-2 border-primary pt-5">
+          <h3>{active.name}</h3>
+          <p className="mt-2 text-sm italic text-muted-foreground">{active.subtitle}</p>
+          <dl className="mt-5 grid gap-4 border-y border-border py-4 sm:grid-cols-2">
+            <div><dt className="text-xs text-muted-foreground">Duration</dt><dd className="mt-1 text-sm">{active.duration}</dd></div>
+            <div><dt className="text-xs text-muted-foreground">Mode</dt><dd className="mt-1 text-sm">{active.mode}</dd></div>
+          </dl>
+          <p className="mt-5 text-sm font-medium">Learning focus</p>
+          <ul className="mt-3 grid gap-3 text-sm">
+            {active.highlights.map((highlight) => <li key={highlight} className="flex items-start gap-3"><IconTarget aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" /><span>{highlight}</span></li>)}
+          </ul>
+          <p className="mt-5 text-sm font-medium">Admission</p>
+          <p className="mt-2 text-sm text-muted-foreground">{active.admissionSummary}</p>
+          {active.slug === "ms-data-science" && <p className="mt-3 text-sm text-muted-foreground">30 seats each year are reserved for international applicants to the M.S. Data Science programme.</p>}
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button asChild><Link to={programmePath(active)}>View Programme <IconArrowRight size={16} /></Link></Button>
+            <Button asChild variant="outline"><Link to={`/?programme=${active.slug}#programme-enquiry`}>Enquire <IconArrowRight size={16} /></Link></Button>
+          </div>
+        </div>
       </div>
     </section>
   );

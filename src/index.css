@@ -497,6 +497,11 @@
 .svu-main-page .programme-card__highlights { color: var(--color-foreground); }
 .svu-main-page #programme-enquiry { max-width: 900px; margin-left: auto; margin-right: auto; }
 .svu-main-page .programme-enquiry-form { border-radius: 8px; }
+.programme-explorer__option[aria-pressed="true"] { background: color-mix(in oklab, var(--color-primary) 8%, var(--color-background)); color: var(--color-heading); border-color: var(--color-primary); }
+.programme-explorer__option--quantum { border-left: 3px solid var(--color-primary); }
+.programme-explorer__panel { min-height: 550px; overflow-wrap: anywhere; }
+.landing .programme-explorer__panel h3 { font-weight: 500; }
+@media (max-width: 1023px) { .programme-explorer__panel { min-height: 0; } }
 @media (min-width: 768px) {
   .svu-main-page .programme-overview-card--quantum { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
   .svu-main-page .programme-overview-card--quantum .programme-card__content { grid-row: 1 / 3; }
