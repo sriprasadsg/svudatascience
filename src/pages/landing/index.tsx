@@ -6,7 +6,7 @@ import { TechStrip } from "./components/tech-strip";
 import { ProgrammeEnquiryForm } from "./components/programme-enquiry-form";
 import svuLogo from "@/assets/svu-logo.png.asset.json";
 import exfeduLogo from "@/assets/exfedu-logo.png.asset.json";
-import { Atom, Network, FileChartColumn, CodeXml, PanelsTopLeft, Cloud } from "lucide-react";
+import onlineLearningIllustration from "@/assets/svu-online-learning.webp";
 import {
   IconArrowRight,
   IconBook2,
@@ -27,8 +27,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 function Hero() {
-  const heroLabels = ["Quantum Computing", "Data Science", "PG Diploma in Data Science", "Python for AI, ML & Gen AI", "Data Visualization", "Cloud Technologies"];
-  const heroIcons = [Atom, Network, FileChartColumn, CodeXml, PanelsTopLeft, Cloud];
   return (
     <section id="top" className="landing svu-main-hero relative isolate overflow-hidden border-b border-border bg-background">
       <div className="svu-main-hero__content mx-auto max-w-page px-6 lg:px-8">
@@ -56,16 +54,14 @@ function Hero() {
           <Button variant="outline" className="min-h-11 px-6" asChild><a href="#programme-enquiry">Enquire Now <IconArrowRight className="size-4" /></a></Button>
         </div>
       </div>
-      <nav className="svu-main-hero__cards" aria-label="Featured programmes">
-        {programmes.map((programme, index) => {
-          const ProgrammeIcon = heroIcons[index] ?? Atom;
-          return <Link key={programme.slug} to={programmePath(programme)} className={`svu-main-hero__card ${index === 0 ? "svu-main-hero__card--quantum" : ""}`}>
-            <ProgrammeIcon aria-hidden="true" className="size-7 shrink-0 text-primary" strokeWidth={1.6} />
-            <span>{heroLabels[index]}</span>
-            <IconArrowRight aria-hidden="true" className="svu-main-hero__card-arrow size-4 text-primary" />
-          </Link>;
-        })}
-      </nav>
+      <img
+        className="svu-main-hero__illustration"
+        src={onlineLearningIllustration}
+        alt="Online learning illustration with a video lesson, graduate, books, graduation cap and course folders"
+        width={1536}
+        height={1024}
+        fetchPriority="high"
+      />
       </div>
       </div>
     </section>

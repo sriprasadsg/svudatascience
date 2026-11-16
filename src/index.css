@@ -516,36 +516,23 @@
   .svu-main-hero .programme-brand-logos { max-width: 760px; flex-wrap: nowrap; }
 }
 .svu-main-hero {
-  --hero-surface: hsl(204 72% 93%);
-  --hero-card-shadow: 0 8px 24px hsl(218 50% 25% / .07);
   border-top: 3px solid var(--color-heading);
-  background: var(--hero-surface);
-  padding: 28px 0 64px;
+  background: var(--color-background);
+  padding: 28px 0 40px;
 }
-.svu-main-hero::after { content: ""; position: absolute; inset: auto 0 0; height: 52px; background: var(--color-background); clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 100%); z-index: -1; }
 .svu-main-hero .text-muted-foreground { color: var(--color-heading); }
 .svu-main-hero__layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
 .landing.svu-main-hero h1.display { font-size: 36px; line-height: 1.2; margin-bottom: 18px; }
 .svu-main-hero__copy > p:first-of-type { font-size: 16px; line-height: 1.6; }
-.svu-main-hero__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; align-items: start; }
-.svu-main-hero__card { position: relative; display: flex; flex-direction: column; gap: 12px; min-height: 118px; padding: 18px 36px 18px 18px; border: 1px solid var(--color-border); border-radius: 6px; background: var(--color-background); box-shadow: var(--hero-card-shadow); color: var(--color-heading); font-size: 15px; font-weight: 500; line-height: 1.4; transition: transform .2s ease, border-color .2s ease; }
-.svu-main-hero__card:nth-child(even) { margin-top: 28px; }
-.svu-main-hero__card--quantum { border: 2px solid var(--color-primary); background: color-mix(in oklab, var(--color-background) 90%, var(--hero-surface)); }
-.svu-main-hero__card-arrow { position: absolute; right: 14px; bottom: 20px; }
-.svu-main-hero__card:hover { transform: translateY(-3px); border-color: var(--color-primary); }
-.svu-main-hero__card:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 4px; }
+.svu-main-hero__illustration { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; max-height: 420px; object-fit: contain; }
 @media (min-width: 1600px) { .landing.svu-main-hero h1.display { font-size: 42px; } }
 @media (max-width: 1023px) {
   .svu-main-hero__layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .svu-main-hero__cards { max-width: 680px; width: 100%; }
+  .svu-main-hero__illustration { max-width: 680px; margin-inline: auto; }
 }
 @media (max-width: 639px) {
   .landing.svu-main-hero h1.display { font-size: 28px; }
-  .svu-main-hero__cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .svu-main-hero__card { min-height: 88px; flex-direction: row; align-items: center; padding-right: 38px; }
-  .svu-main-hero__card:nth-child(even) { margin-top: 0; }
 }
-@media (prefers-reduced-motion: reduce) { .svu-main-hero__card { transition: none; } .svu-main-hero__card:hover { transform: none; } }
 .svu-main-hero p { max-width: 680px; }
 .svu-main-collaboration { background: color-mix(in oklab, var(--color-primary) 3%, var(--color-background)); }
 .svu-main-learning .svu-benefit > svg { flex-shrink: 0; margin: 0; }
