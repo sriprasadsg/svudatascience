@@ -221,7 +221,7 @@ function International() {
       <div className="mx-auto grid max-w-page items-start gap-8 px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-sm font-medium text-primary">Programmes</p>
-          <h2 className="mt-2 text-balance">Master’s and Diploma Programmes</h2>
+          <h2 className="mt-2 text-balance">Quantum, Masters in Data Science &amp; Diploma Programmes</h2>
           <div role="group" aria-label="Programme summaries" className="mt-6 grid gap-2">
             {programmes.map((programme) => (
               <Button key={programme.slug} variant="ghost" aria-pressed={activeSlug === programme.slug} aria-controls="programme-summary-panel" onMouseEnter={() => setActiveSlug(programme.slug)} onFocus={() => setActiveSlug(programme.slug)} onClick={() => setActiveSlug(programme.slug)} className={`programme-explorer__option ${programme.slug === "ms-quantum-computing" ? "programme-explorer__option--quantum" : ""} min-h-12 h-auto w-full justify-between whitespace-normal border border-border px-4 py-3 text-left font-medium`}>
