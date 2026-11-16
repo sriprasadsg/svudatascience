@@ -71,3 +71,12 @@ The supplied M.S. Data Science, PG Diploma and Specialist Diplomas presentations
 - The function returns `notificationSent: false` when a saved enquiry cannot be emailed. The visitor-facing success wording says only that the enquiry was saved; it does not claim that an email was delivered.
 
 No publishing, function deployment, database migration, real form submission or real email send was performed for this change.
+
+## Online registration admissions notification (prepared, not deployed)
+
+- Provider: Lovable managed email (`@lovable.dev/email-js` via the shared `sendTemplateEmail` helper), sender domain `notify.svudatascience.in`, fixed recipient `admissions@svudatascience.in`, reply-to set to the applicant's email. Template: `registration-notification` (all values rendered as escaped React text).
+- Flow: `submit-registration` saves to `registration_submissions` first; only then sends. Response `{ id, saved: true, notificationAccepted }` (201) or `{ saved: false, error }` (503). A failed send is logged with the registration id and never reported as a failed registration; the page tells the applicant not to resubmit. "Accepted for sending" is shown only when the email API accepts it — delivery is not claimed. Idempotency key `registration-notification-<id>` prevents duplicate sends on retries.
+- Programme enquiry notifications to the same mailbox are unchanged.
+- Required secret names (already present in the project): `LOVABLE_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
+- Tests: `src/pages/landing/components/registration-submission.test.ts` (save+send success, save failure, saved-but-notification-failed).
+- Remaining steps (not performed): verify DNS for `notify.svudatascience.in`; deploy `submit-registration`, `submit-programme-enquiry` and `preview-transactional-email`; publish the frontend; then send one approved test registration and confirm it in the email logs. No migration is needed (insert now also selects the existing `created_at`).

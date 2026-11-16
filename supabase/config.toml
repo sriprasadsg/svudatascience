@@ -7,3 +7,6 @@ project_id = "aujtjyzcffmkpcetahtc"
     verify_jwt = false
   [functions.submit-programme-enquiry]
     verify_jwt = false
+
+[functions.submit-registration]
+  verify_jwt = false

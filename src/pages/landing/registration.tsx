@@ -18,6 +18,7 @@ export default function RegistrationPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);
   const [reference, setReference] = useState("");
+  const [notificationAccepted, setNotificationAccepted] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const update = (key: string, value: string) => {
     setValues(prev => ({ ...prev, [key]: value }));
@@ -46,6 +47,7 @@ export default function RegistrationPage() {
     try {
       const { data, error } = await supabase.functions.invoke("submit-registration", { body: parsed.data });
       if (error || !data?.id) throw new Error("Save failed");
+      setNotificationAccepted(data.notificationAccepted === true);
       setReference(data.id);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch { setSubmitError("Your registration could not be saved. Please try again; your entries are still here."); }
@@ -77,6 +79,7 @@ export default function RegistrationPage() {
         <CheckCircle2 className="mx-auto mb-4 h-10 w-10 text-primary" />
         <h2 className="text-xl tracking-normal">Registration submitted</h2>
         <p className="mt-3 text-muted-foreground">Your registration has been saved successfully.</p>
+        <p className="mt-2 text-sm text-muted-foreground">{notificationAccepted ? "A notification to the admissions team has been accepted for sending." : "Please do not submit again — the admissions team can find your registration using this reference."}</p>
         <p className="mt-4 break-all text-xs text-muted-foreground">Reference: {reference}</p>
       </section> : <form onSubmit={submit} noValidate className="space-y-5 border-t border-border pt-6">
         {field("full_name", "Name")}
