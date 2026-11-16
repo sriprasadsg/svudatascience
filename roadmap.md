@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Inspect original/duplicate backend isolation and activate compatible original registration notifications without publishing, sending emails or inserting records; registration and email preview deployed, 73 tests passed, non-sending live checks returned 400/401.
+- [ ] Activate original programme enquiry handler (blocked: four missing enquiries columns; requires separate approval for the reviewed additive database change).
+- [ ] Complete notification delivery verification (blocked: notify.svudatascience.in DNS verification and approval for a real delivery test; duplicate activation belongs in its own project).
+
 - [x] Add approved domestic Quantum eligibility and admission process first on Admissions; verified exact intro, preserved international content, editable enquiry preselection and 1280/390/360px layout, 45 tests and preview build. No publication or backend changes; pre-existing header/banner image-loading issues remain.
 
 - [x] Adapt International Students alone to the visually inspected UNSW editorial reference; retained approved admissions/support wording, verified six catalogue/preselect links and generic shared enquiry CTA, original heading/subtitle, artwork loading and 1280/390/360px layout; 38 tests and preview build passed. No verified campus/student photos, team or transport details were supplied, so no such claims/sections were invented; original header logo loading remains unverified. No publication or backend changes.

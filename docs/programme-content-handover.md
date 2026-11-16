@@ -1,5 +1,40 @@
 # Programme content and enquiry handover
 
+## Authorised original-only activation — 16 November 2026, 13:12 UTC request
+
+This section supersedes the historical deployment status below. Only the original project was changed; no frontend publication, provider change, DNS edit, migration, applicant insertion or email send was performed.
+
+### Isolation
+
+- Original Lovable project: `63a3fc70-96ab-4339-9758-b3ba694ce9f1`; backend ref `aujtjyzcffmkpcetahtc`, confirmed by the live project-info tool and original client/config.
+- Duplicate Lovable project: `c7331980-9076-47d3-9ef2-ca4e9785d5a0`; backend ref `ciafhelakfdxcdvmfhbw`, confirmed in its read-only snapshot client/config. No live duplicate administration was attempted from this project.
+- The configured backends are separate. Original enquiries retain six programme IDs including Quantum; duplicate enquiries define five without Quantum. Both submission entrypoints differ. Nothing was copied or deployed to the duplicate.
+
+### Deployment and non-sending checks
+
+- Successfully deployed original `submit-registration` and `preview-transactional-email`. Shared registration/programme notification templates are bundled in the preview and registration deployment; this does not activate the programme-enquiry route.
+- Live `POST submit-registration` with `{}` returned 400 required-field validation, proving route startup/import resolution without saving or sending.
+- Live email-preview GET with an intentionally invalid authorization value returned 401 Unauthorized rather than its missing-key 500, establishing that `LOVABLE_API_KEY` is present in that deployed runtime. Template rendering/send acceptance was not exercised.
+- `submit-programme-enquiry` returned 404 and was deliberately not deployed: live `enquiries` lacks `programme_id`, `preferred_spell`, `consent`, and `educational_qualification`. Deploying the prepared handler now would make every valid insert fail. The existing additive SQL in `docs/review/programme-enquiry-fields.sql` needs separate migration approval before activation. No field was dropped or silently omitted to bypass this blocker.
+- Both destination tables have row-level security enabled. Existing registration columns match the prepared insert. Runtime service credentials/database insert permissions remain unverified because no valid submission or privileged diagnostic route was used.
+- 73 tests passed across registration orchestration/validation, online registration, programme validation/form and catalogue. The live save-and-send flow remains intentionally untested.
+
+### Provider, DNS and secrets
+
+- Provider remains Lovable managed app emails, pinned `@lovable.dev/email-js@0.7.0`; sender/from remain `notify.svudatascience.in`; both templates have fixed recipient `admissions@svudatascience.in` and applicant reply-to.
+- Domain check reports **Verifying DNS**, not ready for sending. Exact assigned delegation records: `notify.svudatascience.in NS ns3.lovable.cloud` and `notify.svudatascience.in NS ns4.lovable.cloud` (relative host `notify` in the `svudatascience.in` zone). Public Google DNS lookup returned no NS answers for this hostname; that observation alone does not establish authoritative DNS state.
+- Open this project's **More → Emails → Domain settings** to review the assigned records and use Check again after the domain provider has them. Do not alter root website/email records, provider or delegation arbitrarily. No shared DNS was edited. General setup reference: https://docs.lovable.dev/features/emails .
+- Required secret names: `LOVABLE_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. The secrets tool confirms the managed email key; platform configuration lists the two platform runtime secrets, which are not shown by the user-secret listing. No values were read or disclosed. No new user-supplied secret is currently identified as missing; do not ask for managed service credentials. Actual runtime availability of the two database secrets remains unverified by these deliberately non-writing checks.
+
+### Remaining actions
+
+1. Complete sender DNS verification in More → Emails; verification alone does not prove email delivery.
+2. Obtain separate approval for the original reviewed additive enquiry migration, apply it without changing historical data, then deploy original `submit-programme-enquiry`.
+3. Activate the duplicate from its own project against its separate backend and five-programme schema.
+4. Obtain approval for an actual end-to-end registration and programme-enquiry test, confirm saved records and email acceptance events, and independently confirm inbox arrival. No real emails or fake applicant records were created here.
+
+Frontend publication is not required for this backend activation and was not performed.
+
 ## AVIT primary homepage reference — 16 November 2026
 
 Visually inspected a fetched screenshot and read `https://avit.ac.in/vemerge-plus/`. Adapted the visible introductory CTA/benefits layout and the text-verified grouped features/programme-summary hierarchy, not an exact visual reproduction of the full source page. AVIT supersedes True Hope for the main page only; existing coherent detail pages are retained.
