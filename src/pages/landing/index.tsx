@@ -10,8 +10,6 @@ import {
   IconArrowRight,
   IconBook2,
   IconBriefcase,
-  IconCode,
-  IconDatabase,
   IconDeviceLaptop,
   IconTarget,
   IconUsers,
@@ -171,10 +169,10 @@ function ProgrammeEnquiry() {
 
 function Learning() {
   const cards = [
-    { icon: IconCode, title: "Practical work", text: "Hands-on exercises with the tools used in data and AI roles." },
-    { icon: IconUsers, title: "Mentorship", text: "Guidance from industry practitioners alongside university faculty." },
-    { icon: IconBriefcase, title: "Projects", text: "Applied projects that build a portfolio of real problem-solving." },
-    { icon: IconBook2, title: "Learning resources", text: "Structured materials and resources to support hybrid study." },
+    { icon: IconTarget, title: "80% Applied Learning", text: "Develop practical skills through laboratory work, analytical exercises and projects." },
+    { icon: IconBook2, title: "20% Theoretical Foundations", text: "Build conceptual understanding to support analysis, problem-solving and practical work." },
+    { icon: IconDeviceLaptop, title: "Online Academic Sessions", text: "Engage with structured lectures, subject discussions and guided learning." },
+    { icon: IconUsers, title: "Faculty & Industry Mentorship", text: "Receive academic guidance and practical perspectives from faculty and industry professionals." },
   ];
   return (
     <section id="learning" className="landing svu-main-learning py-12">
@@ -183,61 +181,14 @@ function Learning() {
           <p className="text-sm font-medium text-primary">Learning experience</p>
           <h2 className="mt-2 text-balance">How you will learn</h2>
         </div>
-        <div className="mb-8 grid gap-4 sm:grid-cols-2">
-          {cards.map((c, i) => (
-            <div key={c.title} className="svu-benefit soft-lift flex items-start gap-4 rounded-lg border border-border bg-card p-5">
-              <c.icon className={`mb-4 size-7 icon-anim icon-c${(i % 4) + 1}`} />
-              <div>
-              <h4 className="font-medium">{c.title}</h4>
+        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map((c) => (
+            <article key={c.title} className="svu-learning-card soft-lift flex min-w-0 flex-col rounded-lg border border-border bg-background p-5">
+              <c.icon aria-hidden="true" className="mb-4 size-7 shrink-0 text-primary" />
+              <h3>{c.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
-              </div>
-            </div>
+            </article>
           ))}
-        </div>
-        <div className="learn-highlights mx-auto mb-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: IconTarget, strong: "80%", label: "Practical Learning", c: 1 },
-            { icon: IconBook2, strong: "20%", label: "Theoretical Foundation", c: 2 },
-            { icon: IconDeviceLaptop, strong: "", label: "Online Sessions", c: 3 },
-            { icon: IconUsers, strong: "", label: "Industry Professionals & Mentors", c: 4 },
-          ].map((h, i) => (
-            <div
-              key={h.label}
-              className="learn-tile soft-lift rounded-xl border border-border bg-card p-5 text-center"
-              style={{ animationDelay: `${i * 1.2}s` }}
-            >
-              <h.icon className={`mx-auto mb-3 size-7 icon-anim icon-c${h.c}`} />
-              <p className="text-sm leading-snug">
-                {h.strong && <span className="mr-1 text-lg font-medium text-primary">{h.strong}</span>}
-                {h.label}
-              </p>
-            </div>
-          ))}
-        </div>
-        <section aria-labelledby="lms-heading" className="lms-support-band mx-auto mb-12 max-w-4xl border-y border-border px-6 py-8 sm:px-8">
-          <div className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)] md:gap-8">
-            <div className="flex items-center gap-4 md:flex-col md:items-start md:justify-center md:border-r md:border-border md:pr-6">
-              <IconDatabase aria-hidden="true" className="size-9 shrink-0 icon-anim icon-c1" />
-              <h3 id="lms-heading" className="text-xl font-normal">LMS access</h3>
-            </div>
-            <ul className="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-              {[
-                { label: "Course materials", icon: IconBook2 },
-                { label: "Lecture videos", icon: IconDeviceLaptop },
-                { label: "Real-time projects", icon: IconCode },
-                { label: "Case studies", icon: IconBriefcase },
-                { label: "Industry mentor support", icon: IconUsers },
-              ].map((item, index) => (
-                <li key={item.label} className="flex min-w-0 items-center gap-3">
-                  <item.icon aria-hidden="true" className={`size-5 shrink-0 icon-anim icon-c${(index % 4) + 1}`} />
-                  <span className="text-sm leading-relaxed text-foreground">{item.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-        <div className="min-w-0 rounded-lg border border-border bg-card px-4 pb-6 sm:px-6">
-          <TechStrip />
         </div>
       </div>
     </section>
@@ -395,6 +346,7 @@ export default function Landing() {
       <main className="svu-main-page bg-background text-foreground">
         <Hero />
         <Learning />
+        <div className="mx-auto max-w-page px-6 pb-10 lg:px-8"><TechStrip /></div>
         <Collaboration />
         <Programmes />
         <Admissions />

@@ -507,6 +507,8 @@
 .svu-main-page { --color-primary: hsl(218 72% 30%); }
 .svu-main-page .landing :is(h1, h2, h3, h4) { letter-spacing: 0; }
 .svu-main-page .icon-anim { color: var(--color-heading); }
+.landing .svu-learning-card h3 { font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0; }
+.svu-learning-card > svg { color: var(--color-heading); }
 .svu-main-page .learn-tile { background: var(--color-background); }
 .svu-main-page .landing .learn-tile::before { display: none; }
 .svu-main-page .lms-support-band { background: color-mix(in oklab, var(--color-primary) 3%, var(--color-background)); }
