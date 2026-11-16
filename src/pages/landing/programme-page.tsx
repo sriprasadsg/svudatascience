@@ -13,9 +13,6 @@ const admissions: Record<AdmissionType, { rows: [string, string][]; footnote: st
   quantum: {
     rows: [
       ["Entrance examination", "Online examination"],
-      ["Examination format", "50 multiple-choice questions"],
-      ["Total marks", "50 marks"],
-      ["Negative marking", "No negative marking"],
       ["Selection and verification", "Entrance qualification followed by counselling and certificate verification through the SVU Directorate of Admissions"],
       ["Admission spell", "As notified by SVU"],
     ],
