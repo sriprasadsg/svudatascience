@@ -128,29 +128,6 @@ function Programmes() {
           {programmes.map((programme) => <ProgrammeCard key={programme.slug} p={programme} />)}
         </div>
 
-        <div className="mt-10 overflow-x-auto border-y border-border bg-background text-foreground">
-          <table className="w-full text-left text-sm">
-            <caption className="sr-only">Programme comparison</caption>
-            <thead className="border-b border-border text-base leading-snug md:text-lg">
-              <tr>
-                <th className="p-4 font-medium">Programme</th>
-                <th className="p-4 font-medium">Duration</th>
-                <th className="p-4 font-medium">Mode of delivery</th>
-                <th className="p-4 font-medium">Admission</th>
-              </tr>
-            </thead>
-            <tbody>
-              {programmes.map((p) => (
-                <tr key={p.slug} className="border-b border-border last:border-0">
-                  <td className="min-w-56 p-4 font-medium"><Link to={programmePath(p)} className="hover:text-primary hover:underline">{p.name}</Link></td>
-                  <td className="min-w-32 p-4 text-muted-foreground">{p.duration}</td>
-                  <td className="min-w-56 p-4 text-muted-foreground">{p.mode}</td>
-                  <td className="min-w-48 p-4 text-muted-foreground">{p.admissionSummary}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </div>
     </section>
   );
