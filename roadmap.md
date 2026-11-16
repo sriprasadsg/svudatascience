@@ -1,5 +1,10 @@
 # Roadmap
 
+- [x] Rework programme discovery into six linked overview cards, with Quantum Computing first, and add six shared-layout programme routes.
+- [x] Add programme-specific enquiry forms with validated phone/consent fields, applicable admission spells, preserved input on failure, and a prepared server-side admissions notification flow; do not deploy, migrate, publish, or send test submissions.
+- [x] Verify all programme routes, direct loading, overview links, mobile overflow, form validation, programme prefill, spell differences, mocked success/failure, and the preview build.
+- [x] Record specialist-delivery verification limits and the required enquiry function/migration deployment in the infrastructure handover.
+
 - [x] Review all public pages on phones, correct narrow-screen layouts, and verify menus, programme choices, and registration controls.
 
 - [x] Correct the programme-card Register interest link and supply Workers static-assets settings for mobile navigation and direct registration URLs.
@@ -30,9 +35,9 @@
 - [x] Compact and balance the admissions & enquiries contact band above the official footer.
 - [ ] Confirm the real social profile addresses for the footer icons.
 - [ ] Confirm seat counts for the PG Diploma and specialist diplomas.
-- [ ] Replace the written programme and learning-card summaries with approved wording.
+- [x] Replace the written programme and learning-card summaries with approved wording.
 - [ ] Decide what the Register Interest form collects and its consent wording.
-- [ ] Build the separate programme pages listed in the SVU plan.
+- [x] Build the separate programme pages listed in the SVU plan.
 - [x] Specialist diploma cards: Data Visualization + Cloud Technologies on the lower row (done)
 - [x] Gentle looping animation on the admissions timeline dots and connecting line (done)
 - [x] Fix the empty space in the programmes section: a single card now spans the band, flush with the comparison table (done)

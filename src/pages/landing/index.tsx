@@ -18,7 +18,7 @@ import {
   IconBuildingBank,
 } from "@tabler/icons-react";
 import { Button } from "@/components/base/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { programmes, programmePath, type Programme } from "./programmes";
 import {
   Accordion,
   AccordionContent,
@@ -33,74 +33,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-type Programme = {
-  slug: string;
-  name: string;
-  group: "masters" | "pg" | "diploma";
-  duration: string;
-  mode: string;
-  summary: string;
-  selection: string;
-  intake: string;
-};
-
-const programmes: Programme[] = [
-  {
-    slug: "ms-data-science",
-    name: "M.S. Data Science",
-    group: "masters",
-    duration: "2 Years",
-    mode: "Regular Full-Time (Hybrid)",
-    summary:
-      "A two-year master's degree for graduates who want a strong grounding in data science, delivered with industry input.",
-    selection: "APPGCET, or the SVU Directorate of Admissions online proctored entrance test",
-    intake: "120 seats per year (APPGCET 30, DOA 60, International 30)",
-  },
-  {
-    slug: "pg-diploma-data-science",
-    name: "PG Diploma in Data Science",
-    group: "pg",
-    duration: "1 Year",
-    mode: "Part-Time (Hybrid)",
-    summary:
-      "A one-year postgraduate diploma for graduates and working professionals building practical data science skills.",
-    selection: "SVU Directorate of Admissions online proctored entrance test",
-    intake: "January and July intakes",
-  },
-  {
-    slug: "diploma-python-ai-ml-generative-ai",
-    name: "Diploma in Python for AI, ML & Generative AI",
-    group: "diploma",
-    duration: "6 Months",
-    mode: "Part-Time (Hybrid)",
-    summary: "Python programming applied to artificial intelligence, machine learning and generative AI.",
-    selection: "SVU Directorate of Admissions online proctored entrance test",
-    intake: "January and July intakes",
-  },
-  {
-    slug: "diploma-data-visualization",
-    name: "Diploma in Data Visualization (Power BI, Tableau & SQL)",
-    group: "diploma",
-    duration: "6 Months",
-    mode: "Part-Time (Hybrid)",
-    summary: "Turn data into clear reports and dashboards using Power BI, Tableau and SQL.",
-    selection: "SVU Directorate of Admissions online proctored entrance test",
-    intake: "January and July intakes",
-  },
-  {
-    slug: "diploma-cloud-technologies",
-    name: "Diploma in Cloud Technologies",
-    group: "diploma",
-    duration: "6 Months",
-    mode: "Part-Time (Hybrid)",
-    summary: "Core cloud concepts and platforms used to build and run modern data and AI systems.",
-    selection: "SVU Directorate of Admissions online proctored entrance test",
-    intake: "January and July intakes",
-  },
-];
-
 function Hero() {
   const [choice, setChoice] = useState<string>("");
+  const selectedProgramme = programmes.find((programme) => programme.slug === choice);
   return (
     <section id="top" className="landing relative isolate overflow-hidden py-24">
       <div
@@ -142,9 +77,11 @@ function Hero() {
             </SelectContent>
           </Select>
           <Button className="h-14 px-6" asChild>
-            <a href={choice ? `#prog-${choice}` : "#programmes"} onClick={(e) => { if (choice) { e.preventDefault(); goToProgramme(choice); } }}>
+            {selectedProgramme ? <Link to={programmePath(selectedProgramme)}>
               Explore <IconArrowRight className="size-4 icon-nudge" />
-            </a>
+            </Link> : <a href="#programmes">
+              Explore <IconArrowRight className="size-4 icon-nudge" />
+            </a>}
           </Button>
         </div>
       </div>
@@ -183,112 +120,52 @@ function Collaboration() {
   );
 }
 
-function ProgrammeCard({ p, wide }: { p: Programme; wide?: boolean }) {
+function ProgrammeCard({ p }: { p: Programme }) {
   return (
-    <article id={`prog-${p.slug}`} className={`programme-card scroll-mt-24 rounded-xl bg-background p-6 text-foreground ${wide ? "md:col-span-2" : ""}`}>
-      <h3 className="text-xl">{p.name}</h3>
-      <p className="mt-2 text-sm text-muted-foreground">{p.duration} · {p.mode}</p>
-      <p className="mt-4 text-muted-foreground">{p.summary}</p>
-      <Link to="/registration" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-        Register interest <IconArrowRight className="size-4 icon-nudge" />
-      </Link>
-    </article>
+    <Link id={`prog-${p.slug}`} to={programmePath(p)} className="programme-card programme-overview-card group flex min-w-0 scroll-mt-24 flex-col rounded-xl border border-border bg-background p-6 text-foreground" aria-label={`View ${p.name}`}>
+      <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.duration}</p>
+      <h3 className="mt-3 text-xl group-hover:underline group-hover:underline-offset-4">{p.name}</h3>
+      <p className="mt-3 text-sm italic text-muted-foreground">{p.subtitle}</p>
+      <p className="mt-4 text-sm leading-6 text-muted-foreground">{p.mode}</p>
+      <span className="mt-auto inline-flex items-center gap-1 pt-6 text-sm font-medium text-primary">
+        View programme <IconArrowRight className="size-4 icon-nudge" />
+      </span>
+    </Link>
   );
 }
 
-
-function goToProgramme(slug: string) {
-  history.replaceState(null, "", `#prog-${slug}`);
-  window.dispatchEvent(new CustomEvent("svu:prog", { detail: slug }));
-}
-
 function Programmes() {
-  const [tab, setTab] = useState<string>("masters");
-  useEffect(() => {
-    const open = (slug: string) => {
-      const p = programmes.find((x) => x.slug === slug);
-      if (!p) return;
-      setTab(p.group);
-      setTimeout(() => {
-        const el = document.getElementById(`prog-${slug}`);
-        if (!el) return;
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
-        el.classList.remove("prog-highlight");
-        void el.offsetWidth;
-        el.classList.add("prog-highlight");
-      }, 60);
-    };
-    const fromHash = () => {
-      const m = location.hash.match(/^#prog-(.+)$/);
-      if (m) open(m[1]);
-    };
-    const onEvt = (e: Event) => open((e as CustomEvent<string>).detail);
-    fromHash();
-    window.addEventListener("hashchange", fromHash);
-    window.addEventListener("svu:prog", onEvt);
-    return () => {
-      window.removeEventListener("hashchange", fromHash);
-      window.removeEventListener("svu:prog", onEvt);
-    };
-  }, []);
-  const groups = [
-    { key: "masters", label: "Master's" },
-    { key: "pg", label: "PG Diploma" },
-    { key: "diploma", label: "Specialist Diplomas" },
-  ] as const;
   return (
-    <section id="programmes" className="landing bg-primary py-20 text-primary-foreground">
+    <section id="programmes" className="landing programme-overview scroll-mt-4 bg-background py-16 text-foreground">
       <div className="mx-auto max-w-page px-6 lg:px-8">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="text-sm font-medium opacity-80">Programmes</p>
-          <h2 className="mt-2 text-balance">Choose the programme that fits your goals</h2>
+        <div className="mx-auto mb-9 max-w-4xl text-center">
+          <p className="text-sm font-medium text-primary">Programmes</p>
+          <h2 className="mt-2 text-balance">Explore Our Programmes</h2>
+          <p className="programme-overview__subtitle mt-3 text-lg text-muted-foreground">Industry-integrated learning in quantum computing, data science, AI and cloud technologies.</p>
+          <p className="mx-auto mt-4 max-w-3xl leading-7 text-muted-foreground">Explore postgraduate and diploma programmes offered by Sri Venkateswara University in collaboration with Exafluence. Select a programme to view its learning focus, duration, study mode and admission process.</p>
         </div>
-        <Tabs value={tab} onValueChange={setTab}>
-          <TabsList className="mx-auto mb-8 flex h-auto min-h-11 w-fit max-w-full flex-wrap gap-1">
-            {groups.map((g) => (
-              <TabsTrigger key={g.key} value={g.key} className="min-h-11">{g.label}</TabsTrigger>
-            ))}
-          </TabsList>
-          {groups.map((g) => {
-            const items = programmes.filter((p) => p.group === g.key);
-            const cols =
-              g.key === "diploma"
-                ? "md:grid-cols-2"
-                : items.length === 1
-                  ? "md:grid-cols-1"
-                  : items.length === 2
-                    ? "md:grid-cols-2"
-                    : "md:grid-cols-2 lg:grid-cols-3";
-            return (
-              <TabsContent key={g.key} value={g.key} forceMount className="data-[state=inactive]:hidden">
-                <div className={`grid gap-6 ${cols}`}>
-                  {items.map((p, i) => (
-                    <ProgrammeCard key={p.slug} p={p} wide={g.key === "diploma" && i === 0} />
-                  ))}
-                </div>
-              </TabsContent>
-            );
-          })}
-        </Tabs>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {programmes.map((programme) => <ProgrammeCard key={programme.slug} p={programme} />)}
+        </div>
 
-        <div className="mt-12 overflow-x-auto rounded-xl bg-background text-foreground">
+        <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-background text-foreground">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Programme comparison</caption>
-            <thead className="border-b border-border text-base leading-snug md:text-lg lg:text-xl">
+            <thead className="border-b border-border text-base leading-snug md:text-lg">
               <tr>
                 <th className="p-4 font-medium">Programme</th>
                 <th className="p-4 font-medium">Duration</th>
                 <th className="p-4 font-medium">Mode of delivery</th>
-                <th className="p-4 font-medium">Intake</th>
+                <th className="p-4 font-medium">Admission</th>
               </tr>
             </thead>
             <tbody>
               {programmes.map((p) => (
                 <tr key={p.slug} className="border-b border-border last:border-0">
-                  <td className="p-4 font-medium"><a href={`#prog-${p.slug}`} onClick={(e) => { e.preventDefault(); goToProgramme(p.slug); }} className="hover:text-primary hover:underline">{p.name}</a></td>
-                  <td className="p-4 text-muted-foreground">{p.duration}</td>
-                  <td className="p-4 text-muted-foreground">{p.mode}</td>
-                  <td className="p-4 text-muted-foreground">{p.intake}</td>
+                  <td className="min-w-56 p-4 font-medium"><Link to={programmePath(p)} className="hover:text-primary hover:underline">{p.name}</Link></td>
+                  <td className="min-w-32 p-4 text-muted-foreground">{p.duration}</td>
+                  <td className="min-w-56 p-4 text-muted-foreground">{p.mode}</td>
+                  <td className="min-w-48 p-4 text-muted-foreground">{p.admissionSummary}</td>
                 </tr>
               ))}
             </tbody>

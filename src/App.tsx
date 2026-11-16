@@ -9,6 +9,7 @@ import ApplicationLayout from "./layouts/application-layout";
 import Landing from "./pages/landing";
 import StudentInformation from "./pages/landing/student-information";
 import RegistrationPage from "./pages/landing/registration";
+import ProgrammePage from "./pages/landing/programme-page";
 import AuthPage from "./pages/auth";
 import AuthCallback from "./pages/auth/callback";
 import LinksPage from "./pages/links";
@@ -39,6 +40,7 @@ const App = () => (
               <Route path="/admissions" element={<StudentInformation />} />
               <Route path="/international-students" element={<StudentInformation international />} />
               <Route path="/registration" element={<RegistrationPage />} />
+              <Route path="/programmes/:programmeSlug" element={<ProgrammePage />} />
             </Route>
             <Route path="/auth" element={<AuthPage />} />
             {/* Managed OAuth + email-confirmation return. SocialAuthButtons always

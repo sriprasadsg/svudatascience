@@ -28,7 +28,7 @@ After Vite builds, the Cloudflare build downloads every `src/**/*.asset.json` po
 
 ## Page navigation
 
-Cloudflare Pages provides its default single-page-app fallback when there is no top-level `404.html`. Do not add one. Direct requests and reloads for `/registration`, `/admissions`, and `/international-students` should load the application. No Pages Functions or Cloudflare Worker is required.
+Cloudflare Pages provides its default single-page-app fallback when there is no top-level `404.html`. Do not add one. Direct requests and reloads for `/registration`, `/admissions`, `/international-students`, and `/programmes/:programmeSlug` should load the application. No Pages Functions or Cloudflare Worker is required.
 
 ## Registration and email
 
@@ -53,6 +53,8 @@ After redeploying, test the circled programme-card link on a phone, then open `/
 Cloudflare hosts the frontend only. The existing Lovable Cloud submission function, private registration storage, validation, and email functions remain in their current service; they are not converted into Workers. Do not deploy the existing Deno email/submission function files as Cloudflare Workers. Existing cross-origin form requests use the submission function's CORS response.
 
 Moving the frontend does not complete email setup: admissions notifications still require verified sender-domain setup and connection to the submission flow. Do not claim email delivery is enabled by this deployment.
+
+The six programme pages include a prepared programme-enquiry save-and-notification flow that is intentionally not deployed. Review `docs/programme-content-handover.md` and apply its review-only database change before deploying the enquiry function. The sender domain remains subject to verification, and no enquiry email delivery has been tested.
 
 If account sign-in routes are used, add the new site's exact HTTPS `/auth/callback` address to the allowed authentication redirects before testing those routes.
 
